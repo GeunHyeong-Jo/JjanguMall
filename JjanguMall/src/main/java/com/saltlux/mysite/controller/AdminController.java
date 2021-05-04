@@ -97,7 +97,7 @@ public class AdminController {
 	}
 	
 	
-	 
+	 //상품등록프로세스
 	@RequestMapping(value="/productRegist", method=RequestMethod.POST)
 	public String productRegist(@ModelAttribute GoodsDTO goodsDTO
 			, @RequestParam MultipartFile thumbFile) {
