@@ -154,7 +154,7 @@
 					<a href="javascript:history.back();">이전으로</a>				</div>
 				
 				<div class="shopContinue main-button-s" style="width: 140px; margin: -59px 564px 0px;">
-					<a href="/miniproject"><li class="shopContinue main-button-s" >쇼핑계속하기</li></a>
+					<a href="${pageContext.request.contextPath }"><li class="shopContinue main-button-s" >쇼핑계속하기</li></a>
 				</div>
 			</div>
 		</c:if>
@@ -175,7 +175,7 @@
 								<a href="#"><li class="subButton subButton-xs">비우기</li></a>
 							</div>
 							<div class="" style="width: 140px; display: inline-block; padding-left: 5px;">
-								<a href="/miniproject" ><li class="subButton subButton-xs">쇼핑 계속하기</li></a>
+								<a href="${pageContext.request.contextPath }" ><li class="subButton subButton-xs">쇼핑 계속하기</li></a>
 							</div>
 							
 							<div class="selectOrder" style="width: 140px; display: inline-block; padding-left: 5px;">
@@ -258,11 +258,11 @@ $('.modifyBtn').off('click').on('click',function(){
 	
 	$.ajax({
 		type:'post',
-		url:'/miniproject/cart/goods_cart_modify',
+		url:'${pageContext.request.contextPath }/cart/goods_cart_modify',
 		data:{'cartCode':cartCode,
 			'productQty':input},
 			success:function(){
-				location.href="/miniproject/cart/goods_cart";
+				location.href="${pageContext.request.contextPath }/cart/goods_cart";
 			}
 	});
 });
@@ -283,7 +283,7 @@ $('.selectDelete').click(function() {
 				if('${memId}'!=''){//회원
 					$.ajax({
 						type : 'post',
-						url : '/miniproject/cart/deleteCart',
+						url : '${pageContext.request.contextPath }/cart/deleteCart',
 						data : {
 							'userId' : '${memId}',
 							'productCode' : productCode
@@ -298,7 +298,7 @@ $('.selectDelete').click(function() {
 	}
 	//새로고침
 	if('${memId}'!='')
-		location.href = '/miniproject/cart/goods_cart';
+		location.href = '${pageContext.request.contextPath }/cart/goods_cart';
 	
 });
 
@@ -309,7 +309,7 @@ $('.allDelete').click(function() {
 		if('${memId}'!=''){//회원
 			$.ajax({
 				type : 'POST',
-				url : '/miniproject/cart/allDeleteCart',
+				url : '${pageContext.request.contextPath }/cart/allDeleteCart',
 				data : {
 					'userId' : '${memId}'
 				}
@@ -317,7 +317,7 @@ $('.allDelete').click(function() {
 		}
 		alert('장바구니 비우기 완료');
 		if('${memId}'!='')
-			location.href = '/miniproject/cart/goods_cart';
+			location.href = '${pageContext.request.contextPath }/cart/goods_cart';
 		
 	}
 });
@@ -338,7 +338,7 @@ $('#selectOrderBtn').click(function(){
 		checkedValueStr += ",";
 	}
 	if('${memId}'!=''){
-		location.href="/miniproject/order/order_cart?checkedValueStr="+checkedValueStr;
+		location.href="${pageContext.request.contextPath }/order/order_cart?checkedValueStr="+checkedValueStr;
 	}
 
 	

@@ -167,7 +167,7 @@ public class OrderController {
 		String memId = (String)session.getAttribute("memId");
 		orderService.orderCancel(memId);
 		
-		return "/miniproject";
+		return "/${pageContext.request.contextPath }";
 	}
 	
 }

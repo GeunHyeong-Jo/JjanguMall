@@ -94,7 +94,7 @@
 
 	/* 상품등록 버튼 */
 	$('#productRegistBtn').click(function() {
-		location.href = "/miniproject/admin/productRegistForm";
+		location.href = "${pageContext.request.contextPath }/admin/productRegistForm";
 	});
 
 	/* 상품 링크 클릭 시 수정 폼 */
@@ -103,7 +103,7 @@
 					'click',
 					'#productA',
 					function() {
-						location.href = "/miniproject/admin/productModifyForm?productCode="
+						location.href = "${pageContext.request.contextPath }/admin/productModifyForm?productCode="
 								+ $(this).attr('class');
 					});
 </script>

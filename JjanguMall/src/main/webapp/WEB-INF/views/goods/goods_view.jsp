@@ -103,13 +103,13 @@ $('#cartBtn').click(function(){
 	
 	if(userId==""){
 		if(confirm("회원에게만 제공하는 서비스 입니다. 로그인하시겠습니까?")){
-			location.href="/miniproject/user/loginForm";
+			location.href="${pageContext.request.contextPath }/user/loginForm";
 		}
 	}else{//회원
 		
 		$.ajax({	
 			type: 'post',
-			url: '/miniproject/cart/goods_cart_insert',
+			url: '${pageContext.request.contextPath }/cart/goods_cart_insert',
 			data: {'userId': '${memId}',
 				   'userEmail' : '${memEmail}',
 				   'productCode': '${goodsDTO.productCode}',
@@ -120,10 +120,10 @@ $('#cartBtn').click(function(){
 				   },
 			success : function(data){
 				if(data=='success'){
-					location.href = "/miniproject/cart/goods_cart";
+					location.href = "/${pageContext.request.contextPath }/cart/goods_cart";
 				}else if(data=='fail'){
 					alert("장바구니에 있는 상품입니다.");
-					location.href="/miniproject/cart/goods_cart";
+					location.href="/${pageContext.request.contextPath }/cart/goods_cart";
 				}
 			}
 		}); //ajax		

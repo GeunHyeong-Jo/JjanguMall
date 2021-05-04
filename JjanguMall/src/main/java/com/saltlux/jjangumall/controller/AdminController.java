@@ -110,7 +110,7 @@ public class AdminController {
 		
 		//파일경로설정 - 옮겨받으시면 경로수정 꼭 해주세용
 
-		String thumbImgPath = "C:\\Users\\32153256\\Desktop\\ssong\\soltlux\\TILJAVA\\workspace_Servlet_JSP\\miniproject\\src\\main\\webapp\\assets\\image\\thumb"; 
+		String thumbImgPath = "C:\\Users\\32153256\\Desktop\\ssong\\soltlux\\TILJAVA\\workspace_Servlet_JSP\\${pageContext.request.contextPath }\\src\\main\\webapp\\assets\\image\\thumb"; 
 		
 		//파일 이름 지정
 		String thumbImgName = seq+".jpg";
@@ -156,7 +156,7 @@ public class AdminController {
 		
 		if(thumbFile.isEmpty()==false) {//썸네일 있을때 이미지 수정
 			String thumbImgName = seq+".jpg";
-			String thumbImgPath = "C:\\Users\\32153256\\Desktop\\ssong\\soltlux\\TILJAVA\\workspace_Servlet_JSP\\miniproject\\src\\main\\webapp\\assets\\image\\thumb";
+			String thumbImgPath = "C:\\Users\\32153256\\Desktop\\ssong\\soltlux\\TILJAVA\\workspace_Servlet_JSP\\${pageContext.request.contextPath }\\src\\main\\webapp\\assets\\image\\thumb";
 			File thumbImgFile = new	File(thumbImgPath, thumbImgName); 
 			try {
 				FileCopyUtils.copy(thumbFile.getInputStream(), new FileOutputStream(thumbImgFile));

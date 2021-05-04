@@ -402,7 +402,7 @@ $('#orderWriteBtn').click(function(){
 	
 	$.ajax({
 		type : 'POST',
-		url : '/miniproject/order/updateUserInfo',
+		url : '/${pageContext.request.contextPath }/order/updateUserInfo',
 		async: false,
 		data : {'userId'			: '${memId}',
 				'userName'			: '${memName}',
@@ -441,7 +441,7 @@ $('#orderWriteBtn').click(function(){
 		
 		$.ajax({
 			type : 'POST',
-			url : '/miniproject/order/setOrderInfo',
+			url : '/${pageContext.request.contextPath }/order/setOrderInfo',
 			async: false,
 			data : {'userId' 		: '${memId}',
 					'userName' 		: '${userDTO.userName}',
@@ -466,7 +466,7 @@ $('#orderWriteBtn').click(function(){
 
 		});
 	}
-	location.href = "/miniproject/order/order_settle?checkedValueStr=${checkedValueStr}";
+	location.href = "/${pageContext.request.contextPath }/order/order_settle?checkedValueStr=${checkedValueStr}";
 });
 
 //콤마찍힌 숫자 정수형으로 변환

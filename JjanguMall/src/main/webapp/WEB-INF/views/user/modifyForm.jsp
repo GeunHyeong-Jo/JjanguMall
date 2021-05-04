@@ -229,7 +229,7 @@ $('#pwdChange').click(function(){
 $('#checkEmailBtn').click(function(){
 	$.ajax({
 		type : 'post',
-		url  : '/miniproject/user/checkEmail',
+		url  : '/${pageContext.request.contextPath }/user/checkEmail',
 		data : "userEmail=" + $('#userEmail').val(),
 		dataType : 'text',
 		success : function(data){
@@ -250,7 +250,7 @@ function changePwd(){
 	
 	$.ajax({
 		type:'post',
-		url:'miniproject/user/checkPwd',
+		url:'${pageContext.request.contextPath }/user/checkPwd',
 		data:{'userId':userId,
 			'userPwd':originalPwd},
 		success:function(data){

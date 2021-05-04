@@ -68,7 +68,7 @@ function changePwd(){
 	
 	$.ajax({
 		type:'post',
-		url:'/miniproject/user/checkPwd',
+		url:'/${pageContext.request.contextPath }/user/checkPwd',
 		data:{'userId':userId,
 			'userPwd':userPwd},
 		success:function(data){

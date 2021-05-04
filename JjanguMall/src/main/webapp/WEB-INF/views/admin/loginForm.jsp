@@ -89,12 +89,12 @@ $().ready(function(){
 		else {
 			$.ajax({
 				type : "post",
-				url : '/miniproject/admin/loginProcess',
+				url : '${pageContext.request.contextPath }/admin/loginProcess',
 				data : {"id" : $('#adminId').val(), "pwd" : $('#adminPwd').val()},
 				dataType : 'text',
 				success : function(data){
 					if(data == 'login_ok'){
-						location.href="/miniproject/admin/productList";
+						location.href="${pageContext.request.contextPath }/admin/productList";
 					} else if(data == 'login_fail'){
 						$('#loginResultDiv').text("로그인 실패").css("color","red").css("font-size","12pt");
 					}
