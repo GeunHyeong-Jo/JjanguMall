@@ -53,7 +53,7 @@ $('#loginBtn').on('click', function(){
 	else{
 		$.ajax({
 			type : 'post',
-			url  : '/${pageContext.request.contextPath }/user/login',
+			url  : '${pageContext.request.contextPath }/user/login',
 			data : {"userId" : userId,
 					"userPwd" : userPwd	},
 			dataType : 'text',
@@ -63,7 +63,7 @@ $('#loginBtn').on('click', function(){
 					notice.text("아이디 또는 비밀번호 오류입니다");
 				}
 				else{ //data == false 로그인 성공
-					location.href="/${pageContext.request.contextPath }";
+					location.href="${pageContext.request.contextPath }";
 				}
 			}
 		});

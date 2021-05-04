@@ -36,9 +36,9 @@
 			<!-- slider -->
 			<div id="slider_wrap">
 				<div id="main_slider" class="main_slider">
-					<div><a href="#"><img src="${pageContext.request.contextPath }/assets/image/main_banner1.png" style="height:500px;" /></a></div>
-					<div><a href="#"><img src="${pageContext.request.contextPath }/assets/image/main_banner2.png" style="height:500px;" /></a></div>
-					<div><a href="#"><img src="${pageContext.request.contextPath }/assets/image/main_banner3.png" style="height:500px;" /></a></div>
+					<div><a href="${pageContext.request.contextPath }/com/index"><img src="${pageContext.request.contextPath }/assets/image/main_banner1.png" style="height:500px;" /></a></div>
+					<div><a href="${pageContext.request.contextPath }/store/index"><img src="${pageContext.request.contextPath }/assets/image/main_banner2.png" style="height:500px;" /></a></div>
+					<div><a href="${pageContext.request.contextPath }/used/index"><img src="${pageContext.request.contextPath }/assets/image/main_banner3.png" style="height:500px;" /></a></div>
 				</div>
 				<div class="slider_nav">
 					
