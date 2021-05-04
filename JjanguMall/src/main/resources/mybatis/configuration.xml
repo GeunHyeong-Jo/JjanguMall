@@ -2,12 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.saltlux.mysite.dto.GoodsDTO" alias="goods"/>
-		<typeAlias type="com.saltlux.mysite.dto.UserDTO" alias="user"/>
-		<typeAlias type="com.saltlux.mysite.dto.CartDTO" alias="cart"/>
-		<typeAlias type="com.saltlux.mysite.dto.OrderDTO" alias="order"/>
-		<typeAlias type="com.saltlux.mysite.dto.OrderlistDTO" alias="orderlist"/>
-		<typeAlias type="com.saltlux.mysite.dto.AdminDTO" alias="admin"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.GoodsDTO" alias="goods"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.OrderDTO" alias="order"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.OrderlistDTO" alias="orderlist"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.AdminDTO" alias="admin"/>
     </typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />

@@ -54,7 +54,7 @@
 	
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.saltlux.mysite.dto, com.saltlux.mysite.service, com.saltlux.mysite.repository">
+	<context:component-scan base-package="com.saltlux.jjangumall.dto, com.saltlux.jjangumall.service, com.saltlux.jjangumall.repository">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 		<context:include-filter type="annotation"
