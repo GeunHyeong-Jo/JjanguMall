@@ -14,8 +14,6 @@
 			</a>
 		</div><!-- top_logo 끝 -->
 		
-		
-		
 		<ul id="top_menu" class="utilMenu">
 			<c:if test="${memId == null}">
 			<li><a href="${pageContext.request.contextPath }/user/loginForm" class="utilMenuText">로그인</a></li>
@@ -24,22 +22,11 @@
 			<c:if test="${memId != null}">
 			<li>${memName }님</li>
 			<li id="logoutBtn"><a href="${pageContext.request.contextPath }/user/logout" class="utilMenuText">로그아웃</a></li>
+				<li><a href="${pageContext.request.contextPath }/cart/goods_cart" class="utilMenuText">장바구니</a></li>
+				<li><a href="${pageContext.request.contextPath }/mypage/mypage_orderlist" class="utilMenuText">마이페이지</a></li>
+				<li><a href="${pageContext.request.contextPath }/my/index" class="utilMenuText">건강 관리 사이트</a></li>
 			</c:if>
-			
-			<c:if test="${memId != null}">
-			<li><a href="${pageContext.request.contextPath }/cart/goods_cart" class="utilMenuText">장바구니</a></li>
-			</c:if>
-			
-			<c:if test="${memId == null}">
-			<li><a href="${pageContext.request.contextPath }/user/loginForm" class="utilMenuText">마이페이지</a></li>
-			</c:if>
-			
-			<c:if test="${memId != null}">
-			<li><a href="${pageContext.request.contextPath }/mypage/mypage_orderlist" class="utilMenuText">마이페이지</a></li>
-			</c:if>
-			
 		</ul>
-		
 	</div><!-- top_menu_area 끝-->
 </div><!-- top_1 끝-->
 
