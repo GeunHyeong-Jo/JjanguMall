@@ -1,0 +1,472 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+*{font-family:'Hanna', sans-serif;}
+/*헤더*/
+a{color:#000000; text-decoration:none;}
+
+#top_1{width:1100px; margin:auto;}
+#top_menu_area{width:1100px; height:84px; position:relative;}
+#top_logo{width:200px; height:66px; padding:19px 0 0 10px; float:left;
+}
+
+#top_cate{width:1100px; height:40px;}
+#top_cate>table{padding-left:50px; width:730px;}
+#top_cate td>div{margin-top:36px;}
+.cate1{margin:30px; font-size:23px; color:#888888;}
+.cate1:hover{color:#000000;}
+
+#top_menu{float:right;}
+
+/*로그인*/
+
+p{font-size:30px; margin-left:50px;}
+#admin_login_div{
+	border:1px solid #bdbdbd; width:410px; height:330px; margin:150px auto;
+	padding-top:70px; background:#ffffff; border-radius:5px;
+}
+#admin_login_div table{width:250px; height:150px; margin:auto;}
+#admin_login_div input{
+	float:left; width:170px; height:30px;
+	border:1px solid #bdbdbd; margin-bottom:4px;
+}
+
+#admin_Btn_Div{margin:auto; width:250px; height:50px; margin-top:20px;}
+div.admin_Btn{
+	width:240px; height:30px; float:left; background:#c3c3c3;
+	text-align:center; padding-top:15px; margin-top:20px;
+	cursor:pointer;
+}
+div.admin_Btn:hover{background:#444444;}
+
+
+.checkDiv{width:150px; height:15px; padding-top:3px; }
+
+#loginResultDiv{clear:both; width:160px; margin:auto; padding-left:80px; padding-top:10px;}
+
+
+
+/*상품관리*/
+.product_search th{
+	width: 154px;
+	height: 35px;
+	text-align: center;
+	font-weight: 500;
+	background-color: #f5f4f4;
+	padding: 9px 9px 7px;
+}
+
+.product_search td{
+	width: 700px;
+	padding-left: 10px;
+}
+
+
+.product_btn_group{
+	min-width: 140px;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#product_searchBtn{
+	
+	color: #fff;
+    border: 1px solid transparent;
+    background-color: #1b87d4;
+}
+
+#product_resetBtn{
+	
+  	color: #1b87d4;
+    border: 1px solid #1b87d4;
+    background-color: #fff;
+}
+
+
+
+#productRegistBtn{
+	width: 100px;
+	height: 35px;
+    padding: 0 20px;
+    font-size: 14px;
+	font-weight: normal;
+    cursor: pointer;
+	color: #1b87d4;
+    border: 1px solid #1b87d4;
+    background-color: #fff;
+   	float: right;
+}
+#productRegistBtn:hover{
+   background-color:#1b87d4;
+   color:#ffffff;
+}
+#productDeleteBtn{
+	width: 100px;
+	height: 35px;
+    padding: 0 20px;
+    font-size: 14px;
+	font-weight: normal;
+    cursor: pointer;
+	color: #1b87d4;
+    border: 1px solid #1b87d4;
+    background-color: #fff;
+   	float: right;
+}
+#productDeleteBtn:hover{
+   background-color:#1b87d4;
+   color:#ffffff;
+}
+#productText{
+	width: 300px;
+}
+
+#productSeach_list th{
+	background-color: #f5f4f4;
+	font-weight: 500;
+	height: 53px;
+}
+
+.product_search select{
+	height: 27px;
+}
+#productSearchWord{
+	height: 23px;
+	padding-left: 5px;
+}
+.priceText{
+	width: 85px;
+	height: 18px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#productA:link{
+	color: black;
+} 
+#productA:hover{
+	color: #1b87d4;
+	text-decoration: underline;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+    
+	/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 100%; /* Could be more or less, depending on screen size */     
+     width: auto; display: table;                   
+}
+
+.modalDiv{
+	width:185px;
+	cursor:pointer;
+	background-color:#DDDDDD;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 0 15px 0 15px;
+}
+
+#product_info th{
+	width: 154px;
+    height: 35px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #f5f4f4;
+    padding: 9px 9px 7px;
+}
+
+#product_info td{
+	width: 80%;
+    padding-left: 10px;
+}
+.regist_reset{
+	min-width: 140px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#registBtn{
+    color: #fff;
+    border: 1px solid transparent;
+    background-color: #1b87d4;
+    font-weight:normal;
+}
+
+#registResetBtn{
+    color: #1b87d4;
+    border: 1px solid #1b87d4;
+    background-color: #fff;
+    font-weight:normal;
+}
+
+.inputText{
+	height: 27px;
+	padding-left: 5px;
+}
+#productName{
+	width: 300px;
+}
+
+#originalPrice{
+	width: 85px;
+	height: 18px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#origin{
+	width: 150px;
+}
+
+#manufacturer{
+	width: 150px;
+}
+
+#totalQty{
+	width: 70px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#subTotalQty{
+	width: 80px;
+	height: 30px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.minusImg {
+	width: 20px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+
+.span{
+	border:1px solid #bbb; 
+	width: 100px; 
+	height: 35px; 
+	text-align: center; 
+	font-weight: 500; 
+	background-color: #f5f4f4; 
+	padding: 9px 9px 7px;
+	vertical-align: middle;
+}
+.modifyImg{
+	width: 34px;
+	height: 34px;
+	vertical-align: middle;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	/* transition: all 0.3s ease-in-out; */   /* 부드러운 모션을 위해 추가*/
+}
+
+#thumbImgModify:hover {
+	border: 0.1px solid black;	
+	transform: scale(10);
+	-webkit-transform: scale(10);
+	-moz-transform: scale(10);
+	-ms-transform: scale(10);
+	-o-transform: scale(10);
+}
+#detailedImgModify:hover {
+	border: 0.1px solid black;
+	transform: translateY(-200px) scaleX(10) scaleY(20);
+	-webkit-transform: translateY(-200px) scaleX(10) scaleY(20);
+	-moz-transform: translateY(-200px) scaleX(10) scaleY(20);
+	-ms-transform: translateY(-200px) scaleX(10) scaleY(20);
+	-o-transform: translateY(-200px) scaleX(10) scaleY(20);
+}
+
+
+/*주문관리*/
+
+.order_search th{
+	width: 154px;
+	height: 35px;
+	text-align: center;
+	font-weight: 500;
+	background-color: #f5f4f4;
+	padding: 9px 9px 7px;
+}
+
+.order_search td{
+	width: 700px;
+	padding-left: 10px;
+}
+
+#searchBtn{
+	min-width: 140px;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 40px;
+    cursor: pointer;
+	color: #fff;
+    border: 1px solid transparent;
+    background-color: #1b87d4;
+}
+
+#orderSeach_list th{
+	height: 53px;
+	font-weight: 500;
+}
+
+.order_btn_group{
+	min-width: 140px;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.tbl_button {
+    width:55px;
+    height:25px;
+    background-color: #1B87D4;
+    border: none;
+    color:#fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius:10px;
+}
+
+.tbl_button:hover {
+    background-color: #f8585b;
+}
+
+
+#order_searchBtn{
+    color: #fff;
+    border: 1px solid transparent;
+    background-color: #1b87d4;
+}
+
+#order_resetBtn{
+    color: #1b87d4;
+    border: 1px solid #1b87d4;
+    background-color: #fff;
+}
+
+#orderSeach_list th{
+	font-weight: 500;
+    background-color: #f5f4f4;
+}
+.oreder_search input{
+	padding-left: 10px;
+}
+#orderTable{
+	 width:100%;
+	 border: 1px solid #d9dadc; 
+	 border-spacing: 0; 
+	 line-height: 1.5;
+}
+#orderTable select{
+	width: 80px;
+	height: 27px;
+}
+#order_selectDiv{
+	width: 100%;
+	padding-bottom: 10px;
+	overflow: auto;
+}
+
+#selDelete{
+	width: 100px;
+	height: 35px;
+    padding: 0 20px;
+    font-size: 14px;
+	font-weight: normal;
+    cursor: pointer;
+	color: #1b87d4;
+    border: 1px solid #1b87d4;
+    background-color: #fff;
+}
+#selDelete:hover{
+   background-color:#1b87d4;
+   color:#ffffff;
+}
+
+#order_state{
+	width: 150px;
+	height: 35px;
+    padding: 0 5px;
+    font-size: 14px;
+	font-weight: normal;
+}
+.searchKeyword{
+	height: 23px;
+	padding-left: 5px;
+}
+.searchPeriod{
+	height: 23px;
+	padding-left: 5px;
+}
+.orderList_tr{
+	background-color: #fff;
+}
+.orderList_tr:hover{
+	background-color: #eef;
+	color : #1b87d4;
+}
+
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+    
+	/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 100%; /* Could be more or less, depending on screen size */     
+     width: auto; display: table;                   
+}
+
+.modalDiv{
+	width:185px;
+	cursor:pointer;
+	background-color:#DDDDDD;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 0 15px 0 15px;
+}

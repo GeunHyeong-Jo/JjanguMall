@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/*** 고객센터 타이틀 ***/
+#left_mypage { /* border:solid 1px #e5e5e5; */ border-width:0 1px 1px 1px; margin:123px 0 0 0; }
+#left_mypage .title_mypage { font-size:18px; font-weight:bold; color:#222; text-align:left; padding:0 0 15px 0; }
+#left_mypage .line_mypage { width:100%; margin:0; padding:0; text-align:left; border-bottom: 1px solid #ddd;}
+
+
+
+/*** 고객센터 메뉴 ***/
+table.lnbMyMenu {
+	border-collapse: separate;
+ 	border-spacing: 0 20px;
+  	width:100%; font-size:13px; letter-spacing:-1; text-align:left;}
+table.lnbMyMenu th a{ text-decoration:none;
+color:#525252; font-size:13px; text-align:left; padding:18px 0 0 0;}
+table.lnbMyMenu th.unline {border-width:0;}
+table.lnbMyMenu td {padding:5px 0 10px 0; line-height:19px;}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+/*font-family: 'Hanna', sans-serif;*/
+*{
+	margin:0; padding:0;
+	list-style-type:none;
+}
+a{color:#1E1E1E; text-decoration:none;}
+.fixed{position:fixed; top:0px;}
+
+#top_1{width:1000px; margin:auto;}
+#top_menu_area{width:1000px; height:84px; position:relative;}
+
+#top_logo{width:140px; height:66px; padding:19px 0 0 10px; float:left;
+		}
+
+#top_cate{
+	position:relative;
+	width:490px; height:20px; padding-top:31px; float:left;
+	left:50px;
+	}
+#top_cate>table{width:420px;}
+
+#top_cate>table>tbody>tr>td{float:left; padding-right:40px;}
+#top_cate>table>tbody>tr>td>div>a.cate1{
+	font-family: 'Hanna', sans-serif; font-size:17px; font-weight:normal;
+	}
+#top_cate>table>tbody>tr>td>div>a.cate1:hover{ 
+	padding-bottom:2px;
+	border-bottom:3px solid #000000;
+	}
+#top_cate .catebar{width:60px; height:100px;}
+#top_cate .catebar .subLayer{
+	position:absolute; top:72px; left:-15px;
+	font-size:12px;
+	width:140px; height:140px;
+	background:#f9f9f9;	
+	box-shadow:2px 2px 2px #efefef;
+	}
+#top_cate .catebar .subLayer>ul>li{padding-top:14px; padding-left:15px;}
+.cate2:hover{font-weight:bolder;}
+
+
+#top_menu{
+	font-size:12px; width:320px; height:20px;
+	float:right; padding-left:10px;
+	}
+#top_menu>li{float:left; padding:37px 0 0 27px; font-weight:bold;}
+/* #top_menu>li#logoutBtn{margin-left:64px;} */
+#top_menu>li>a:hover{color:#000000;}
+
+.utilMenuText{color:#c1c1c1;}
+

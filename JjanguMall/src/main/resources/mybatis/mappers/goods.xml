@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goodsSQL">
+	<!-- 신상품리스트; newP -->
+	<select id="get_goods_list_newP" resultType="goods">
+		select * from TBL_PRODUCT where newP=1 order by productcode desc
+	</select>
+		
+	<!-- 상품상세페이지정보 가져오기 -->
+	<select id="getGoodsView" parameterType="Integer" resultType="goods">
+		select * from TBL_PRODUCT where productCode = #{productCode}
+	</select> 
+	
+	<!-- 상품상세페이지정보 가져오기 -->
+	<select id="getProductCode" resultType="Integer">
+		select productCode from TBL_product order by productCode desc limit 1
+	</select> 
+	
+	<!-- 상품본체 등록 -->
+	<insert id="productRegist" parameterType="goods">
+		insert into TBL_PRODUCT(productName, 
+								originPrice, 
+								discountPrice,
+								origin, 
+								manufacturer, 
+								thumbImg, 
+								totalQty,
+								stockQty, 
+								saleStatus, 
+								regDate, 
+								updateDate, 
+								newP) 
+							values( #{productName}
+									, #{originPrice}
+									, #{originPrice}
+									, #{origin}
+									, #{manufacturer}
+									, #{thumbImg}
+									, #{totalQty}
+									, #{totalQty}
+									, 1
+									, now()
+									, now()
+									, 1)
+	</insert>
+	
+	<!-- 상품 전체 수정 -->
+	<update id="productModify" parameterType="goods">
+		update TBL_PRODUCT set productName = #{productName}
+							, originPrice = #{originPrice}
+							, discountPrice = #{originPrice}
+							, origin = #{origin}
+							, manufacturer = #{manufacturer}
+							, thumbImg = #{thumbImg}
+							, totalQty = #{totalQty}
+							, stockQty = #{stockQty}
+							, saleStatus = #{saleStatus}
+							, updateDate = now()
+		where productCode = #{productCode}
+	</update>	
+		
+	<!-- 상품삭제 -->
+	<delete id="productDelete" parameterType="String">
+		delete from TBL_PRODUCT where productCode =#{productCode}
+	</delete>
+</mapper>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cartSQL">
+	<!-- 장바구니 리스트보기-->
+	<select id="getCart" parameterType="String" resultType="cart">
+		select * from tbl_cart where userId = #{userId} order by cartCode desc
+	</select>
+	
+	<!-- 장바구니 옵션내용 -->
+	<select id="checkCart" parameterType="cart" resultType="int">
+		select count(*) from tbl_cart where userId = #{userId} and productCode = #{productCode}
+	</select>
+	
+	<!-- 장바구니 추가 -->
+	<insert id="cartInsert" parameterType="cart">
+		insert into tbl_cart(userId,
+							userEmail,
+							productCode,
+							productName,
+							thumbImg,
+							discountPrice,
+							productQty)
+							values(
+									#{userId}
+									,#{userEmail}
+									,#{productCode}
+									,#{productName}
+							   		,#{thumbImg}
+							   		,#{discountPrice}
+							   		,#{productQty})
+	</insert>
+	
+	<!-- getCartDTO -->
+	<select id="getCartDTO" parameterType="String" resultType="cart">
+		select * from tbl_cart where cartCode = #{cartCode}
+	</select>
+	
+	
+	<!-- 장바구니 선택삭제 -->
+	<delete id="deleteCart" parameterType="java.util.Map">
+		delete from tbl_cart where userId = #{userId} and productCode = #{productCode} 		
+	</delete>
+	
+	<!-- 장바구니 전체지우기 -->
+	<delete id="allDeleteCart" parameterType="String">
+		delete from tbl_cart where userId=#{userId}
+	</delete>
+	
+	<!-- 장바구니 수량수정 -->
+	<update id="cartUpdate" parameterType="cart">
+		update tbl_cart set productQty = #{productQty} where cartCode = #{cartCode}
+	</update>
+	
+	<!-- 장바구니에 있는 물품 추가 수정 -->
+	<update id="cartInsertUpdate" parameterType="cart">
+		update tbl_cart set productQty=productQty+#{productQty} where userId = #{userId} and productCode = #{productCode}
+	</update>
+	
+	<!-- 주문 후 장바구니 삭제 -->
+	<delete id="deleteCartAfterPay" parameterType="Integer">
+		delete from tbl_cart where cartCode = #{cartCode}
+	</delete>
+	
+</mapper>

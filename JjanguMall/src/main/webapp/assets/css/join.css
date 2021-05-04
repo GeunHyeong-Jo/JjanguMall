@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+/* joinIndex table */
+.outline_both {
+	table-layout:fixed;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-left-color:#FFFFFF;
+	border-right-color:#FFFFFF;
+	padding:50px;
+	margin : 0 0 50px 130px;
+}
+
+.indiv {
+	margin:0 80px 30px 0;
+}
+
+
+/*loginForm*/
+.loginMsg_bg{
+	width:500px; height:200px;
+	margin:auto; padding-bottom:40px;
+}
+
+.login_bg {
+	text-align: center;
+}
+
+.login_bg p{
+	margin:12px 0 12px 0;
+}
+
+input.member_input01 {
+	border:1px solid #d9d9d9;
+	background:#fff !important;
+	font-size:14px;
+	height:34px;
+	line-height:34px;
+	padding:0 10px;
+	margin:0;
+}
+
+input.member_input01:focus {
+	border:1px solid #999 !important;
+}
+
+
+/* 비회원 로그인 */
+.no_mem_area {
+	width:100%;
+	border:6px solid #efefef;
+	margin:30px 0;
+	color:#666;
+}
+
+.no_mem_area label{
+	display:inline-block;
+	width:80px;
+	font-size:13px;
+	padding-bottom:9px\9;
+}
+
+.no_mem_area p {
+	text-align:center;
+	font-size:13px;
+	padding:30px;
+	line-height:18px;
+}
+
+.no_mem_area p b {
+	font-size:13px;
+	color:#000;
+	font-weight:bold;
+}
+
+.no_mem_area div {
+	text-align:center;
+	padding-bottom:25px;
+	font-size:14px;
+}
+
+.no_mem_area .no_mem_order{
+	padding-top:30px;
+}
+
+.no_mem_area .no_mem_order a{
+	font-size:12px;
+	font-weight:bold;
+	color:#666;
+	text-decoration:underline;
+}
+
+
+/* 아이디,비밀번호찾기 결과 */
+.result_search{
+	width:100%; 
+	border:6px solid #efefef; 
+	padding:50px 0; 
+	margin:30px 0 0 0;
+}
+
+.result_search td{
+	font-size:14px; 
+	color:#666;
+}
+	
+.result_search td .span_red{
+	color:#f44336;
+}
+
+.result_search td .span_blue{
+	font-weight:bold; 
+	color:#2196f3;
+}
+
+
+/* 아이디찾기,비밀번호찾기 하단 다른페이지로 이동버튼 */
+.search_other_btn{
+	width:100%; 
+	text-align:center; 
+	margin-top:20px;
+}
+
+.search_other_btn a:first-child{
+	margin-right:10px;
+}
+
+a.member_btn_style03 {
+	border:1px solid #555 !important; 
+	background:#666 !important; 
+	color:#fff; font-size:12px; 
+	text-align:center; 
+	font-weight:600; 
+	padding:7px 25px; 
+	display:inline-block;
+}
+
+a.member_btn_style04 {
+	border:1px solid #ddd !important; 
+	background:#eee !important; 
+	color:#666; 
+	font-size:12px; 
+	text-align:center; 
+	font-weight:600; 
+	padding:7px 25px; 
+	display:inline-block;
+}
+
+
+
+
+/* 쇼핑몰 계정으로 회원가입 */
+div.join-shop {
+	display:inline-block;
+	width:50%;
+	text-align:center;
+	padding:50px 0 40px 0;
+	height:160px;
+	background:#ddd;
+}
+
+div.join-shop div.join-shop-title {
+	font-size:17px;
+	font-weight: normal;
+	color:#333;
+	margin-bottom:20px;
+}
+
+div.join-shop div.join-shop-title b{
+	font-weight:700;
+	color:#000;
+}
+
+div.join-shop div.join-shop-select button.btn-join-shop {
+	border:1px solid #555; 
+	background:#666; 
+	font-size:12px; 
+	font-weight:600; 
+	width:180px; 
+	height:34px;
+}
+
+div.join-shop div.join-shop-select div.join-shop-option {
+	margin-top:20px;
+}
+
+div.join-shop div.join-shop-select div.join-shop-option span {
+	color:#999;
+}
+	
+div.join-shop div.join-shop-select div.join-shop-option a.login-shop {
+	display:block; 
+	color:#666; 
+	text-decoration:underline; 
+	font-weight:600; 
+	margin-top:5px;
+}
+
+
+/* 회원가입 버튼 */
+.main-button {
+  font-weight: 700;
+  width: 100%;
+  height:60px;
+  line-height: 60px;
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+  list-style: none;
+  box-sizing: border-box;
+  display: list-item;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif,Arial, dotum, 돋움;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.main-button a {
+  color:#fff;
+}
+
+.main-button:hover {
+  background-color: #222;
+  color:#fff;
+}
+
+
+/* 회원가입 이용약관 */
+
+/* 타이틀 */
+.indiv div.in_tit{
+	font-size: 22px; 
+	font-weight: 700; 
+	text-align: left;
+}
+
+h5.in_stt {
+	font-size:12px; 
+	color:#333; 
+	margin:0; 
+	text-align:left;
+}
+
+h5.join_tit{
+	margin-top:15px;
+}
+
+/* 쇼핑몰,SNS회원가입 이용약관,개인정보취급방침 스크롤 */
+.scroll	{
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-shadow-color: #AFAFAF;
+	scrollbar-highlight-color: #AFAFAF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #F7F7F7;
+	scrollbar-arrow-color: #838383;
+	height:190px;
+	padding:10px;
+	box-sizing:border-box;
+	background:#ffffff;
+	color: #585858;
+}
+
+/* 개인정보 취급방침 */
+.boxScroll {
+	width:100%; 
+	height:190px; 
+	overflow: auto; 
+	font:9pt ; 
+	font-family:'Noto Sans KR',Arial, dotum, 돋움;
+	border:1px #dddddd solid; 
+	overflow-x:hidden; 
+	text-align:left; 
+	margin-left:10px;
+}
+
+/* 이용약관 동의*/
+.join_agreement {
+	padding:20px 20px 10px 20px; 
+	background:#fbfbfb; 
+	border:1px solid #ddd;
+}
+
+.join_agreement textarea{
+	color:#777; 
+	line-height:19px; 
+	font-size:12px; 
+	border:1px solid #ccc; 
+	font-weight:400;
+}
+
+.join_agreement .private_textarea{
+	color:#777; 
+	line-height:19px; 
+	font-size:12px; 
+	border:1px solid #ccc; 
+	font-weight:400;
+}
+	
+.join_agreement input[type=radio]{
+	/*vertical-align:middle;*/
+}
+
+.join_agreement label{
+	color:#666;
+}
+
+.join_agreement .private_info {
+	font-size:12px; 
+	color:#777; 
+	font-weight:400;
+}
+
+.join_agreement .private_info a{
+	color:#2196f3;
+}
+
+.join_agreement .private_info a:hover{
+	text-decoration:underline;
+}
+
+
+/*뒤로, 그외 버튼*/
+.sub-button-s {
+	height:38px;
+	line-height: 38px;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	list-style: none;
+	box-sizing: border-box;
+	display: list-item;
+	font-size: 13px;
+	font-family: 'Noto Sans KR', sans-serif,Arial, dotum, 돋움;
+	font-weight: 500;
+	color: #a4a4a4;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.sub-button-s a {
+	text-decoration:none;	
+	color:#a4a4a4;
+}
+
+.sub-button-s:hover {
+  background-color: #f6f6f6;
+  color:#a4a4a4;
+  border: 1px solid #ccc;
+}
+
+
+/*다음 버튼*/
+.main-button-s {
+	height:38px;
+	line-height: 38px;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+	background-color: #444;
+	list-style: none;
+	box-sizing: border-box;
+	display: list-item;
+	font-size: 13px;
+	font-family: 'Noto Sans KR', sans-serif,Arial, dotum, 돋움;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.main-button-s a {
+	text-decoration:none;
+	color:#fff;
+}
+
+.main-button-s:hover {
+	background-color: #222;
+	color:#fff;
+}
+
+
+/* 개인회정보 입력폼 */
+#join_table_01{
+	width:100%; 
+	color:#666;
+}
+
+#join_table_01 tr:first-child td{
+	border-top:1px solid #dfdfdf;
+}
+
+#join_table_01 td.memberCols1{
+	text-align:left; 
+	padding:5px; 
+	box-sizing:border-box; 
+	width:200px; 
+	font-size:13px;
+	font-weight:700;
+	color:#333;
+}
+
+#join_table_01 td.memberCols2{ 
+	font-size:13px; 
+	color: #333;
+}
+
+#join_table_01 td.memberCols2 input[type=text]{
+	border:1px solid #DDD; 
+	width:200px; 
+	height:35px; 
+	padding-left: 10px; 
+	font-size:13px; 
+	color: #333; 
+	-webkit-appearance:none; 
+	border-radius:0;  
+	margin:5px;
+}
+
+#join_table_01 td.memberCols2 input[type=password]{
+	border:1px solid #DDD;
+	width:200px; 
+	height:35px; 
+	padding-left: 10px; 
+	font-size:13px; 
+	color: #333; 
+	-webkit-appearance:none; 
+	border-radius:0; 
+	margin:5px;
+}
+
+.join_blue01{
+	font-size:11px; 
+	color:#2196f3;
+}
+
+.join_red01{
+	font-size:11px; 
+	color:#f44336; 
+	padding-top:10px;
+}
+

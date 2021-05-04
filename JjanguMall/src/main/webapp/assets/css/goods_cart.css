@@ -1,0 +1,232 @@
+.sub_Wa{
+	width: 1000px;
+    margin: auto;
+    padding: 0;
+    border: none;
+    text-align: center;
+}
+
+.cartTable{
+    width: 100%;
+    color: #666;
+}
+
+.cart_title{
+	font-size: 22px;
+	font-weight: 700;
+	text-align: left;
+	color: #222;
+}
+
+.cart_select{
+	border-top: 1px solid #999;
+}
+
+.sellPrice{
+	border-top: 1px solid #999; 
+	font-size: 12px; 
+	color: #999; 
+	text-align: right; 
+	padding-right:50px;
+}
+
+.goodsInfo{
+	border-top: 1px solid #999; 
+	font-size: 12px; 
+	color: #999; 
+	text-align: left; 
+	padding-left: 15px; 
+	font-weight:500;
+}
+
+.sellPrice{
+	border-top: 1px solid #999; 
+	font-size: 12px; 
+	color: #999; 
+	text-align: right; 
+	padding-right:50px;
+}
+
+.sellQty{
+	border-top: 1px solid #999; 
+	font-size: 12px; 
+	color: #999; 
+	font-weight:500;
+}
+
+.sellDelivery{
+	border-top: 1px solid #999; 
+	font-size: 12px; 
+	color: #999; 
+	font-weight:500;
+}
+
+.Total{
+	border-top: 1px solid #999; 
+	font-size: 12px; 
+	color: #999; 
+	text-align: right; 
+	padding-right:20px; 
+	font-weight:500;
+}
+
+.totalPriceArea{
+	height: 30px;
+    padding: 0;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.price{
+	color: #222; 
+	vertical-align:top; 
+	padding: 30px 50px 30px 0; 
+	text-align:right;
+}
+
+.optionButton{
+	text-align:center; 
+	font-weight:500; 
+	width:90px; 
+	height:40px; 
+	line-height:40px; 
+	float:left; 
+	padding:0;
+}
+
+.optionButton{
+	margin: 10px 0 0;
+    padding: 5px 7px -1px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    list-style: none;
+    box-sizing: border-box;
+    display: list-item;
+    font-size: 11px;
+    font-weight: 700;
+    color: #a4a4a4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.optionButton:hover{
+	background-color: rgb(246, 246, 246);
+}
+
+.totalPrice{
+	height: 30px;
+    border: 0;
+    padding: 0;
+    text-align: right;
+    padding-right: 20px;
+}
+.main-button-s {
+    height: 38px;
+    line-height: 38px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    background-color: #444;
+    list-style: none;
+    box-sizing: border-box;
+    display: list-item;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif,Arial, dotum, ����;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.main-button-s:hover{
+	background-color: rgb(43, 43, 43);
+}
+* {
+    font-family: 'Noto Sans KR', sans-serif,Arial, dotum, ����;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.subButton{
+	text-align:center; 
+	height:60px; 
+	line-height:60px; 
+	font-size: 14px; 
+	font-weight:700;
+	background-color: #fff;
+}
+
+.subButton-xs{
+	height: 38px;
+    line-height: 38px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    display: list-item;
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif, Arial, dotum, ����;
+    font-weight: 500;
+    color: rgb(164, 164, 164);
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    list-style: none;
+    transition: all 0.2s ease 0s;
+}
+
+.subButton-xs:hover{
+	background-color : rgb(246, 246, 246);
+}
+
+.cartTable th {
+    font-size: 13px;
+    height: 50px;
+    color: #999;
+    background: #f6f6f6;
+    text-align: center;
+    font-weight: 700;
+}
+
+.cartTable td {
+    font-size: 13px;
+    height: 40px;
+    padding: 15px -1;
+    border-bottom: 1px solid #ebebeb;
+    text-align: right;
+}
+
+.orderOption{
+text-align:left;vertical-align:top; padding: 30px 0;}
+
+.thumImg{
+	color: #222; font-weight: 700; font-size: 14px;
+}
+
+.totalPriceArea{
+	text-align: right;
+}
+
+.none_previous{
+	text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.none_allDelete{
+	text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.shopContinue{
+	text-align:center;
+	height:60px; 
+	line-height:60px; 
+	font-size: 14px; 
+	font-weight:700;
+}

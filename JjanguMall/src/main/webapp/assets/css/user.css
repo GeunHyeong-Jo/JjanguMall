@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+div.passwordStrenth {background-color:#FFFFFF; border:1px #CCCCCC solid; padding:10px; width:263px;display:none; position:absolute;}
+
+div.passwordStrenth p {margin:0;padding:5px 0 0 0; font-size:11px; font-family:dotum;color:#616161; }
+
+div.passwordStrenth dl {margin:0;padding:0 6px 0 0;color:#373737; font-weight:bold;font-size:11px; font-family:dotum; }
+div.passwordStrenth dl dt,
+div.passwordStrenth dl dd {display:inline;font-size:11px; font-family:dotum;margin:0;height:15px;line-height:15px;}
+
+div.passwordStrenth dl dt {color:#363636; font-weight:bold; width:95px;}
+
+div.passwordStrenth dl dd {text-indent:0px;font-size:12px; width:110px;}
+div.passwordStrenth dl dd.lv0 {color:#F52D00;background-position:20px 0;}
+div.passwordStrenth dl dd.lv1 {color:#F52D00;background-position:20px 0;}
+div.passwordStrenth dl dd.lv2 {color:#028EFF;background-position:20px -29px;}
+div.passwordStrenth dl dd.lv3 {color:#46C32D;background-position:20px -59px;}
+
+.memberCols1 {
+width:100px;
+text-align:left;
+font-weight:700;
+color:#222;
+height:60px;
+}
+.memberCols2 {
+text-align:left;
+padding-left:10px;
+}
+
+
+#pwdManual { border:2px solid #333; z-index:1000; display:none; position:absolute; width:350px; background:#ffffff; margin:15px 0 0 226px; }
+#pwdManual p { margin:-5px 0 0 0;padding:0px 30px 10px 30px;color:#333;font-size:14px;line-height:21px;font-weight:bold;}
+#pwdManual p.close { background:none;padding:0;margin:10px 10px 0 0;text-align:right;}
+#pwdManual ul {list-style:none;margin:0;padding:0px 30px 30px 30px;color:#999;}
+#pwdManual ul li {color:#999; font-size:11px; line-height:17px;}

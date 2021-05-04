@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/* 개인정보 취급방침 */
+.boxScroll {width:100%; height:190px; overflow: auto; font:9pt ; font-family:'Noto Sans KR',Arial, dotum, 돋움; border:1px #dddddd solid; overflow-x:hidden; text-align:left; margin-left:10px;}
+.scroll	{
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-shadow-color: #AFAFAF;
+	scrollbar-highlight-color: #AFAFAF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #F7F7F7;
+	scrollbar-arrow-color: #838383;
+	height:190px;
+	padding:10px;
+	box-sizing:border-box;
+	background:#ffffff;
+	color: #585858;
+}
+/* 이용약관 동의*/
+.join_agreement {padding:20px 20px 10px 20px; background:#fbfbfb; border:1px solid #ddd;}
+
+
+.join_agreement textarea{color:#777; line-height:19px; font-size:12px; border:1px solid #ccc; font-weight:400;}
+.join_agreement .private_textarea{color:#777; line-height:19px; font-size:12px; border:1px solid #ccc; font-weight:400;}
+.join_agreement input[type=radio]{/*vertical-align:middle;*/}
+.join_agreement label{color:#666;}
+.join_agreement .private_info {font-size:12px; color:#777; font-weight:400;}
+.join_agreement .private_info a{color:#2196f3;}
+.join_agreement .private_info a:hover{text-decoration:underline;}
+
+
+
+/* 주문상세내역 */
+.table_tit_style02{width:100%; color:#666;}
+.table_tit_style02 th{font-size:13px;height:50px; color:#333; background:#f6f6f6; text-align:center; font-weight:500;}
+.table_tit_style02 th a{color:#333;}
+.table_tit_style02 td{font-size:13px;height:40px; padding:15px 0; border-bottom:1px solid #ebebeb; text-align:center;}
+.table_tit_style02 td a{display:inline-block; margin-bottom:10px;}
+
+
+
+/* 주문서 작성 table */
+.indiv .box_style_01	{ width:100%; background-color: #fff; padding: 30px 30px 30px 40px; border: 1px solid #ddd;}
+.box_style_01 .box_tit{font-size: 15px; color: #333; font-weight:700;}
+.box_style_01 .box_sub_tit{height:38px; font-size: 13px; color: #666; padding-top: 5px; font-weight:bold;}
+
+.box_style_01 td input[type=text]{
+	border:1px solid #DDD; 
+	width:200px; height:38px; padding-left: 10px; font-size:13px; 
+	color: #333; -webkit-appearance:none; 
+	border-radius:0;
+	vertical-align:middle;
+	}
+
+.box_style_01 .box_con{font-size:13px;line-height:18px; color:#666;}
+.box_style_01 .box_con td{font-size:13px;padding-top:20px;}
+
+.box_style_01 .box_con02{font-size:13px;padding:20px 0; color:#666;}
+
+.box_style_01 .box_con03{font-size:13px;padding-top:0; color:#666;}
+.box_style_01 .box_con03 table{font-size:13px;padding-top:20px; padding:0\9; line-height:22px; color:#666;}
+
+.box_style_01 .box_con04{font-size:13px;color:#666;}
+.box_style_01 .box_con04 table td{font-size:13px;padding-top:5px; padding:0\9; line-height:22px; color:#666;}
+
+.indiv {margin:0 80px 50px 100px; padding: 0 80px 80px 80px;}
+.indiv2 {margin:auto; padding:0 80px 80px 80px;}
+
+.table_tit_style02{width:100%; color:#666;}
+.table_tit_style02 th{font-size:13px;height:50px; color:#333; background:#f6f6f6; text-align:center; font-weight:500;}
+.table_tit_style02 th a{color:#333;}
+.table_tit_style02 td{font-size:13px;height:40px; padding:15px 0; border-bottom:1px solid #ebebeb; text-align:center;}
+.table_tit_style02 td a{display:inline-block; margin-bottom:10px;}
+
+/* 장바구니    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.order_option{line-height:18px;}
+.total_price_area{color:#666;}
+.total_price_area td{height:30px; border:0; padding:0; text-align:right; padding-right:20px;}
+.total_price_area span{font-size:16px; font-weight:bold; padding-left:10px;}
+.total_price_area .total_price span{color:#f44336}
+
+
+/* 타이틀 */
+.indiv div.order_tit{font-size: 22px; font-weight: 700; text-align: left;}
+h5.join_tit{margin-top:15px;}
+
+
+/*뒤로, 그외 버튼*/
+.sub-button-s {
+	
+  height:38px;
+    line-height: 38px;
+    margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+    list-style: none;
+    box-sizing: border-box;
+    display: list-item;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif,Arial, dotum, 돋움;
+  font-weight: 500;
+    color: #a4a4a4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sub-button-s a {
+text-decoration:none;	
+  color:#a4a4a4;
+}
+
+.sub-button-s:hover {
+  background-color: #f6f6f6;
+  color:#a4a4a4;
+  border: 1px solid #ccc;
+}
+
+
+/*다음 버튼*/
+.main-button-s {
+	height:38px;
+	  line-height: 38px;
+	font-weight: 500;
+	  margin: 0;
+	padding: 0;
+	background-color: #444;
+	  list-style: none;
+	  box-sizing: border-box;
+	  display: list-item;
+	  font-size: 13px;
+	  font-family: 'Noto Sans KR', sans-serif,Arial, dotum, 돋움;
+	  color: #fff;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.main-button-s a {
+	text-decoration:none;
+  color:#fff;
+}
+
+.main-button-s:hover {
+  background-color: #222;
+  color:#fff;
+}
+
+

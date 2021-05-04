@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.footer_menu{
+	width : 100%;
+	margin: 0 auto;
+	background-color: #333;
+	height : 230px;
+	line-height : 55px;
+	margin-top: 100px;
+}
+
+
+.footer_menu img{
+	width : 90px;
+	
+}
+
+.footer_company p{
+	width: 100%;
+	font-size : 11px;
+	line-height : 21px;
+	color : #616161;
+}
+
+.footer_menu>.footer_company>p>a.textLink{
+	text-decoration: underline;
+	color: #616161;
+	font-weight: normal;
+	cursor:pointer;
+	
+}
+
+.footer_menu p{
+	padding-top: 5px;
+}

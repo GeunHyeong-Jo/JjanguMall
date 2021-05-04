@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	
+	<!-- 회원가입시 중복아이디 체크 -->
+	<select id="checkId" parameterType="String" resultType="user">
+		select * from TBL_USER where userId = #{userId}
+	</select>
+
+	<!-- 회원가입시 중복이메일 체크 -->
+	<select id="checkEmail" parameterType="String" resultType="user">
+		select * from TBL_USER where userEmail = #{userEmail}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="join" parameterType="user">
+		insert into TBL_USER (USERID
+							 ,USERPWD
+							 ,USERNAME
+							 ,USEREMAIL
+							 ,USERPHONE
+							 ,JOINDATE) 
+					values (#{userId} 
+							,#{userPwd} 
+							,#{userName}
+							,#{userEmail}
+							,#{userPhone}
+							,now())
+	</insert>
+	
+	<!-- 로그인 아이디/비밀번호 체크 -->
+	<select id="getUser" parameterType="java.util.Map" resultType="user">
+		select * from TBL_USER where userId = #{userId}
+	</select>
+	
+	<!--배송정보 추가 -->
+	<update id="updateUserInfo" parameterType="user">
+		update TBL_USER set userName = #{userName}
+							,userPhone = #{userPhone}
+							,userEmail = #{userEmail} 
+							,receiverName 	= #{receiverName}
+							,receiverAddr1 	= #{receiverAddr1}
+							,receiverAddr2 	= #{receiverAddr2}
+							,receiverZipcode = #{receiverZipcode}
+							,receiverPhone = #{receiverPhone}
+							where userId = #{userId}
+	</update>
+	
+	<!-- 장바구니 수 + 1 -->
+	<update id="addCartCount" parameterType="String">
+		update tbl_user set productInCart = productInCart+1 where userId = #{userId}
+	</update>
+	
+	<!-- 장바구니 수 - 1 -->
+	<update id="subCartCount" parameterType="String">
+		update tbl_user set productInCart = productInCart-1 where userId = #{userId}
+	</update>
+	
+	<!-- 장바구니 수 비우기 -->
+	<update id="allDeleteCartCount" parameterType="String">
+		update tbl_user set productInCart = 0 where userId = #{userId}
+	</update>
+	
+	<!-- 회원정보수정 -->
+	<update id="modify" parameterType="java.util.Map">
+		update TBL_USER set USERPWD=#{userPwd}
+							 ,USERNAME=#{userName}
+							 ,USEREMAIL=#{userEmail}
+							 ,USERPHONE=#{userPhone}
+							where userId=#{userId}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="memberDelete" parameterType="java.util.Map">		
+		delete from TBL_USER where userId=#{userId};
+	</delete>
+	
+</mapper>
