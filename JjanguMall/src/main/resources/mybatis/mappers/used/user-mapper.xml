@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+	<resultMap type="tradevo" id="tradeMap">
+		<result property="itemNo" column="item_no" />
+		<result property="sellerId" column="seller_id" />
+		<result property="buyerId" column="buyer_id" />
+		<result property="itemNo" column="item_no" />
+	</resultMap>
+
+
+	<insert id="signUp" parameterType="uservo">
+		<![CDATA[
+			insert into
+			user (id, password, name, region, sub_date)
+			values( #{id}, #{password}, #{name}, #{region}, now());
+		]]>
+		
+	</insert>
+	
+	
+	<select id="findByIdAndPassword" parameterType="uservo" resultType="uservo">
+		<![CDATA[
+			select id, name, role
+			from user 
+			where id = #{id } and password = #{password }
+		]]>
+	</select>
+	
+	
+	<select id="findById" parameterType="string" resultType="uservo">
+		<![CDATA[
+			select id, name, region, sub_date, role 
+			from user 
+			where id = #{id }
+		]]>
+	</select>
+	
+	
+	<!--  seller 정보창에 나오는 정보들 -->
+	<select id="seller" parameterType="String" resultType="uservo">
+		select id, name, region
+		from user
+		where id = #{id }
+	</select>
+	
+	<!--  seller에 같이나오는 평점 -->
+	<select id="sellerPoint" parameterType="String" resultType="double">
+		select avg(point) from trade where seller_id = #{id } and point > 0;
+	</select>
+	
+	<!-- trade list -->
+	<select id="tradeList" parameterType="String" resultType="tradevo" resultMap="tradeMap">
+		select trade.no, trade.item_no, seller_id, buyer_id, title, point, trade.status
+		from trade, item
+		where item_no = item.no and (seller_id = #{id } or buyer_id = #{id })
+		order by no desc;
+	</select>
+	
+	<!--  avgPoint -->
+	<select id="avgPoint" parameterType="string" resultType="double">
+		select avg(point) from trade
+		where seller_id = #{id } and point > 0
+	</select>
+	
+	
+	<update id="update" parameterType="uservo" >
+		<choose>
+			<when test='password != ""'>
+				<![CDATA[
+					update user set name=#{name }, region=#{region }, password=#{password }
+					where id = #{id }		
+				]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+					update user set name=#{name }, region=#{region }
+					where no = #{no }		
+				]]>
+			</otherwise>
+		</choose>
+	</update>
+	
+	
+	<select id="getRole" parameterType="string" resultType="string">
+		select role from user where id = #{id }
+	
+	</select>
+	
+	
+	
+</mapper>
+
+

@@ -11,7 +11,7 @@ import com.saltlux.jjangumall.dto.used.ItemVo;
 import com.saltlux.jjangumall.service.used.ItemService;
 
 @Controller
-public class MainController {
+public class UsedMainController {
 	
 	@Autowired
 	ItemService itemService;
@@ -21,7 +21,7 @@ public class MainController {
 		List<ItemVo> list = itemService.index();
 
 		model.addAttribute("itemList", list);
-		return "main/index";
+		return "used/main/index";
 	}
 	
 }

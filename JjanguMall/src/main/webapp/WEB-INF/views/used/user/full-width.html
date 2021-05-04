@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Template Name: Colossus
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Colossus | Pages | Full Width</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="${pageContext.request.contextPath }/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+           
+      <div id="comments">
+        
+        <h2>Write A Comment</h2>
+       <form action="${pageContext.request.contextPath }/user/join" method="post">
+		<div class="one_third first">
+			<label for="ID">ID <span>*</span></label> 
+			<input type="text" name="id" id="id" value="" size="22">
+		</div>
+		<div class="one_third">
+			<label for="password">Mail <span>*</span></label> 
+			<input type="password" name="password" id="password" value="" size="22">
+		</div>
+		<div class="one_third">
+			<label for="url">Address</label> 
+			<input type="text" name="url" id="url" value="" size="22">
+		</div>
+		<div class="block clear">
+			<label for="comment">Your Comment</label>
+			<textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+		</div>
+		<div>
+			<input name="submit" type="submit" value="Sign up">
+			&nbsp; <input name="reset" type="reset" value="Reset Form">
+		</div>
+		</form>
+      </div>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<!-- JAVASCRIPTS -->
+<script src="${pageContext.request.contextPath }/layout/scripts/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }/layout/scripts/jquery.backtotop.js"></script>
+<script src="${pageContext.request.contextPath }/layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
