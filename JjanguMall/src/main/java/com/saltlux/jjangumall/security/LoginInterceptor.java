@@ -10,8 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.service.UserService;
+import com.saltlux.jjangumall.dto.store.UserDTO;
+import com.saltlux.jjangumall.service.store.UserService;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
