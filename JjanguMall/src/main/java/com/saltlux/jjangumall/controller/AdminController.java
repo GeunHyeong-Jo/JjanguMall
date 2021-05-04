@@ -30,7 +30,7 @@ import com.saltlux.jjangumall.service.AdminService;
 import com.saltlux.jjangumall.service.GoodsService;
 import com.saltlux.jjangumall.service.OrderService;
 
-
+// test
 
 @Auth(role="admin")
 @Controller
