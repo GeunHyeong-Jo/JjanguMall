@@ -20,7 +20,7 @@
       <div id="comments">
         
    
-       <form action="${pageContext.request.contextPath }/regist" method="post" enctype="multipart/form-data">
+       <form action="${pageContext.request.contextPath }/used/regist" method="post" enctype="multipart/form-data">
 		<div class="one_third first">
 			<label for="TITLE">TITLE <span>*</span></label>
 			<input type="text" name="title" id="title" value="" size="22">
@@ -58,8 +58,8 @@
     <div class="clear"></div>
   </main>
 </div>
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>

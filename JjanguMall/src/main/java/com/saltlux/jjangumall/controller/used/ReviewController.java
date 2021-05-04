@@ -21,7 +21,7 @@ public class ReviewController {
 	@RequestMapping(value="/review", method=RequestMethod.GET)
 	public String review() {
 		
-		return "user/review";
+		return "used/user/review";
 	}
 	
 	@Auth
@@ -30,6 +30,6 @@ public class ReviewController {
 		System.out.println(vo);
 		
 		int result = reviewService.review(vo);
-		return "redirect:/user/buy";
+		return "redirect:/used/user/buy";
 	}
 }

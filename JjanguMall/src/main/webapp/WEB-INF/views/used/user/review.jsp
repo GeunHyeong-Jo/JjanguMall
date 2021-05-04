@@ -21,7 +21,7 @@
       <div id="comments">
         
         <h2>${param.result }</h2>
-       <form action="${pageContext.request.contextPath }/review/review?no=${param.no }" method="post">
+       <form action="${pageContext.request.contextPath }/used/review/review?no=${param.no }" method="post">
 		<div class="one_harf first">
 		  <label for="Point">Point <span>*</span></label>
           <select name="point" >
@@ -51,7 +51,7 @@
   </main>
 </div>
 
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 </body>
 </html>

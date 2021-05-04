@@ -33,7 +33,7 @@
            <c:forEach var="itemVo" items="${itemList }" varStatus="status">
             <tr>
               <td>${itemVo.no }</td>
-              <td><a href="${pageContext.request.contextPath }/detail/${itemVo.no }">${itemVo.title }</a></td>
+              <td><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }">${itemVo.title }</a></td>
               <c:choose>
                 <c:when test="${itemVo.status eq 0 }">
  	              <td>거래 전</td>
@@ -55,7 +55,7 @@
   </main>
 </div>
 
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 </body>
 </html>

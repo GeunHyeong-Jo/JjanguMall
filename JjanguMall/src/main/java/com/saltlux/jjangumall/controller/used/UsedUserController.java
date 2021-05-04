@@ -34,14 +34,14 @@ public class UsedUserController {
 	// ------------- Join
 	@RequestMapping(value="/signup", method=RequestMethod.GET)
 	public String Join() {
-		return "user/signup";
+		return "used/user/signup";
 	}
 	
 	@RequestMapping(value="/signup", method=RequestMethod.POST)
 	public String Join(UserVo vo) {
 		
 		userService.signUp(vo);
-		return "redirect:/user/signin";
+		return "redirect:/used/user/signin";
 	}
 	
 	
@@ -49,13 +49,13 @@ public class UsedUserController {
 	@RequestMapping(value="/signin", method=RequestMethod.GET)
 	public String login() {
 		
-		return "user/signin";
+		return "used/user/signin";
 	}
 	
 	@RequestMapping(value="/auth", method=RequestMethod.POST)
 	public String login(UserVo vo) {
 		
-		return "redirect:/";
+		return "redirect:/used/";
 	}
 	
 	
@@ -89,7 +89,7 @@ public class UsedUserController {
 		for(TradeVo vo : tradeList) {
 			System.out.println(vo);
 		}
-		return "user/detail";
+		return "used/user/detail";
 	}
 	
 	// --------------- My Page
@@ -97,7 +97,7 @@ public class UsedUserController {
 	@RequestMapping("/mypage")
 	public String myPage(Model moded, HttpServletRequest reuqest) {
 		
-		return "user/mypage/mypage";
+		return "used/user/mypage/mypage";
 	}
 	
 	@Auth
@@ -110,7 +110,7 @@ public class UsedUserController {
 		List<TradeVo> list = userService.tradeList(authUser.getId());
 		
 		model.addAttribute("tradeList", list);
-		return "user/mypage/sell";
+		return "used/user/mypage/sell";
 	}
 	
 	@Auth
@@ -123,7 +123,7 @@ public class UsedUserController {
 		
 		model.addAttribute("tradeList", list);
 		
-		return "user/mypage/buy";
+		return "used/user/mypage/buy";
 	}
 	
 	@Auth
@@ -142,7 +142,7 @@ public class UsedUserController {
 		model.addAttribute("itemList", list);
 		
 		
-		return "user/mypage/sellitem";
+		return "used/user/mypage/sellitem";
 	}
 	
 }

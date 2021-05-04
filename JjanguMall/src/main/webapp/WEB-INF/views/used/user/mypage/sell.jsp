@@ -35,10 +35,10 @@
             <c:if test="${authUser.id eq tradeVo.sellerId }">
             <tr>
               <td><a href="#">${tradeVo.no }</a></td>
-              <td><a href="${pageContext.request.contextPath }/detail/${tradeVo.no }">${tradeVo.title }</a></td>
+              <td><a href="${pageContext.request.contextPath }/used/detail/${tradeVo.no }">${tradeVo.title }</a></td>
               <c:choose>
                 <c:when test="${tradeVo.status eq 0 }">
- 	              <td><a href="${pageContext.request.contextPath }/trade/cancle?no=${tradeVo.no }">취소 </a> <a href="${pageContext.request.contextPath }/trade/succsess?itemNo=${tradeVo.itemNo }&no=${tradeVo.no }"> 완료</a></td>
+ 	              <td><a href="${pageContext.request.contextPath }/used/trade/cancle?no=${tradeVo.no }">취소 </a> <a href="${pageContext.request.contextPath }/used/trade/succsess?itemNo=${tradeVo.itemNo }&no=${tradeVo.no }"> 완료</a></td>
                 </c:when>
                 <c:when test="${tradeVo.status eq 1}">
  	              <td>거래 취소</td>
@@ -69,7 +69,7 @@
   </main>
 </div>
 
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 </body>
 </html>

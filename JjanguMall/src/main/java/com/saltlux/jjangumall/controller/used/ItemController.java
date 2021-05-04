@@ -34,7 +34,7 @@ public class ItemController {
 		List<ItemVo> list = itemService.index();
 
 		model.addAttribute("itemList", list);
-		return "item/index";
+		return "used/item/index";
 	}
 	
 	
@@ -50,7 +50,7 @@ public class ItemController {
 		model.addAttribute("itemList", itemList);
 		model.addAttribute("pageVo", pageVo);
 		
-		return "item/index";	
+		return "used/item/index";	
 	}
 	
 	@RequestMapping("/search/{page}")
@@ -69,14 +69,14 @@ public class ItemController {
 		model.addAttribute("itemList", list);
 		model.addAttribute("pageVo", pageVo);
 		
-		return "item/searchindex";
+		return "used/item/searchindex";
 	}
 
 	@Auth
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
 	public String regist() {
 
-		return "item/regist";
+		return "used/item/regist";
 	}
 	
 	@Auth
@@ -90,7 +90,7 @@ public class ItemController {
 
 		itemService.regist(vo, pictures);
 
-		return "redirect:/index";
+		return "redirect:/used/index";
 	}
 	
 	@RequestMapping("/detail/{no}")
@@ -103,7 +103,7 @@ public class ItemController {
 		}
 		model.addAttribute("imageList", imageList);
 		model.addAttribute("vo", vo);
-		return "item/detail";
+		return "used/item/detail";
 	}
 	
 }

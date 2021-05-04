@@ -37,7 +37,7 @@ public class TradeController {
 		
 		tradeService.apply(tradeVo);
 		
-		return "redirect:/user/buy";
+		return "redirect:/used/user/buy";
 	}
 	
 	
@@ -52,7 +52,7 @@ public class TradeController {
 	public String sucsess(Long no, Long itemNo) {
 		int result = tradeService.sucsess(no);
 		itemService.itemSuccess(itemNo);
-		return "redirect:/user/sell";
+		return "redirect:/used/user/sell";
 	}
 	
 	

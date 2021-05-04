@@ -35,7 +35,7 @@
             <c:if test="${authUser.id eq tradeVo.buyerId }">
             <tr>
               <td><a href="#">${tradeVo.no }</a></td>
-              <td><a href="${pageContext.request.contextPath }/detail/${tradeVo.itemNo }">${tradeVo.title }</a></td>
+              <td><a href="${pageContext.request.contextPath }/used/detail/${tradeVo.itemNo }">${tradeVo.title }</a></td>
               <c:choose>
                 <c:when test="${tradeVo.status eq 0}">
  	              <td>거래중</td>
@@ -44,7 +44,7 @@
  	              <td>거래 취소</td>
                 </c:when>
                 <c:otherwise>
- 	              <td><a href="${pageContext.request.contextPath }/review/review?no=${tradeVo.no }">리뷰 작성</a></td>
+ 	              <td><a href="${pageContext.request.contextPath }/used/review/review?no=${tradeVo.no }">리뷰 작성</a></td>
                 </c:otherwise>
               </c:choose>
               <c:choose>
@@ -67,7 +67,7 @@
   </main>
 </div>
 
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 </body>
 </html>

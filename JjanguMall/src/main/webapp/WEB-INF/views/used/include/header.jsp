@@ -20,17 +20,17 @@
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="${pageContext.request.contextPath }">Home</a></li>
-        <li><a class="drop" href="${pageContext.request.contextPath }/index/1">중고 거래</a>
+        <li><a class="drop" href="${pageContext.request.contextPath }/used/index/1">중고 거래</a>
         </li>
        
         <c:choose>
 		  <c:when test="${empty authUser }">
-            <li><a href="${pageContext.request.contextPath }/user/signin">Sign in</a></li>
-            <li><a href="${pageContext.request.contextPath }/user/signup">Sign up</a></li>
+            <li><a href="${pageContext.request.contextPath }/used/user/signin">Sign in</a></li>
+            <li><a href="${pageContext.request.contextPath }/used/user/signup">Sign up</a></li>
           </c:when>
           <c:otherwise>
-            <li><a href="${pageContext.request.contextPath }/user/mypage">My page</a></li>
-            <li><a href="${pageContext.request.contextPath }/user/signout">Sign out</a></li>
+            <li><a href="${pageContext.request.contextPath }/used/user/mypage">My page</a></li>
+            <li><a href="${pageContext.request.contextPath }/used/user/signout">Sign out</a></li>
           </c:otherwise>
         </c:choose>
       </ul>

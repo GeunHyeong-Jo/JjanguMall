@@ -35,7 +35,7 @@
       <div id="gallery">
         <figure>
           <header class="heading">Index</header>
-          <form action="${pageContext.request.contextPath }/search/1">
+          <form action="${pageContext.request.contextPath }/used/search/1">
           
           <div id="comments">
             <div class="one_quarter first">
@@ -58,10 +58,10 @@
           	  <c:forEach var="itemVo" items="${itemList }" varStatus="status">
           	    <c:choose>
           	      <c:when test="${status.index % 3 == 0 }">
-                    <li class="one_third first" style="height: 380px;"><a href="${pageContext.request.contextPath }/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
+                    <li class="one_third first" style="height: 380px;"><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
                   </c:when>
                   <c:otherwise>
-            	    <li class="one_third" style="height: 380px;"><a href="${pageContext.request.contextPath }/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
+            	    <li class="one_third" style="height: 380px;"><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
                   </c:otherwise>
                 </c:choose>
               </c:forEach>
@@ -70,12 +70,12 @@
       </div>
       <div class="group btmspace-50 demo">
         <c:if test=""></c:if>
-        <div class="one_quarter first" onclick="location.href='${pageContext.request.contextPath }/regist'" style="cursor:pointer;">글 쓰 기</div>
+        <div class="one_quarter first" onclick="location.href='${pageContext.request.contextPath }/used/regist'" style="cursor:pointer;">글 쓰 기</div>
       </div>
        <nav class="pagination">
         <ul>
           <c:if test="${pageVo.page ne 1 }">
-            <li><a href="${pageContext.request.contextPath }/search/${pageVo.page - 1 }?option=${searchVo.option }&search=${searchVo.search }">&laquo; Previous</a></li>
+            <li><a href="${pageContext.request.contextPath }/used/search/${pageVo.page - 1 }?option=${searchVo.option }&search=${searchVo.search }">&laquo; Previous</a></li>
           </c:if>
           <c:forEach var="i" begin='${pageVo.minView }' end="${pageVo.maxView }">
           	<c:choose>
@@ -83,12 +83,12 @@
 				<li>${i }</li>
 			  </c:when>
 			  <c:otherwise>
-				<li><a href="${pageContext.request.contextPath }/search/${i }?option=${searchVo.option }&search=${searchVo.search }">${i }</a></li>
+				<li><a href="${pageContext.request.contextPath }/used/search/${i }?option=${searchVo.option }&search=${searchVo.search }">${i }</a></li>
 			  </c:otherwise>
 			</c:choose>
           </c:forEach>
           <c:if test="${pageVo.page ne pageVo.maxView }">
-            <li><a href="${pageContext.request.contextPath }/search/${pageVo.page + 1 }?option=${searchVo.option }&search=${searchVo.search }">Next &raquo;</a></li>
+            <li><a href="${pageContext.request.contextPath }/used/search/${pageVo.page + 1 }?option=${searchVo.option }&search=${searchVo.search }">Next &raquo;</a></li>
           </c:if>
         </ul>
       </nav>
@@ -102,8 +102,8 @@
 
 
 <!--  footer -->
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
