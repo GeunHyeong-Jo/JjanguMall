@@ -2,8 +2,6 @@ package com.saltlux.mysite.repository;
 
 import java.util.Map;
 
-import javax.sql.DataSource;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,11 +13,7 @@ public class UserRepository {
 
 	@Autowired
 	private SqlSession sqlSession;
-	
-	@Autowired
-	private DataSource dataSource;	
-	
-	
+
 
 	public UserDTO checkId(String userId) {
 		return sqlSession.selectOne("user.checkId",userId);

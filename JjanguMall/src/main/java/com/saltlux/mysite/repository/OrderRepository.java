@@ -3,13 +3,10 @@ package com.saltlux.mysite.repository;
 import java.util.List;
 import java.util.Map;
 
-import javax.sql.DataSource;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.saltlux.mysite.dto.GoodsDTO;
 import com.saltlux.mysite.dto.OrderDTO;
 import com.saltlux.mysite.dto.OrderlistDTO;
 
@@ -18,8 +15,6 @@ public class OrderRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	@Autowired
-	private DataSource dataSource;
 
 	public int setOrderInfo(OrderDTO orderDTO) {
 		return sqlSession.insert("orderSQL.setOrderInfo", orderDTO);
