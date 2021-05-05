@@ -13,7 +13,7 @@ public class TradeRepository {
 	SqlSession sqlSession;
 	
 	public int apply(TradeVo vo) {
-		
+		 
 		return sqlSession.insert("trade.apply", vo);
 	}
 

@@ -26,7 +26,7 @@ public class ReviewController {
 	
 	@Auth
 	@RequestMapping(value="/review", method=RequestMethod.POST)
-	public String review(ReviewVo vo) {
+	public String review(ReviewVo vo)  {
 		System.out.println(vo);
 		
 		int result = reviewService.review(vo);

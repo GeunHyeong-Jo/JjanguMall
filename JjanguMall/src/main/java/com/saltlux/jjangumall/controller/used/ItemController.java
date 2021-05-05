@@ -74,7 +74,7 @@ public class ItemController {
 
 	@Auth
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
-	public String regist() {
+	public String regist() { 
 
 		return "used/item/regist";
 	}

@@ -20,7 +20,7 @@ public class UsedMainController {
 	public String main(Model model) {
 		List<ItemVo> list = itemService.index();
 
-		model.addAttribute("itemList", list);
+		model.addAttribute("itemList", list); 
 		return "used/main/index";
 	}
 	

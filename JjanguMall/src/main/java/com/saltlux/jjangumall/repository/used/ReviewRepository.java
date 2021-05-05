@@ -13,7 +13,7 @@ public class ReviewRepository {
 	SqlSession sqlSession;
 
 	public int review(ReviewVo vo) {
-		
+		 
 		return sqlSession.update("review.review", vo);
 	}
 

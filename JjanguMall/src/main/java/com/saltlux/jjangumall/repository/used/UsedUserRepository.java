@@ -15,7 +15,7 @@ public class UsedUserRepository {
 	
 	@Autowired
 	SqlSession sqlSession;
-	
+	 
 	
 	// -------------- Sign Up
 	public int signUp(UserVo vo) {

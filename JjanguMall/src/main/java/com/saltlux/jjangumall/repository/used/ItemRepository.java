@@ -17,7 +17,7 @@ import com.saltlux.jjangumall.dto.used.SearchVo;
 @Repository
 public class ItemRepository {
 
-	private static final String SAVE_PATH = "C:/Workspace/trade/src/main/webapp/upload/";
+	private static final String SAVE_PATH = "C:/Users/User/git/JjanguMall/JjanguMall/src/main/webapp/used/upload/";
 
 	@Autowired
 	SqlSession sqlSession;

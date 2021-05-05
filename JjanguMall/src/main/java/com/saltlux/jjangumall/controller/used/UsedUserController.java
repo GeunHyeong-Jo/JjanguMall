@@ -33,7 +33,7 @@ public class UsedUserController {
 	
 	// ------------- Join
 	@RequestMapping(value="/signup", method=RequestMethod.GET)
-	public String Join() {
+	public String Join() { 
 		return "used/user/signup";
 	}
 	

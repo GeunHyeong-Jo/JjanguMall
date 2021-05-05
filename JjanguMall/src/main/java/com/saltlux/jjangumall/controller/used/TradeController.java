@@ -36,7 +36,7 @@ public class TradeController {
 		tradeVo.setBuyerId(authUser.getId());
 		
 		tradeService.apply(tradeVo);
-		
+		 
 		return "redirect:/used/user/buy";
 	}
 	
