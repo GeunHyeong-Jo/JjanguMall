@@ -18,8 +18,22 @@ public class ComProductService {
 	
 	}
 	
-	public ProductDTO getOneProduct(int pno) {
+	public ProductDTO getOneProduct(int pno) {//선택한 상품의 정보를 가져온다
 		return productRepository.getOneProduct(pno);
 	}
 	
+	public void registProduct(ProductDTO productDTO) { //상품등록
+		// 넣어야할 데이터
+		//name, price, origin, manufacturer, img, totalQty, context, socket
+		productRepository.registProduct(productDTO);
+	}
+	
+	public boolean modifyProduct(ProductDTO productDTO) {//상품 정보 수정
+		//상품번호, 등록일 제외하고 넣어야 한다
+		return productRepository.modifyProduct(productDTO);
+	}
+	public void deleteProduct(int pno) {
+		productRepository.deleteProduct(pno);
+		
+	}
 }

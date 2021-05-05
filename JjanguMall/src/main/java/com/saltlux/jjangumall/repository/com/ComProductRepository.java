@@ -18,8 +18,23 @@ public class ComProductRepository {
 		return sqlSession.selectList("product.getAllProduct",null);
 	}
 
-	public ProductDTO getOneProduct(int pno) {
+	public ProductDTO getOneProduct(int pno) {//선택한 상품의 정보를 가져온다
 		return sqlSession.selectOne("product.getOneProduct", pno);
+	}
+
+	public void registProduct(ProductDTO productDTO) { //상품등록
+		sqlSession.insert("product.productRegist",productDTO);
+		
+	}
+
+	public boolean modifyProduct(ProductDTO productDTO) { //상품 정보 수정
+		int result = sqlSession.update("product.productModify", productDTO);
+		return result ==1;
+		
+	}
+
+	public void deleteProduct(int pno) {
+		sqlSession.delete("product.productDelete", pno);
 	}
 	
 	
