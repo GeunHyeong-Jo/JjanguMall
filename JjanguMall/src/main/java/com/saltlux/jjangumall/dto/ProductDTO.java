@@ -13,7 +13,7 @@ import lombok.Data;
 @Component
 @Data
 public class ProductDTO {
-	private int no;         //상품 번호
+	private int productNo;         //상품 번호
 	private int price;		//상품 각겨
 	private String origin;	//원산지
 	private String manufacturer;	//제조사
@@ -25,7 +25,6 @@ public class ProductDTO {
 	private Date reg_date;	//등록일
 	private String context;	//상세설명
 	private String socket;	//소켓
-	private int productNo;	//상품번호 FK
 	
 	
 }

@@ -6,9 +6,9 @@ import lombok.Data;
 @Component
 @Data
 public class CartDTO {
-	private int no; 	//카트 번호
+	private int carNo; 	//카트 번호
 	private int productNo;//상품 번호
-	private int no2;	//이미지 번호
+	private int imgNo;	//이미지 번호
 	private String userID;//유저ID
 	private int count;	// 갯수
 }

@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class ImgDTO {
 
-	private int no;		//이미지 번호
+	private int imgNo;		//이미지 번호
 	private int productNo; // 상품 번호
 
 }
