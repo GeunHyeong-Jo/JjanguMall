@@ -120,7 +120,7 @@ $('#registBtn').click(function(){
 });
 
 $('#registResetBtn').click(function(){
-	location.href="/miniproject/admin/productList";
+	location.href="${pageContext.request.contextPath }/admin/productList";
 });
 </script>
 

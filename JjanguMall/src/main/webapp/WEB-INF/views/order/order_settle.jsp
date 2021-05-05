@@ -291,7 +291,7 @@ var prdQtyArray = new Array();
 			if('${memId}' != ''){
 				$.ajax({
 					type : 'POST',
-					url  : '/miniproject/order/insertOrderlist',
+					url  : '/${pageContext.request.contextPath }/order/insertOrderlist',
 					data : { 'userId' 				: '${memId}',
 							 'userName' 		 	: '${memName}',
 							 'totalProductPayment' 	: totalProductPayment,
@@ -311,7 +311,7 @@ var prdQtyArray = new Array();
 			else{
 				//회원이 아니면 팅기도록
 				alert("회원만 진행가능합니다"); 			
-				location.replace("/miniproject/order/orderCancel");
+				location.replace("/${pageContext.request.contextPath }/order/orderCancel");
 				return false;
 			}
 			
@@ -323,7 +323,7 @@ var prdQtyArray = new Array();
 			for(i=0; i<cartCodeArray.length-1; i++) {
 				$.ajax({
 					type: 'POST',
-					url: '/miniproject/cart/deleteCartAfterPay',
+					url: '/${pageContext.request.contextPath }/cart/deleteCartAfterPay',
 					data: {'cartCode': cartCodeArray[i]},
 					async: false,
 				});
@@ -333,7 +333,7 @@ var prdQtyArray = new Array();
 			for(var i=0; i<prdArray.length; i++){
 				$.ajax({
 					type : 'POST',
-					url : '/miniproject/order/reduceSaleProduct',
+					url : '/${pageContext.request.contextPath }/order/reduceSaleProduct',
 					data : { 'productCode' : prdArray[i],
 							 'purchaseQty' : prdQtyArray[i]
 							},
@@ -350,7 +350,7 @@ var prdQtyArray = new Array();
 				}); 
 			}//for
 			alert("상품구매가 완료되었습니다! 좋은 하루 되세요");
-			location.href="/miniproject";
+			location.href="/${pageContext.request.contextPath }";
 		
 	});//결제버튼
 });
