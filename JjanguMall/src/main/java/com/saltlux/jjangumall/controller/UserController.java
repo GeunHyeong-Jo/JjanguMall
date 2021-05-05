@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.service.store.UserService;
+import com.saltlux.jjangumall.service.store.SongUserService;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	private UserService userService;	
+	private SongUserService userService;	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 

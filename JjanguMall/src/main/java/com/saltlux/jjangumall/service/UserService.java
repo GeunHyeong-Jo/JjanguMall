@@ -1,4 +1,4 @@
-package com.saltlux.jjangulmall.service;
+package com.saltlux.jjangumall.service;
 
 import java.util.Map;
 
@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.repository.UserRepository;
+import com.saltlux.jjangumall.repository.store.SongUserRepository;
 
 @Service
 public class UserService {
 
 	@Autowired
-	private UserRepository userRepository;
+	private SongUserRepository userRepository;
 
 
 
@@ -52,8 +52,8 @@ public class UserService {
 		userRepository.memberDelete(map);
 	}
 
-	public UserDTO getUser(Map<String, String> map) {
-		return userRepository.getUser(map);
+	public UserDTO getUser(UserDTO userDTO) {
+		return userRepository.getUser(userDTO);
 	}	
 	
 	

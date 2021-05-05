@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.saltlux.jjangumall.dto.UserDTO;
 
 @Repository
-public class UserRepository {
+public class SongUserRepository {
 
 	@Autowired
 	private SqlSession sqlSession;
@@ -44,9 +44,31 @@ public class UserRepository {
 	}
 
 
-	public UserDTO getUser(UserDTO dto) {
-		return sqlSession.selectOne("user.getUser",dto);
+	public void addCartCount(String userId) {
+		sqlSession.update("user.addCartCount", userId);	
 	}
+
+	public void subCartCount(String userId) {
+		sqlSession.update("user.subCartCount",userId);
+	}
+
+	public void allDeleteCartCount(String userId) {
+		sqlSession.update("user.allDeleteCartCount",userId);
+	}
+
+	public void modify(Map<String, String> map) {
+		sqlSession.update("user.modify",map);
+	}
+
+	public void memberDelete(Map<String, String> map) {
+		sqlSession.delete("user.memberDelete",map);
+	}
+
+
+	public UserDTO getUser(UserDTO userDTO) {
+		return sqlSession.selectOne("user.getUser",userDTO);
+	}
+
 
 
 }
