@@ -13,9 +13,4 @@ public class MainController {
 	public String index() {
 		return "/main/index";
 	}
-	
-	@RequestMapping({ "/calory/index" })
-	public String caloryIndex() {
-		return "/main/caloryindex";
-	}
 }
