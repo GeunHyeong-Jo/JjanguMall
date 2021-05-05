@@ -83,6 +83,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 				session.setAttribute("memName", userDTO.getUserName());
 				session.setAttribute("memId", userDTO.getUserId());
 				session.setAttribute("memEmail", userDTO.getEmail());
+
 				response.sendRedirect(request.getContextPath());
 			}else {
 				System.out.println("비밀번호 틀려");

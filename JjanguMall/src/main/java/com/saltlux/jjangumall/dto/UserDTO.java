@@ -12,6 +12,7 @@ import lombok.Data;
 @Component
 @Data
 public class UserDTO {
+
 	private String userId; 		//유저아이디
 	private String userName;	//유저이름
 	private String password;    //비밀번호
