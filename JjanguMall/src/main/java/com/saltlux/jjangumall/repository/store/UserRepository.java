@@ -8,18 +8,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.saltlux.jjangumall.dto.store.UserDTO;
+import com.saltlux.jjangumall.dto.UserDTO;
 
 @Repository
 public class UserRepository {
 
 	@Autowired
 	private SqlSession sqlSession;
-	
-	@Autowired
-	private DataSource dataSource;	
-	
-	
 
 	public UserDTO checkId(String userId) {
 		return sqlSession.selectOne("user.checkId",userId);
@@ -31,37 +26,26 @@ public class UserRepository {
 	}
 
 
-	public void join(UserDTO userDTO) {
+	public boolean join(UserDTO userDTO) {
 		int count = sqlSession.insert("user.join",userDTO);
+		return count==1;
 	}
 
 	public void updateUserInfo(UserDTO userDTO) {
 		sqlSession.update("user.updateUserInfo", userDTO);	
 	}
-	
-	public void addCartCount(String userId) {
-		sqlSession.update("user.addCartCount", userId);	
+
+	public void modify(UserDTO dto) {
+		sqlSession.update("user.modify",dto);
 	}
 
-	public void subCartCount(String userId) {
-		sqlSession.update("user.subCartCount",userId);
-	}
-
-	public void allDeleteCartCount(String userId) {
-		sqlSession.update("user.allDeleteCartCount",userId);
-	}
-
-	public void modify(Map<String, String> map) {
-		sqlSession.update("user.modify",map);
-	}
-
-	public void memberDelete(Map<String, String> map) {
-		sqlSession.delete("user.memberDelete",map);
+	public void delete(String userId) {
+		sqlSession.delete("user.delete",userId);
 	}
 
 
-	public UserDTO getUser(Map<String, String> map) {
-		return sqlSession.selectOne("user.getUser",map);
+	public UserDTO getUser(UserDTO dto) {
+		return sqlSession.selectOne("user.getUser",dto);
 	}
 
 

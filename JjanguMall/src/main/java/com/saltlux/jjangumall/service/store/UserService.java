@@ -5,7 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.saltlux.jjangumall.dto.store.UserDTO;
+import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.repository.store.UserRepository;
 
 @Service
@@ -31,29 +31,16 @@ public class UserService {
 	public void updateUserInfo(UserDTO userDTO) {
 		userRepository.updateUserInfo(userDTO);
 	}
-
-	public void addCartCount(String userId) {
-		userRepository.addCartCount(userId);
+	public void modify(UserDTO dto) {
+		userRepository.modify(dto);
 	}
 
-	public void subCartCount(String userId) {
-		userRepository.subCartCount(userId);
+	public void delete(String userId) {
+		userRepository.delete(userId);
 	}
 
-	public void allDeleteCartCount(String userId) {
-		userRepository.allDeleteCartCount(userId);
-	}
-
-	public void modify(Map<String, String> map) {
-		userRepository.modify(map);
-	}
-
-	public void memberDelete(Map<String, String> map) {
-		userRepository.memberDelete(map);
-	}
-
-	public UserDTO getUser(Map<String, String> map) {
-		return userRepository.getUser(map);
+	public UserDTO getUser(UserDTO dto) {
+		return userRepository.getUser(dto);
 	}	
 	
 	

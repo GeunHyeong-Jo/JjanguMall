@@ -160,10 +160,10 @@
     <input type="text" name="userEmail" value="${sessionScope.memEmail }" id="userEmail" class="line"
     style="border:1px solid #DDD; width:200px; height:38px; padding-left:10px; font-size:13px; color:#333; position:relative; 
     border-radius:0; margin:5px 0 8px 0;" required>
-    <a href="javascript:void(0)" onclick="" style="text-decoration:none;">
+    <!-- a href="javascript:void(0)" onclick="" style="text-decoration:none;">
      <span id="checkEmailBtn" style="text-align:center; border:1px solid #ccc; width:112px; height:38px; position:absolute; margin-left:27px; margin-top:5px;
       padding:1px 0; color:#a4a4a4; line-height:40px; font-weight:700; font-size:12px;" align="absmiddle">메일 중복확인</span>
-    </a>
+    </a -->
    
     <div class="join_red01"></div>
    </td>
