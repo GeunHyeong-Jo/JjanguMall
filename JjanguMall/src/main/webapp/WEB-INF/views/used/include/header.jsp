@@ -24,7 +24,7 @@
         </li>
        
         <c:choose>
-		  <c:when test="${empty authUser }">
+		  <c:when test="${empty memId }">
             <li><a href="${pageContext.request.contextPath }/used/user/signin">Sign in</a></li>
             <li><a href="${pageContext.request.contextPath }/used/user/signup">Sign up</a></li>
           </c:when>

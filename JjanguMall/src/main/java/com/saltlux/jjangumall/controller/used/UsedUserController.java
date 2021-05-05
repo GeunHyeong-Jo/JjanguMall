@@ -105,9 +105,9 @@ public class UsedUserController {
 	public String sell(Model model, HttpServletRequest reuqest) {
 		
 		HttpSession session = reuqest.getSession();
-		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		String userId = (String) session.getAttribute("memId");
 		
-		List<TradeVo> list = userService.tradeList(authUser.getId());
+		List<TradeVo> list = userService.tradeList(userId);
 		
 		model.addAttribute("tradeList", list);
 		return "used/user/mypage/sell";
@@ -117,9 +117,9 @@ public class UsedUserController {
 	@RequestMapping("/buy")
 	public String buy(Model model, HttpServletRequest reuqest) {
 		HttpSession session = reuqest.getSession();
-		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		String userId = (String) session.getAttribute("memId");
 		
-		List<TradeVo> list = userService.tradeList(authUser.getId());
+		List<TradeVo> list = userService.tradeList(userId);
 		
 		model.addAttribute("tradeList", list);
 		
@@ -131,10 +131,9 @@ public class UsedUserController {
 	public String sellItem(Model model, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		String userId = (String) session.getAttribute("memId");
 		
-		System.out.println(authUser);
-		List<ItemVo> list = itemService.myItem(authUser.getId());
+		List<ItemVo> list = itemService.myItem(userId);
 		for(ItemVo vo : list) {
 			System.out.println(vo);
 		}

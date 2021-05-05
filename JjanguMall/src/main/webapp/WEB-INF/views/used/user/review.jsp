@@ -12,7 +12,7 @@
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-<c:import url="/WEB-INF/views/include/header.jsp"/>
+<c:import url="/WEB-INF/views/used/include/header.jsp"/>
 <div class="wrapper row3">
   <main class="container clear"> 
     <!-- main body -->
@@ -21,7 +21,7 @@
       <div id="comments">
         
         <h2>${param.result }</h2>
-       <form action="${pageContext.request.contextPath }/used/review/review?no=${param.no }" method="post">
+       <form action="${pageContext.request.contextPath }/used/review?no=${param.no }" method="post">
 		<div class="one_harf first">
 		  <label for="Point">Point <span>*</span></label>
           <select name="point" >

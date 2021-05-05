@@ -31,9 +31,9 @@ public class TradeController {
 	public String index(TradeVo tradeVo, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		String userId = (String) session.getAttribute("memId");
 		
-		tradeVo.setBuyerId(authUser.getId());
+		tradeVo.setBuyerId(userId);
 		
 		tradeService.apply(tradeVo);
 		 

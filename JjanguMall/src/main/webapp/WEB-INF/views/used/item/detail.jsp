@@ -23,7 +23,7 @@
     <div class="flexslider basicslider">
       <ul class="slides">
         <c:forEach var="imageVo" items="${imageList }">
-          <li><img src="${pageContext.request.contextPath }/upload/${imageVo.no}.png" alt=""></li>
+          <li><img src="${pageContext.request.contextPath }/used/upload/${imageVo.no}.png" alt=""></li>
         </c:forEach>
       </ul>
     </div>
@@ -64,7 +64,7 @@
 		</div>
 		
 		<div class="one_quarter">
-			<form action="${pageContext.request.contextPath }/trade/apply">
+			<form action="${pageContext.request.contextPath }/used/trade/apply">
 	        	<label for="avgPoint"></label>
 	        	<input name="sellerId" type="hidden" value="${vo.userId }"> 
 	        	<input name="no" type="hidden" value="${vo.no }"> 
@@ -78,11 +78,11 @@
   </main>
 </div>
 <!--  footer -->
-<c:import url="/WEB-INF/views/include/footer.jsp"/><a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/><a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
 <!-- JAVASCRIPTS -->
-<script src="${pageContext.request.contextPath }/layout/scripts/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath }/layout/scripts/jquery.backtotop.js"></script>
-<script src="${pageContext.request.contextPath }/layout/scripts/jquery.mobilemenu.js"></script>
-<script src="${pageContext.request.contextPath }/layout/scripts/jquery.flexslider-min.js"></script>
+<script src="${pageContext.request.contextPath }/used/layout/scripts/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }/used/layout/scripts/jquery.backtotop.js"></script>
+<script src="${pageContext.request.contextPath }/used/layout/scripts/jquery.mobilemenu.js"></script>
+<script src="${pageContext.request.contextPath }/used/layout/scripts/jquery.flexslider-min.js"></script>
 </body>
 </html>

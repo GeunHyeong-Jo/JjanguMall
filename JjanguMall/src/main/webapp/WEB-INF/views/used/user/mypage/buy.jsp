@@ -32,7 +32,7 @@
           </thead>
           <tbody>
            <c:forEach var="tradeVo" items="${tradeList }" varStatus="status">
-            <c:if test="${authUser.id eq tradeVo.buyerId }">
+            <c:if test="${memId eq tradeVo.buyerId }">
             <tr>
               <td><a href="#">${tradeVo.no }</a></td>
               <td><a href="${pageContext.request.contextPath }/used/detail/${tradeVo.itemNo }">${tradeVo.title }</a></td>
@@ -44,7 +44,7 @@
  	              <td>거래 취소</td>
                 </c:when>
                 <c:otherwise>
- 	              <td><a href="${pageContext.request.contextPath }/used/review/review?no=${tradeVo.no }">리뷰 작성</a></td>
+ 	              <td><a href="${pageContext.request.contextPath }/used/review?no=${tradeVo.no }">리뷰 작성</a></td>
                 </c:otherwise>
               </c:choose>
               <c:choose>

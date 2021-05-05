@@ -84,9 +84,9 @@ public class ItemController {
 	public String regist(ItemVo vo, HttpServletRequest request, List<MultipartFile> pictures) {
 
 		HttpSession session = request.getSession();
-		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		String userId = (String) session.getAttribute("memId");
 	
-		vo.setUserId(authUser.getId());
+		vo.setUserId(userId);
 
 		itemService.regist(vo, pictures);
 

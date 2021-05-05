@@ -53,7 +53,7 @@
   </main>
 </div>
 
-<c:import url="/WEB-INF/views/include/footer.jsp"/>
-<c:import url="/WEB-INF/views/include/footerjs.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 </body>
 </html>

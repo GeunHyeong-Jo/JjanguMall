@@ -2,6 +2,8 @@ package com.saltlux.jjangumall.controller.used;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,14 @@ public class UsedMainController {
 
 		model.addAttribute("itemList", list); 
 		return "used/main/index";
+	}
+	
+	@RequestMapping("used/session")
+	public String makeSession(HttpSession session) {
+		
+		
+		session.setAttribute("memId", "1234");
+		return "redirect:/used";
 	}
 	
 }

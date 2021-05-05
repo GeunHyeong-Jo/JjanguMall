@@ -22,11 +22,11 @@
     <!-- ################################################################################################ -->
     <div class="flexslider basicslider">
       <ul class="slides">
-        <li><img src="images/demo/slides/01.png" alt="">
+        <li><img src="used/images/demo/slides/01.png" alt="">
         </li>
-        <li><img src="images/demo/slides/02.png" alt="">
-        </li>중고나라
-        <li><img src="images/demo/slides/03.png" alt="">
+        <li><img src="used/images/demo/slides/02.png" alt="">
+        </li>
+        <li><img src="used/images/demo/slides/03.png" alt="">
           </div>
         </li>
       </ul>

@@ -32,7 +32,7 @@
           </thead>
           <tbody>
            <c:forEach var="tradeVo" items="${tradeList }" varStatus="status">
-            <c:if test="${authUser.id eq tradeVo.sellerId }">
+            <c:if test="${memId eq tradeVo.sellerId }">
             <tr>
               <td><a href="#">${tradeVo.no }</a></td>
               <td><a href="${pageContext.request.contextPath }/used/detail/${tradeVo.no }">${tradeVo.title }</a></td>
