@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+
+	<!-- 뷰에 뿌려줄 모든 상품의 정보 GET -->
+	<select id="getAllProduct" resultType="product">
+		  <![CDATA[ select productNo, name, price, img from product ]]>
+	</select>
+
+	<!-- 선택한 상품의 모든 정보 GET -->
+	<select id="getOneProduct" parameterType="Integer"	resultType="product">
+		  <![CDATA[ select * from product where productNo = #{productno }]]>
+	</select>
+
+	<!-- 상품 등록 -->
+	<insert id="productRegist" parameterType="product">
+		insert into product( name, price, origin, manufacturer, img, totalQty, saleQty, stockQty, reg_date, context, socket ) 
+							values( #{name }
+									, #{price }
+									, #{origin }
+									, #{manufacturer }
+									, #{img }
+									, #{totalqty }
+									, 0
+									, #{totalqty }
+									, now()
+									, #{context }
+									, #{socket }
+	</insert>
+	
+	<!-- 상품 정보 수정 -->
+	<update id="productModify" parameterType="product">
+		update product set name = #{name }
+							, price = #{price }
+							, origin = #{origin }
+							, manufacturer = #{manufacturer }
+							, img = #{img }
+							, totalQty = #{totalqty }
+							, saleQty = #{saleqty }
+							, stockQty = #{stockqty }
+							, context = #{context }
+							socket = #{socket }
+		where productNo = #{productno}
+	</update>	
+	
+	
+	<!-- 상품삭제 -->
+	<delete id="productDelete" parameterType="Integer">
+		delete from product where productNo = #{productNo }
+	</delete>
+</mapper>

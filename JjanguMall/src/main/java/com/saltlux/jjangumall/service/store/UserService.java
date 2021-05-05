@@ -15,7 +15,6 @@ public class UserService {
 	private UserRepository userRepository;
 
 
-
 	public UserDTO checkId(String userId) {
 		return userRepository.checkId(userId);
 	}

@@ -76,8 +76,6 @@
 	
 	
 	<context:annotation-config />
-	<context:component-scan base-package="com.saltlux.jjangumall.controller"/>
-	
+	<context:component-scan base-package="com.saltlux.jjangumall.controller,com.saltlux.jjangumall.controller.com"/>
 
-	
 </beans>
