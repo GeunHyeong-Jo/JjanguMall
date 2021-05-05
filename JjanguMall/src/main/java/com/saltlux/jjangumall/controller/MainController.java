@@ -10,14 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.saltlux.jjangulmall.service.GoodsService;
 import com.saltlux.jjangumall.dto.GoodsDTO;
 
-
-
 @Controller
 public class MainController {
-	
+
 	@Autowired
 	private GoodsService goodService;
-	
+
 	@RequestMapping("")
 	public ModelAndView index() {
 		List<GoodsDTO> list = goodService.get_goods_list_newP();

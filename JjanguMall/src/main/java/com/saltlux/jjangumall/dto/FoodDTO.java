@@ -4,11 +4,11 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-@Data
 @Component
-public class AdminDTO {
-	private String id;
-	private String pwd;
-	private String name;
-	private String phone;
+@Data
+public class FoodDTO {
+
+	private int no;//번호
+	private String name;//이름
+	private int calory;//칼로리
 }
