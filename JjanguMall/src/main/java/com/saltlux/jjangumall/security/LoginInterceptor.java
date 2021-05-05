@@ -6,12 +6,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.saltlux.jjangumall.dto.store.UserDTO;
+import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.service.store.UserService;
 
 
@@ -77,13 +76,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			
 			UserDTO userDTO = new UserDTO();
 			userDTO.setUserId(userId);
-			userDTO.setUserPwd(userPwd);
+			userDTO.setPassword(userPwd);
 			
-			if(passwordEncoder.matches(userPwd, userDTO.getUserPwd())) {
+			if(passwordEncoder.matches(userPwd, userDTO.getPassword())) {
 				System.out.println("비밀번호 맞아");
 				session.setAttribute("memName", userDTO.getUserName());
 				session.setAttribute("memId", userDTO.getUserId());
-				session.setAttribute("memEmail", userDTO.getUserEmail());
+				session.setAttribute("memEmail", userDTO.getEmail());
 				response.sendRedirect(request.getContextPath());
 			}else {
 				System.out.println("비밀번호 틀려");

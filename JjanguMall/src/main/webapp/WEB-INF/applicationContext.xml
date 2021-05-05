@@ -62,6 +62,4 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Component" />			
 	</context:component-scan>
-
-
 </beans>
