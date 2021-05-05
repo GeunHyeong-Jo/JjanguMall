@@ -6,11 +6,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.service.store.UserService;
+
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
