@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+
+	<!-- 메인페이지에 모든 상품출력 -->
+	<select id="get_goods_list" resultType="product">
+		  <![CDATA[ select * from product order by productNo desc]]>
+	</select>
+	
+	
+	<!-- 상품상세페이지정보 가져오기 -->
+	<select id="getGoodsView" parameterType="Integer" resultType="product">
+		<![CDATA[select * from product where productNo = #{productNo}]]>
+	</select> 
+</mapper>

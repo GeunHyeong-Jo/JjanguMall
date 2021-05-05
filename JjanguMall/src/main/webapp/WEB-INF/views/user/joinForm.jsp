@@ -76,8 +76,8 @@
                              <td class="memberCols1">
                                 <font style="font-weight:700;color:#333; border-bottom: 2px solid #FFA7A7;">성별</font>
                              </td>
-                             <td class="memberCols2">
-                               <fieldset>
+                             <td class="memberCols2" >
+                               <fieldset style="border:none;">
                                  <label>여</label> <input type="radio" name="gender" value="female" checked="checked">
                                  <label>남</label> <input type="radio" name="gender" value="male">
                               </fieldset>
@@ -93,10 +93,6 @@
                                   <input type="text" name="email" id="userEmail" 
                                   style="position:absolute; margin:0 0 8px 0" required>
                                  
-                                 <!--  <input type="hidden" name="chkEmail" id="chkEmail" >          
-                                  <input type="button" class="sub-button-s" id="checkEmailBtn"
-                                style="text-align:center;width: 112px;height: 42px; position:relative; margin-left:227px;  padding: 12px 0; line-height: 16px; font-size:12px;" align="absmiddle"
-                                value="메일 중복확인"> -->
                                 
             
                                 </td>

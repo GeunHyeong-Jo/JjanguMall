@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.UserDTO;
 
-import com.saltlux.jjangumall.repository.store.SongUserRepository;
+import com.saltlux.jjangumall.repository.store.StoreUserRepository;
 
 @Service
 public class UserService {
 
 	@Autowired
-	private SongUserRepository userRepository;
+	private StoreUserRepository userRepository;
 
 
 

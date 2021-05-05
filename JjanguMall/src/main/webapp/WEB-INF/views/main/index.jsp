@@ -54,10 +54,11 @@
 				</div>
 			</div>
 			<!-- slider_wrap -->
+			
+			<!-- content_wrap -->
+			<jsp:include page="/WEB-INF/views/${display }"/>
 
-
-			<a href="#" id="topBtn"> <img
-				src="${pageContext.request.contextPath }/assets/image/topBtn.png" />
+			<a href="#" id="topBtn"> <img src="${pageContext.request.contextPath }/assets/image/topBtn.png" />
 			</a>
 
 			<c:import url="/WEB-INF/views/includes/footer.jsp" />

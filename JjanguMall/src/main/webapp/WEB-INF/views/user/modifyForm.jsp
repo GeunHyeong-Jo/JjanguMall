@@ -122,8 +122,8 @@
   <td class="memberCols1" style="height:68px;">
     <label style="border-bottom:2px solid #2ac1bc; font-size:12px;">이름</label>
    </td>
-  <td class="memberCols2" style="border:none;">
-   <fieldset>
+  <td class="memberCols2" >
+   <fieldset style="border:none;">
       <label>여</label> <input type="radio" name="gender" value="female" checked="checked">
       <label>남</label> <input type="radio" name="gender" value="male">
    </fieldset>

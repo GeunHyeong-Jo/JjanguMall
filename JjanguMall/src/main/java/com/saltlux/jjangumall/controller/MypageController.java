@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.service.store.SongUserService;
+import com.saltlux.jjangumall.service.store.StoreUserService;
 
 @Controller
 @RequestMapping("/mypage")
 public class MypageController {
 	
 	@Autowired
-	private SongUserService userService;	
+	private StoreUserService userService;	
 	
 	//주문내역/배송조회 페이지
 	@RequestMapping(value = "/mypage_orderlist", method = RequestMethod.GET)

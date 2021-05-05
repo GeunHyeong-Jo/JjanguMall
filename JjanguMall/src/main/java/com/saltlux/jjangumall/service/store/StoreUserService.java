@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.repository.store.SongUserRepository;
+import com.saltlux.jjangumall.repository.store.StoreUserRepository;
 
 @Service
-public class SongUserService {
+public class StoreUserService {
 
 	@Autowired
-	private SongUserRepository userRepository;
+	private StoreUserRepository userRepository;
 
 
 

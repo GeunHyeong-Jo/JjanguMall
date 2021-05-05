@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.saltlux.jjangumall.dto.UserDTO;
 
 @Repository
-public class SongUserRepository {
+public class StoreUserRepository {
 
 	@Autowired
 	private SqlSession sqlSession;

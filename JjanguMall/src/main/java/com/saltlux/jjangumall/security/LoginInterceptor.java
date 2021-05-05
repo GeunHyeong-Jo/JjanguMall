@@ -11,13 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.service.store.SongUserService;
+import com.saltlux.jjangumall.service.store.StoreUserService;
 
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
 	@Autowired
-	private SongUserService userService;
+	private StoreUserService userService;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
