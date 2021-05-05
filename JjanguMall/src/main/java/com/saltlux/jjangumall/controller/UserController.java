@@ -123,10 +123,14 @@ public class UserController {
 
 	// 회원정보수정 페이지
 	@RequestMapping("/modifyForm")
-	public ModelAndView modifyForm(@ModelAttribute UserDTO dto) {
-
-		UserDTO userDTO = userService.getUser(dto);
-
+	public ModelAndView modifyForm(HttpSession session) {
+		String userID = (String)session.getAttribute("memId");
+		
+		UserDTO authDTO = new UserDTO();
+		authDTO.setUserId(userID);
+		UserDTO userDTO = userService.getUser(authDTO);
+		System.out.println(userDTO);
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("contents", "/user/modifyForm.jsp");
 		mav.addObject("display", "/mypage/mypageIndex.jsp");
@@ -139,9 +143,9 @@ public class UserController {
 
 	// 회원정보수정
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public ModelAndView modify(UserDTO dto) {
+	public ModelAndView modify(UserDTO dto,HttpSession session) {
 
-		System.out.println(dto);
+		System.out.println("수정내용="+dto);
 		UserDTO userDTO = userService.checkId(dto.getUserId());
 
 		// 비밀번호가 null때 이전 값 그대로
@@ -153,7 +157,9 @@ public class UserController {
 		}
 
 		userService.modify(dto);
-
+		session.setAttribute("memName", userDTO.getUserName());
+		session.setAttribute("memEmail", userDTO.getEmail());
+		
 		return new ModelAndView("redirect:/user/modifyForm");
 	}
 

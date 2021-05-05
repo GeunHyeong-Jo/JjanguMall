@@ -30,8 +30,8 @@
     <font style="border-bottom: 2px solid #2ac1bc; font-size:12px;">아이디</font>
    </td>
    <td class="memberCols2">
-   <input type="hidden" id="userId" name="userId" value="${sessionScope.memId }">
-    <span style="font-size: 13px; font-weight:700;">${sessionScope.memId }</span> <!-- 아이디 출력 -->
+   <input type="hidden" id="userId" name="userId" value="${userDTO.userId }">
+    <span style="font-size: 13px; font-weight:700;">${userDTO.userId }</span> <!-- 아이디 출력 -->
    </td>
   </tr>
   
@@ -47,42 +47,7 @@
      color:#ffffff; font-size: 12px;" >비밀번호 변경
      </span>
     </a>
-    <a id="pwdManualOpen" href="javascript:void(0);" style="font-size:12px; margin:12px 0 0 15px; position:absolute; color:#999;">
-    	<u>비밀번호 도움말</u> 
-    </a></br>
-     <!-- 비밀번호 도움말 창 -->
-     <div id="pwdManual">
-      <p class="close">
-       <a id="pwdManualClose" href="javascript:void(0);">
-        <img style="width: 15px;" src="${pageContext.request.contextPath }/assets/image/closeBtn.png"/>
-       </a> 
-      </p>
-      <p>
-       	비밀번호에 영문 대소문자,숫자,특수문자를 
-       	<br/>
-       	조합하시면 비밀번호 안전도가 높아져
-       	<br/>
-       	도용의 위험이 줄어듭니다.
-       </p>
-       <ul>
-        <li>
-      	 영문 대소문자는 구분이 되며, 한가지로만 입력은 위험합니다.
-        </li>
-        <li>
-                   사용가능한 특수문자 :
-         <br/>
-         ! " @ # $ % ^ & ' ( ) * + = , - _ . : ; < > ? / ' ~ | { }
-        </li>
-        <li>
-         ID, 주민번호,생일,전화번호 등의 개인정보와
-         </br>
-                    통산 사용 순서대로의 3자 이상 연속 사용은 피해주세요.
-        </li>
-        <li>
-                     비밀번호는 주기적으로 바꾸어 사용하시는 것이 안전합니다.
-        </li>           
-       </ul>
-     </div>
+    
    </td> 
   </tr>
   
@@ -100,8 +65,9 @@
        <label>현재 비밀번호</label>
       </td>
       <td style="border:0px; padding:20px 15px 5px 15px;">
-       <input type="password" name="userPwd" id="originalPwd" class="line" onchange="changePwd()" required
+       <input type="password" name="originalPwd" id="originalPwd" class="line" onchange="changePwd()" required
        style="border:1px solid #DDD; width:200px; height:38px; padding-left:10px; font-size:13px; color:#333; border-radius:0;"/>
+       
        <input type="hidden" id="chkPwd" value="">
        <span style="font-size:11px; color:#999; padding-left:10px;">현재 비밀번호 입력</span>
       </td>
@@ -112,7 +78,7 @@
        <lable>새 비밀번호</lable>
       </td>
       <td style="padding:5px 15px;">
-       <input type="password" name="newPwd" id="newPwd" class="line" required
+       <input type="password" name="password" id="newPwd" class="line" required
        style="border:1px solid #DDD; width:200px; height:38px; padding-left:10px; font-size:13px; color: #333; border-radius:0;"
        maxlength="20" />
        
@@ -146,28 +112,38 @@
     <label style="border-bottom:2px solid #2ac1bc; font-size:12px;">이름</label>
    </td>
    <td class="memberCols2">
-    <input type="text" name="userName" value="${sessionScope.memName }" class="line" style="border:1px solid #DDD; width:200px; height:38px; padding-left:10px; 
+    <input type="text" name="userName" value="${userDTO.userName }" class="line" style="border:1px solid #DDD; width:200px; height:38px; padding-left:10px; 
     font-size:13px; color:#333; border-radius:0;"  id="userName" required>
    </td>
   </tr> 
   
-  <!-- 이메일 -->
+  <!-- 성별  -->
+  <tr>
+  <td class="memberCols1" style="height:68px;">
+    <label style="border-bottom:2px solid #2ac1bc; font-size:12px;">이름</label>
+   </td>
+  <td class="memberCols2" style="border:none;">
+   <fieldset>
+      <label>여</label> <input type="radio" name="gender" value="female" checked="checked">
+      <label>남</label> <input type="radio" name="gender" value="male">
+   </fieldset>
+  </td>
+  </tr>
+  
+  
+   <!-- 이메일 -->
   <tr>
    <td class="memberCols1" style="vertival-align:top; padding-top:17px; position:absolute; margin-bottom:17px;">
     <label style="border-bottom:2px solid #2ac1bc; font-size:12px;">이메일</label>
    </td>
    <td class="memberCols2" style="padding-bottom:10px; ">
-    <input type="text" name="userEmail" value="${sessionScope.memEmail }" id="userEmail" class="line"
+    <input type="text" name="email" value="${userDTO.email }" id="userEmail" class="line"
     style="border:1px solid #DDD; width:200px; height:38px; padding-left:10px; font-size:13px; color:#333; position:relative; 
     border-radius:0; margin:5px 0 8px 0;" required>
-    <!-- a href="javascript:void(0)" onclick="" style="text-decoration:none;">
-     <span id="checkEmailBtn" style="text-align:center; border:1px solid #ccc; width:112px; height:38px; position:absolute; margin-left:27px; margin-top:5px;
-      padding:1px 0; color:#a4a4a4; line-height:40px; font-weight:700; font-size:12px;" align="absmiddle">메일 중복확인</span>
-    </a -->
-   
-    <div class="join_red01"></div>
+    
    </td>
   </tr>
+  
   
   <!-- 휴대폰 -->
   <tr>
@@ -175,7 +151,7 @@
     <font style="border-bottom:2px solid #2ac1bc; font-size:12px;">휴대폰</font>
    </td>
    <td class="membercols2" style="padding-bottom:15px; padding-left:10px; height:74px;">
-    <input type="text" name="userPhone" value="${userDTO.userPhone }" size="12" maxlength="11" id="userPhone"
+    <input type="text" name="cellNumber" value="${userDTO.cellNumber }" size="12" maxlength="11" id="userPhone"
     class="line" style="border:1px solid #DDD; width:150px; height:38px; text-align:center; font-size:13px; color:#333; margin:0 0 8px 0;
     border-radius:0;" required>
     
@@ -225,24 +201,6 @@ $('#pwdChange').click(function(){
 });
 
 
-//메일 중복 확인
-$('#checkEmailBtn').click(function(){
-	$.ajax({
-		type : 'post',
-		url  : '/${pageContext.request.contextPath }/user/checkEmail',
-		data : "userEmail=" + $('#userEmail').val(),
-		dataType : 'text',
-		success : function(data){
-			if(data == 'exist'){
-				alert("이미 등록된 이메일입니다. 다시 작성해 주십시요!");
-			}
-			else if(data == 'not_exist'){
-				alert("사용 가능합니다");
-				$('#chkEmail').val($('#userEmail').val());
-			}
-		}
-	}); 
-});
 
 function changePwd(){
 	var userId=$('#userId').val();
@@ -252,7 +210,7 @@ function changePwd(){
 		type:'post',
 		url:'${pageContext.request.contextPath }/user/checkPwd',
 		data:{'userId':userId,
-			'userPwd':originalPwd},
+			'password':originalPwd},
 		success:function(data){
 			
 			if(data=='exist'){
@@ -268,9 +226,7 @@ function changePwd(){
 //유효성검사
 $('#modifyBtn').click(function(){
 	
-	var userName = $('#userName').val();
-	
-	var userEmail =$('#userEmail').val();
+	var userName = $('#userName').val();	
 	var userPhone = $('#userPhone').val();
 	var newPwd = $('#newPwd').val();
 	var pwdChkClass = $('#pwdChk').attr('class');
