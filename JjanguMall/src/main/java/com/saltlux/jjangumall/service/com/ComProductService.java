@@ -18,13 +18,18 @@ public class ComProductService {
 	
 	}
 	
+	public List<ProductDTO> getProductByCategory(String category) { //상품정보를 카테고리별로 가져온다
+		return productRepository.getProductByCategory(category);
+	
+	}
+	
 	public ProductDTO getOneProduct(int pno) {//선택한 상품의 정보를 가져온다
 		return productRepository.getOneProduct(pno);
 	}
 	
 	public void registProduct(ProductDTO productDTO) { //상품등록
 		// 넣어야할 데이터
-		//name, price, origin, manufacturer, img, totalQty, context, socket
+		//name, price, origin, manufacturer, img, totalQty, context, socket, category 
 		productRepository.registProduct(productDTO);
 	}
 	

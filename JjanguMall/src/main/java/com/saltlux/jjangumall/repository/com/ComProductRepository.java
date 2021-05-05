@@ -17,6 +17,11 @@ public class ComProductRepository {
 	public List<ProductDTO> getAllProduct() { //전체 상품정보의 정보를 가져온다
 		return sqlSession.selectList("product.getAllProduct",null);
 	}
+	
+	public List<ProductDTO> getProductByCategory(String category) {// 카테고리로 상품을 조회한다
+		return sqlSession.selectList("product.getProductByCategory",category);
+	}
+	
 
 	public ProductDTO getOneProduct(int pno) {//선택한 상품의 정보를 가져온다
 		return sqlSession.selectOne("product.getOneProduct", pno);
@@ -36,6 +41,6 @@ public class ComProductRepository {
 	public void deleteProduct(int pno) {
 		sqlSession.delete("product.productDelete", pno);
 	}
-	
-	
+
+
 }

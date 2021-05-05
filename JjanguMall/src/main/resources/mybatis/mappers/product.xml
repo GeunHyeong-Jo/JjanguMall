@@ -6,7 +6,9 @@
 	<select id="getAllProduct" resultType="product">
 		  <![CDATA[ select productNo, name, price, img from product ]]>
 	</select>
-
+	<select id="getProductByCategory" parameterType="string" resultType="product">
+		  <![CDATA[ select productNo, name, price, img from product where category = #{category }]]>
+	</select>
 	<!-- 선택한 상품의 모든 정보 GET -->
 	<select id="getOneProduct" parameterType="Integer"	resultType="product">
 		  <![CDATA[ select * from product where productNo = #{productno }]]>
@@ -14,7 +16,7 @@
 
 	<!-- 상품 등록 -->
 	<insert id="productRegist" parameterType="product">
-		insert into product( name, price, origin, manufacturer, img, totalQty, saleQty, stockQty, reg_date, context, socket ) 
+		insert into product( name, price, origin, manufacturer, img, totalQty, saleQty, stockQty, reg_date, context, socket, category ) 
 							values( #{name }
 									, #{price }
 									, #{origin }
@@ -26,6 +28,7 @@
 									, now()
 									, #{context }
 									, #{socket }
+									, #{category }
 	</insert>
 	
 	<!-- 상품 정보 수정 -->
@@ -39,7 +42,8 @@
 							, saleQty = #{saleqty }
 							, stockQty = #{stockqty }
 							, context = #{context }
-							socket = #{socket }
+							, socket = #{socket }
+							, category = #{category }
 		where productNo = #{productno}
 	</update>	
 	
