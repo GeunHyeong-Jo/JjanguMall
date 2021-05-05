@@ -32,7 +32,7 @@
 	<!-- 로그인 아이디/비밀번호 체크 -->
 	<select id="getUser" parameterType="user"
 		resultType="user">
-		  <![CDATA[ select * from user where userId = #{userId} and password=#{password};
+		  <![CDATA[ select * from user where userId = #{userId};
 		  ]]>
 	</select>
 

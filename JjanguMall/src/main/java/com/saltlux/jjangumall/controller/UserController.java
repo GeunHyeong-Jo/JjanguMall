@@ -1,7 +1,5 @@
 package com.saltlux.jjangumall.controller;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ import com.saltlux.jjangumall.service.store.UserService;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	private UserService userService;
+	private UserService userService;	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
@@ -82,7 +80,6 @@ public class UserController {
 
 	// 로그인 아이디/비밀번호 체크
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	@ResponseBody
 	public String checkLogin(UserDTO dto, HttpSession session) {
 
 		UserDTO userDTO = userService.getUser(dto);
@@ -91,16 +88,19 @@ public class UserController {
 		System.out.println("db확인정보[authUser]=" + userDTO);
 
 		if (userDTO == null) {
-			return "not_exist";
+			session.setAttribute("authResult", "fail");
+			return "redirect:/user/loginForm";
 
 		} else if (passwordEncoder.matches(dto.getPassword(), userDTO.getPassword())) {
 			session.setAttribute("memName", userDTO.getUserName());
 			session.setAttribute("memId", userDTO.getUserId());
 			session.setAttribute("memEmail", userDTO.getEmail());
-
-			return "exist";
+			
+			session.setAttribute("authResult", "true");
+			return "redirect:/";
 		} else {
-			return "not_exist";
+			session.setAttribute("authResult", "fail");
+			return "redirect:/user/loginForm";
 		}
 
 	}
