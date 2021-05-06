@@ -30,52 +30,7 @@ public class UsedUserController {
 	@Autowired
 	ItemService itemService;
 	
-	
-	// ------------- Join
-	@RequestMapping(value="/signup", method=RequestMethod.GET)
-	public String Join() { 
-		return "used/user/signup";
-	}
-	
-	@RequestMapping(value="/signup", method=RequestMethod.POST)
-	public String Join(UserVo vo) {
 		
-		userService.signUp(vo);
-		return "redirect:/used/user/signin";
-	}
-	
-	
-	// -------------- Login
-	@RequestMapping(value="/signin", method=RequestMethod.GET)
-	public String login() {
-		
-		return "used/user/signin";
-	}
-	
-	@RequestMapping(value="/auth", method=RequestMethod.POST)
-	public String login(UserVo vo) {
-		
-		return "redirect:/used/";
-	}
-	
-	
-	// -------------- Update
-	@Auth
-	@RequestMapping(value="/update", method=RequestMethod.GET)
-	public String update() {
-		
-		return "";
-	}
-	
-	
-	@Auth
-	@RequestMapping(value="/update", method=RequestMethod.POST)
-	public String update(UserVo vo) {
-		
-		return "";
-	}
-	
-	
 	// --------------- User Detail
 	@Auth
 	@RequestMapping(value="/seller/{id}")

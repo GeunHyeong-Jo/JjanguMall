@@ -34,7 +34,7 @@ public class ItemController {
 		List<ItemVo> list = itemService.index();
 
 		model.addAttribute("itemList", list);
-		return "used/item/index";
+		return "redirect:/used/index/1";
 	}
 	
 	

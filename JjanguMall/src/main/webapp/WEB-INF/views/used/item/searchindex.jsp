@@ -58,10 +58,10 @@
           	  <c:forEach var="itemVo" items="${itemList }" varStatus="status">
           	    <c:choose>
           	      <c:when test="${status.index % 3 == 0 }">
-                    <li class="one_third first" style="height: 380px;"><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
+                    <li class="one_third first" style="height: 380px;"><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/used/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
                   </c:when>
                   <c:otherwise>
-            	    <li class="one_third" style="height: 380px;"><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
+            	    <li class="one_third" style="height: 380px;"><a href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/used/upload/${itemVo.imageNo }.png" alt=""><p>${itemVo.title }</p></a></li>
                   </c:otherwise>
                 </c:choose>
               </c:forEach>

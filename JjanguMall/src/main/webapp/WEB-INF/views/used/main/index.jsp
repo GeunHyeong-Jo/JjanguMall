@@ -40,7 +40,7 @@
     <ul class="nospace group">
       <c:forEach var="itemVo" items="${itemList }" varStatus="status">
         <li>
-          <figure><a class="overlay" href="${pageContext.request.contextPath }/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/upload/${itemVo.imageNo }.png" alt=""></a>
+          <figure><a class="overlay" href="${pageContext.request.contextPath }/used/detail/${itemVo.no }"><img src="${pageContext.request.contextPath }/used/upload/${itemVo.imageNo }.png" alt=""></a>
           </figure>
         </li>
       </c:forEach>

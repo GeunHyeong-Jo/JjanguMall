@@ -35,7 +35,7 @@
       <div id="gallery">
         <figure>
           <header class="heading">List</header>
-          <form action="${pageContext.request.contextPath }/search/1">
+          <form action="${pageContext.request.contextPath }/used/search/1">
           
           <div id="comments">
             <div class="one_quarter first">
