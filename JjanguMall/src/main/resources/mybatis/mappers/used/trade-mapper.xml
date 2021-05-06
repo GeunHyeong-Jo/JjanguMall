@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="trade">
+
+	<insert id="apply" parameterType="tradevo">
+		insert into trade (no, item_no, seller_id, buyer_id, point, review, status) 
+			values(null, #{no },  #{sellerId }, #{buyerId }, DEFAULT, null, 0);
+	</insert>
+	
+	<update id="succsess" parameterType="int">
+		update trade set status = 2 where no = #{no }
+	</update>
+	
+	<update id="cancle" parameterType="int">
+		update trade set status = 1 where no = #{no }
+	</update>
+</mapper>
+
+
