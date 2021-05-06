@@ -17,6 +17,7 @@ public class UserDTO {
 	private String userName;	//유저이름
 	private String password;    //비밀번호
 	private String gender;		//성별
+	private String ages;		//나이대
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date reg_date;		//가입일
 	private String email;		//유저이메일
