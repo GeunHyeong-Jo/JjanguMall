@@ -20,50 +20,50 @@ public class UsedUserRepository {
 	// -------------- Sign Up
 	public int signUp(UserVo vo) {
 	
-		return sqlSession.insert("user.signUp", vo);
+		return sqlSession.insert("used.user.signUp", vo);
 	}
 	
 	
 	// -------------- Sign In
 	public UserVo findByIdAndPassword(UserVo vo) {
 		
-		return sqlSession.selectOne("user.findByIdAndPassword", vo);
+		return sqlSession.selectOne("used.user.findByIdAndPassword", vo);
 	}
 	
 	public UserVo findById(String id) {
 		
-		return sqlSession.selectOne("user.findById", id);
+		return sqlSession.selectOne("used.user.findById", id);
 	}
 	
 	
 	public int update(UserVo vo) {
 		
-		return sqlSession.update("user.update", vo);
+		return sqlSession.update("used.user.update", vo);
 	}
 	
 	public String getRole(String id) {
 		
-		return sqlSession.selectOne("user.getRole", id);
+		return sqlSession.selectOne("used.user.getRole", id);
 	}
 	
 	public UserVo seller(String id) {
 		
-		return sqlSession.selectOne("user.seller", id);
+		return sqlSession.selectOne("used.user.seller", id);
 	}
 	
 	public Double sellerPoint(String id) {
 		
-		return sqlSession.selectOne("user.sellerPoint", id);
+		return sqlSession.selectOne("used.user.sellerPoint", id);
 	}
 	
 	public List<TradeVo> tradeList(String id) {
 		
-		return sqlSession.selectList("user.tradeList", id);
+		return sqlSession.selectList("used.user.tradeList", id);
 	}
 	
 	public Double avgPoint(String id) {
 		
-		return sqlSession.selectOne("user.avgPoint", id);
+		return sqlSession.selectOne("used.user.avgPoint", id);
 	}
 	
 

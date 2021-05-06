@@ -98,9 +98,6 @@ public class ItemController {
 
 		ItemDetailVo vo = itemService.detail(no);
 		List<ImageVo> imageList = itemService.getImageNo(no);
-		for(ImageVo ivo : imageList) {
-			System.out.println(ivo);
-		}
 		model.addAttribute("imageList", imageList);
 		model.addAttribute("vo", vo);
 		return "used/item/detail";

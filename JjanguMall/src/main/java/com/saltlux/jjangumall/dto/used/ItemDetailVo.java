@@ -4,7 +4,7 @@ public class ItemDetailVo {
 
 	private Long no;
 	private String userId;
-	private String name;
+	private String userName;
 	private String title;
 	private String contents;
 	private String date;
@@ -24,11 +24,11 @@ public class ItemDetailVo {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getTitle() {
 		return title;
@@ -62,10 +62,12 @@ public class ItemDetailVo {
 	}
 	@Override
 	public String toString() {
-		return "ItemDetailVo [no=" + no + ", userId=" + userId + ", name=" + name + ", title=" + title + ", contents="
-				+ contents + ", date=" + date + ", region=" + region + ", avgPoint=" + avgPoint + "]";
+		return "ItemDetailVo [no=" + no + ", userId=" + userId + ", userName=" + userName + ", title=" + title
+				+ ", contents=" + contents + ", date=" + date + ", region=" + region + ", avgPoint=" + avgPoint + "]";
 	}
 	
+	
+
 	
 
 	
