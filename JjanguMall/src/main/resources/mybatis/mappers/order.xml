@@ -10,14 +10,14 @@
 	 	<![CDATA[ SELECT * FROM `order` ORDER BY orderNo DESC]]>
 	</select>
 	<!-- 주문상세조회 -->
-	<select id="getOrderList" parameterType="map" resultType="cartandproduct">
+	<select id="getOrderList" parameterType="map" resultType="orderlistandproduct">
 	 	<![CDATA[ SELECT * FROM `orderlist` LEFT JOIN `product` ON orderlist.productNo = product.productNo 
 	 		where (SELECT `order`.userID FROM `order` LEFT JOIN  `orderlist` ON `order`.orderNo = orderlist.orderNo 
 	 		WHERE `order`.orderNo = orderlist.orderNo LIMIT 1) = #{userID } AND orderNo = #{orderNo }	]]>
 	</select>
 	
 	<!-- 관리자의 주문상세조회 -->
-	<select id="getAllOrderList" resultType="cartandproduct">
+	<select id="getAllOrderList" resultType="orderlistandproduct">
 	 	<![CDATA[ SELECT * FROM `orderlist` LEFT JOIN `product` ON orderlist.productNo =
 	 		product.productNo where (SELECT `order`.userID FROM `order` LEFT JOIN
 	  		`orderlist` ON `order`.orderNo = orderlist.orderNo ORDER BY orderNo	]]>
