@@ -15,7 +15,7 @@ public class ComProductRepository {
 	private SqlSession sqlSession;
 
 	public List<ProductDTO> getAllProduct() { //전체 상품정보의 정보를 가져온다
-		return sqlSession.selectList("product.getAllProduct",null);
+		return sqlSession.selectList("product.get_goods_list",null);
 	}
 	
 	public List<ProductDTO> getProductByCategory(String category) {// 카테고리로 상품을 조회한다
@@ -24,7 +24,7 @@ public class ComProductRepository {
 	
 
 	public ProductDTO getOneProduct(int pno) {//선택한 상품의 정보를 가져온다
-		return sqlSession.selectOne("product.getOneProduct", pno);
+		return sqlSession.selectOne("product.getGoodsView", pno);
 	}
 
 	public void registProduct(ProductDTO productDTO) { //상품등록

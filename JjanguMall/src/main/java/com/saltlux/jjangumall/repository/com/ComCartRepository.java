@@ -34,21 +34,17 @@ public class ComCartRepository {
 
 	public void deleteAllCart(String userID) {
 		sqlSession.delete("cart.deleteAllCart", userID);
-		
+
 	}
 
 	public void setCartQTY(CartDTO cartDTO) {
 		sqlSession.update("cart.setCartQTY", cartDTO);
-		
+
 	}
 
 	public void changeCartQTY(Map<String, String> map) {
 		sqlSession.update("cart.changeCartQTY", map);
-		
+
 	}
 
-	
-
-	
-	
 }

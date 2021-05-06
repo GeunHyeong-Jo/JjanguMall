@@ -2,17 +2,19 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user" />
+		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO"	alias="product" />
 		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO" alias="product"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.OrderDTO" alias="order"/>
-		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO"  alias="cart" />
 		<typeAlias type="com.saltlux.jjangumall.dto.OrderlistDTO" alias="orderlist"/>
-		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO" alias="cartandproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO"  alias="cartandproduct"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistandproduct"/>
-		
-    </typeAliases>	
-    
+	</typeAliases>
 	<mappers>
+		<mapper resource="mybatis/mappers/user.xml" />
+		<mapper resource="mybatis/mappers/product.xml" />
 		<mapper resource="mybatis/mappers/user.xml" />
 		<mapper resource="mybatis/mappers/product.xml" />
 		<mapper resource="mybatis/mappers/order.xml" />

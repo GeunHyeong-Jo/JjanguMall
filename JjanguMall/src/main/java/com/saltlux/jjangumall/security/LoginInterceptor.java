@@ -11,13 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.service.store.UserService;
+import com.saltlux.jjangumall.service.store.StoreUserService;
 
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
 	@Autowired
-	private UserService userService;
+	private StoreUserService userService;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -83,6 +83,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 				session.setAttribute("memName", userDTO.getUserName());
 				session.setAttribute("memId", userDTO.getUserId());
 				session.setAttribute("memEmail", userDTO.getEmail());
+
 				response.sendRedirect(request.getContextPath());
 			}else {
 				System.out.println("비밀번호 틀려");
