@@ -13,9 +13,7 @@ public class StoreUserService {
 
 	@Autowired
 	private StoreUserRepository userRepository;
-
-
-
+	
 	public UserDTO checkId(String userId) {
 		return userRepository.checkId(userId);
 	}
@@ -41,7 +39,5 @@ public class StoreUserService {
 
 	public UserDTO getUser(UserDTO dto) {
 		return userRepository.getUser(dto);
-	}	
-	
-	
+	}
 }

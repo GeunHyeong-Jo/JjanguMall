@@ -56,7 +56,6 @@ public class UserService {
 	public UserDTO getUser(UserDTO userDTO) {
 		return userRepository.getUser(userDTO);
 
-	}	
-	
+	}
 	
 }

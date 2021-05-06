@@ -13,7 +13,7 @@
 <meta name="author" content="">
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-<title>SONG STATIONERY</title>
+<title>Dashboard Template for Bootstrap</title>
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
@@ -40,8 +40,6 @@
       feather.replace()
     </script>
 <body>
-
-	<!-- 본문 -->
 	<div class="container-fluid">
 		<div class="row">
 			<c:import url="/WEB-INF/views/includes/header.jsp" />
@@ -49,35 +47,34 @@
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 			<div
 				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-				<h1 class="h2">먹은 칼로리 수치</h1>
+				<h1 class="h2">Dashboard</h1>
 				<div class="btn-toolbar mb-2 mb-md-0">
 					<div class="btn-group mr-2">
 						<button class="btn btn-sm btn-outline-secondary">Share</button>
 						<button class="btn btn-sm btn-outline-secondary">Export</button>
 					</div>
-					
-					<!-- 일,주별 보는 방식 선택 -->>
-					<li>보기 방식 선택</li> <select class="form-control" name="showList"
-						onchange=changeList(this.value)>
-						<option selected>===선택===</option>
+					<li>요일 선택</li>
+					<select class="form-control" name="showList" onchange=changeList(this.value)>
+						<option >===선택===</option>
 						<option value="index">전체 보기</option>
-						<option value="days">일별</option>
+						<option value="days" selected>일별</option>
 						<option value="weeks">주차별</option>
+						<option value="months">월별</option>
 					</select>
 				</div>
 			</div>
 
 			<canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-
+				
 			<nav aria-label="Page navigation example">
 			<ul class="pagination">
 				<li class=page-item><a class="page-link"
-					href="${pageContext.request.contextPath }/calory/eat/weeks?no=${no+1}">◀</a></li>
+					href="${pageContext.request.contextPath }/eat/days?no=${no+1}">◀</a></li>
 				<li class=page-item><a class="page-link"
-					href="${pageContext.request.contextPath }/calory/eat/weeks?no=0">오늘날짜로
+					href="${pageContext.request.contextPath }/eat/days?no=0">오늘날짜로
 						돌아오기</a></li>
 				<li class=page-item><a class="page-link"
-					href="${pageContext.request.contextPath }/calory/eat/weeks?no=${no-1}">▶</a></li>
+					href="${pageContext.request.contextPath }/eat/days?no=${no-1}">▶</a></li>
 			</ul>
 			</nav>
 
@@ -135,12 +132,11 @@
 					</tbody>
 				</table>
 			</div>
+
 			<div class="row justify-content-start">
 				<div class="col-4">총 먹은 칼로리 : ${authUser.totalCalory }</div>
 				<div class="col-4">하루 권장 칼로리 : ${calory}</div>
-				<div class="col-4">1 주일간 총 칼로리 : ${authUser.totalCalory- calory*7 }</div>
 			</div>
-
 			</main>
 		</div>
 	</div>
@@ -168,9 +164,9 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: ["Morning", "Lunch", "Evening"],
           datasets: [{
-            data: [${Sunday},${Monday}, ${Tuesday}, ${Wednesday}, ${Thursday}, ${Friday}, ${Saturday}],
+            data: [${Morning},${Lunch}, ${Evening}],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
@@ -196,9 +192,9 @@
 
 	<!-- 음식 내역 및 칼로리 수치 리스트 -->
 	<p>오늘 먹은 음식 및 먹은 시간대를 체크해주세요.</p>
-	<form action="${pageContext.request.contextPath }/calory/eat/insert"
+	<form action="${pageContext.request.contextPath }/eat/insert"
 		method="post">
-		사용자 : ${memId } <br> 먹은 음식 <input type="text" name="name"
+		사용자 : ${authUser.name } <br> 먹은 음식 <input type="text" name="name"
 			value=""><br> 먹은 시간
 		<fieldset>
 			<legend>먹은 시간</legend>

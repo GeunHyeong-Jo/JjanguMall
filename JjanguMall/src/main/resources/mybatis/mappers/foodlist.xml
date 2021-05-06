@@ -28,4 +28,24 @@
 			,now());
 		]]>
 	</insert>
+
+	<delete id="delete" parameterType="Integer">
+		<![CDATA[
+			delete 
+			from foodlist 
+			where foodlistno = #{no};
+		]]>
+	</delete>
+
+	<select id="findNo" parameterType="long" resultType="foodlist">
+	<![CDATA[
+		select foodlistNo from foodlist where foodlistNo=#{no};
+	]]>
+	</select>
+	
+	<update id="update" parameterType="foodlist">
+	<![CDATA[
+		update foodlist set foodNo = #{foodNo}, eatTime = #{eatTime} where userNo = #{userNo};
+	]]>
+	</update>
 </mapper>
