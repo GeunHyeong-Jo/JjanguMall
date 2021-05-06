@@ -44,7 +44,7 @@
 		,gender=#{gender}
 		,email=#{email}
 		,cellNumber=#{cellNumber}
-		,totalcalory=#{totalCalory};
+		where userId=#{userId};
 		]]>
 	</update>
 

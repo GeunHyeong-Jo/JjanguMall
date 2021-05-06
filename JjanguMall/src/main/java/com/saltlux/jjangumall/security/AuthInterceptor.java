@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
 	@Override

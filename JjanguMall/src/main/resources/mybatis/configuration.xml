@@ -2,9 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+
 		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO" alias="product"/>
     </typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
+		<mapper resource="mybatis/mappers/product.xml" />
 	</mappers>
 </configuration>

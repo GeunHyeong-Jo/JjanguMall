@@ -1,5 +1,6 @@
 package com.saltlux.jjangumall.dto;
 
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -13,6 +14,7 @@ public class OrderlistDTO {
 	private int orderNo;	//주문 번호
 	private int oderNo;	//이미지 번호
 	private int count;	//수량
+
 	
 }
 
