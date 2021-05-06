@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+
+	<select id="getCart" parameterType="string" resultType="cartandproduct">
+		<![CDATA[ SELECT * FROM cart LEFT JOIN product ON cart.productNo = product.productNo WHERE userID = #{userid } order BY carNo DESC 	]]>
+	</select>
+	
+	
+	<select id="checkCart" parameterType="string" resultType="cartandproduct">
+		<![CDATA[ SELECT * FROM cart LEFT JOIN product ON cart.productNo = product.productNo WHERE carNo = #{cartno } 	]]>
+	</select>
+	
+	<insert id="cartInsert" parameterType="cart">
+		<![CDATA[ INSERT INTO cart (`productNo`, `imgNo`, `userID`, `count`) VALUES (#{productNo }, #{imgNo }, #{userID }, #{count } ); 	]]>
+	</insert>
+	
+	
+	<delete id="deleteCart" parameterType="string">
+		<![CDATA[ delete from cart where carNo = #{carno } 	]]>
+	</delete>
+	
+	<delete id="deleteAllCart" parameterType="string">
+		<![CDATA[ delete from cart where userID = #{userid } 	]]>
+	</delete>
+	
+	<update id="setCartQTY" parameterType="cart">
+		<![CDATA[ UPDATE cart  SET `count`=#{count}  WHERE  carNo=#{carno } AND productNo=#{productno }	]]>
+	</update>
+	
+	<update id="changeCartQTY" parameterType="map">
+		<![CDATA[ update cart SET `count` =`count`+ #{count } where userID = #{userID } and productNo = #{productNo } and carNo=#{carNo }	]]>
+	</update>
+	
+</mapper>
