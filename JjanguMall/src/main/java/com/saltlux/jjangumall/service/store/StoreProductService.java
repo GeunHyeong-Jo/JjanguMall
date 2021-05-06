@@ -23,4 +23,20 @@ public class StoreProductService {
 		return StoreProductRepository.getGoodsView(parseInt);
 	}
 
+	public int getProductNo() {
+		return StoreProductRepository.getProductNo();
+	}
+
+	public int productRegist(ProductDTO productDTO) {
+		return StoreProductRepository.productRegist(productDTO);
+	}
+
+	public void productModify(ProductDTO productDTO) {
+		StoreProductRepository.productModify(productDTO);
+	}
+
+	public void productDelete(String productNo) {
+		StoreProductRepository.productDelete(productNo);
+	}
+
 }

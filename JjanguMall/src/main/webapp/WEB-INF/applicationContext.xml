@@ -45,12 +45,20 @@
 		class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<property name="order" value="0" />
 	</bean>
-
-	<!-- 파일 업로드 리졸버 추가 -->
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="5000000" />
-	</bean>
+	
+	<!-- 파일업로드에 필요한 bean -->
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+      <!-- 파일 업로드 용량 -->
+      <property name="maxUploadSize" value="10485760"></property>
+   </bean>   
+   
+   <!-- 파일업로드 디렉토리 설정 -->
+   <bean id="uploadPath" class="java.lang.String">
+      <constructor-arg value="C:/Users/user/git/JjanguMall/JjanguMall/src/main/webapp/assets/image/thumb" />
+   </bean>
+   
+	
+	
 	
 	<context:annotation-config />
 
