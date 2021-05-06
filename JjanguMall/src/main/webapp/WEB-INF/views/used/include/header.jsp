@@ -27,7 +27,7 @@
 			<li>${memName }님</li>
 				<li><a href="${pageContext.request.contextPath }/mypage/mypage_orderlist" class="utilMenuText">마이페이지</a></li>
 			<li id="logoutBtn"><a href="${pageContext.request.contextPath }/user/logout" class="utilMenuText">로그아웃</a></li>
-				<li><a href="${pageContext.request.contextPath }/used/user/mypage" class="utilMenuText">거래내역</a></li>
+				<li><a href="${pageContext.request.contextPath }/used/user/sellitem" class="utilMenuText">거래내역</a></li>
 			</c:if>
 		</ul>
 	</div><!-- top_menu_area 끝-->

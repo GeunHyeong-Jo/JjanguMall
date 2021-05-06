@@ -96,6 +96,8 @@
     <div class="clear"></div>
   </main>
 </div>
+<c:import url="/WEB-INF/views/used/include/footer.jsp"/>
+<c:import url="/WEB-INF/views/used/include/footerjs.jsp"/>
 
 </body>
 

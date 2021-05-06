@@ -9,12 +9,12 @@
 </head>
 <body id="top">
     <div class="sidebar one_quarter first"> 
-      <h6>Lorem ipsum dolor</h6>
+      <h6>거래 내역</h6>
       <nav class="sdb_holder">
         <ul>
-          <li><a href="${pageContext.request.contextPath }/used/user/sellitem"> Sell Product</a></li>
-          <li><a href="${pageContext.request.contextPath }/used/user/sell"> Sell List</a></li>
-          <li><a href="${pageContext.request.contextPath }/used/user/buy"> Buy List</a></li>
+          <li><a href="${pageContext.request.contextPath }/used/user/sellitem">판매 중인 물품</a></li>
+          <li><a href="${pageContext.request.contextPath }/used/user/sell"> 판매 거래 중</a></li>
+          <li><a href="${pageContext.request.contextPath }/used/user/buy"> 구매 거래 중</a></li>
         </ul>
       </nav>
     </div>

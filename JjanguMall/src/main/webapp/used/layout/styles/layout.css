@@ -260,8 +260,8 @@ h1, h2, h3, h4, h5, h6, .heading{color:#242424; border-color:inherit;}
 /* Rows */
 .row1, .row1 a{color:#242424; background-color:#FFFFFF;}
 .row2{color:#888888; background-color:#FFFFFF;}
-.row3{color:#888888; background-color:#F7F7F7; border-color:#EBEBEB;}
-.row4{color:#888888; background-color:#F7F7F7; border-color:#EBEBEB;}
+.row3{color:#888888; background-color:#FFFFFF; border-color:#EBEBEB;}
+.row4{color:#888888; background-color:#FFFFFF; border-color:#EBEBEB;}
 .row5, .row5 a{color:#888888; background-color:#EBEBEB;}
 .row6{color:#FFFFFF; background-color:#96AFAA;}
 .row6 a{color:#96AFAA; background-color:#FFFFFF;}
