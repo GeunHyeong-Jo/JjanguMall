@@ -14,17 +14,41 @@
           <th id="product_subject">상품명</th>
           <th id="product_price">판매가</th>
           <th id="qty">수량</th>
-          <th id="total_price">총금액</th>
+          <th id="delivery">주문상태</th>
         </tr>
-        <c:forEach var="orderandproduct" items="${list }">
+        <c:forEach var="orderDTO" items="${list}">
 	        <tr class="mypage_table_content orderview_content">
-	          <td id="product_thumb"><img id="thumbimg" src="${pageContext.request.contextPath }/assets/image/thumb/${orderandproduct.img }"></td>
+	          <td id="product_thumb"><img id="thumbimg" src="${pageContext.request.contextPath }/assets/image/thumb/${orderDTO.thumbImg }"></td>
 	          <td>
-		          <span id="product_name">${orderandproduct.name }</span>		          
+		          <span id="product_name">${orderDTO.productName }</span>		          
 	          </td>
-	          <td>${orderandproduct.price }원</td>
-	          <td>${orderandproduct.count }개</td>
-	          <td>${orderandproduct.price * orderandproduct.count }원</td>
+	          <td>${orderDTO.totalPrice }원</td>
+	          <td>${orderDTO.purchaseQty }개</td>
+	          <td>
+	          	<span class="color_2ac1bc">
+	          		
+	          		<c:if test="${orderDTO.orderState==0 }">
+	          			주문취소
+	          		</c:if>
+	          		<c:if test="${orderDTO.orderState==1 }">
+	          			주문접수	          			
+	          		</c:if>
+	          		<c:if test="${orderDTO.orderState==2 }">
+	          			배송준비	          			
+	          		</c:if>
+	          		<c:if test="${orderDTO.orderState==3 }">
+	          			배송중
+	          		</c:if>
+	          		<c:if test="${orderDTO.orderState==4 }">
+	          			배송완료	          			
+	          		</c:if>
+	          		<c:if test="${orderDTO.orderState==5 }">
+	          			주문완료
+	          		</c:if>
+	          		
+	          	</span>          		
+	          </td>
+	          
 	        </tr>
         </c:forEach>
       </table>
@@ -42,11 +66,11 @@
         </tr>
         <tr>
           <td>주문자 핸드폰 :</td>
-          <td>${userDTO.cellNumber }</td>
+          <td>${userDTO.userPhone }</td>
         </tr>
         <tr>
           <td>이메일 :</td>
-          <td>${userDTO.email }</td>
+          <td>${userDTO.userEmail }</td>
         </tr>
       </table>
       <table class="box_style1">
@@ -55,20 +79,21 @@
         </tr>
         <tr>
           <td id="box_name">받는 분 이름 :</td>
-          <td>${orderDTO.rName}</td>
+          <td>${userDTO.receiverName}</td>
         </tr>
         <tr>
           <td>핸드폰 :</td>
-          <td>${orderDTO.rPhone}</td>
+          <td>${userDTO.receiverPhone}</td>
         </tr>
         <tr>
           <td>우편번호 :</td>
-          <td>${orderDTO.rZipcode }</td>
+          <td>${userDTO.receiverZipcode }</td>
         </tr>
         <tr>
           <td>주소 :</td>
           <td>
-	           ${orderDTO.rAddress }<br>
+	           ${userDTO.receiverAddr1 }<br>
+	           ${userDTO.receiverAddr2 }
           </td>
         </tr>
       </table>
@@ -81,8 +106,8 @@
           <td>
           		<c:set var="sum" value="0"/>
 	         
-	          <c:forEach var="orderandproduct" items="${list}">
-	          	<c:set var="sum" value="${ sum += orderandproduct.price * orderandproduct.count }"/>
+	          <c:forEach var="orderDTO" items="${list}">
+	          	<c:set var="sum" value="${sum+orderDTO.totalPrice}"/>
 	          </c:forEach>
 	          
 	          	<c:out value="${sum}"/>
@@ -90,7 +115,7 @@
         </tr>
         <tr>
           <td>사용포인트 :</td>
-          <td></td>  <!-- <td>${usePoint}원</td> -->
+          <td>${usePoint}원</td>
         </tr>
         <tr>
           <td>배송비 :</td>
@@ -117,7 +142,7 @@
           </td>
         </tr>
       </table>
-      <!-- <table class="box_style1">
+      <table class="box_style1">
         <tr>
           <td id="box_title1" colspan="2">결제수단</td>
         </tr>
@@ -137,7 +162,7 @@
           	</c:forEach>
           </td>
         </tr>
-      </table>-->
+      </table>
     </div>
 
     <div>

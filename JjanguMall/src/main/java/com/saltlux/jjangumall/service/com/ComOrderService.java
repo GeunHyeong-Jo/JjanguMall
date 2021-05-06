@@ -58,4 +58,12 @@ public class ComOrderService {
 		orderRepository.changeOrderState(map);
 	}
 
+	public OrderDTO getOneOrder(String userId, String orderNo) { //주문번호에 따른 DTO 하나 반환
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("userID", userId);
+		map.put("orderNo", orderNo);
+		
+		return orderRepository.getOneOrder(map);
+	}
+
 }

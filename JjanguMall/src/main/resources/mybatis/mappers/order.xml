@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="user">
+<mapper namespace="order">
 	<!-- 주문조회 -->
 	<select id="getOrder" parameterType="string" resultType="order">
 	 	<![CDATA[ SELECT * FROM `order` WHERE `userID`= #{userID } order by orderNo DESC	]]>
 	</select>
+	
+	<!-- 주문번호, 아이디로 1개만 조회 -->
+	<select id="getOneOrder" parameterType="map" resultType="order">
+	 	<![CDATA[ SELECT * FROM `order` WHERE `userID`= #{userID } and `orderNo` =#{orderNo }	]]>
+	</select>
+	
 	<!-- 관리자 주문조회 -->
 	<select id="getAllOrder" resultType="order">
 	 	<![CDATA[ SELECT * FROM `order` ORDER BY orderNo DESC]]>

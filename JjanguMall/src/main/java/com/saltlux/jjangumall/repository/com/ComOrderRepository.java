@@ -41,6 +41,10 @@ public class ComOrderRepository {
 		sqlSession.update("order.changeOrderState", map);
 		
 	}
+	public OrderDTO getOneOrder(Map<String, String> map) {
+		return sqlSession.selectOne("order.getOneOrder", map);
+		
+	}
 	
 	
 	
