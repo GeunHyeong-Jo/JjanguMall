@@ -2,12 +2,16 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-
 		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO" alias="product"/>
+		<typeAlias  type="com.saltlux.jjangumall.dto.FoodlistDTO" alias="foodlist"/>
+		<typeAlias  type="com.saltlux.jjangumall.dto.FoodDTO" alias="food"/>
+		
     </typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
 		<mapper resource="mybatis/mappers/product.xml" />
+		<mapper resource="mybatis/mappers/foodlist.xml"/>
+		<mapper resource="mybatis/mappers/food.xml"/>	
 	</mappers>
 </configuration>
