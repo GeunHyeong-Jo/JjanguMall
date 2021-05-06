@@ -34,47 +34,47 @@
 	
 				<c:set var="total" value="0" />
 				<c:if test="${list.size()!=0}"> 
-					<c:forEach var="cartDTO" items="${list }" varStatus="status">
-					<c:set var="total" value="${total + cartDTO.discountPrice * cartDTO.productQty }" />
+					<c:forEach var="CartAndProductDTO" items="${list }" varStatus="status">
+					<c:set var="total" value="${total + CartAndProductDTO.price * CartAndProductDTO.count }" />
 							<c:set var="cnt" value="${cnt+1}" />
-							<input type="hidden" id="cartCode${cnt}" name="cartCode"
-								value="${cartDTO.cartCode}">
-							<input type="hidden" id="productCode${cnt}" name="productCode"
-								value="${cartDTO.productCode}">
-							<input type="hidden" id="productName${cnt}" name="productName"
-								value="${cartDTO.productName}">
+							<input type="hidden" id="carNo${cnt}" name="carNo"
+								value="${CartAndProductDTO.carNo}">
+							<input type="hidden" id="productNo${cnt}" name="productNo"
+								value="${CartAndProductDTO.productNo}">
+							<input type="hidden" id="productName${cnt}" name="name"
+								value="${CartAndProductDTO.name}">
 							
 							<input type="hidden" id="thumbImg${cnt}"
-								value="${cartDTO.thumbImg}">
+								value="${CartAndProductDTO.img}">
 							<input type="hidden" id="discountPrice${cnt}"
-								value="${cartDTO.discountPrice}">	
+								value="${CartAndProductDTO.price}">	
 							
 							
 							<tr>
 							<td id="cart_checkbox" style="vertical-align: top; padding: 30px 17px;">
-								<input type="checkbox" name="cartCheckbox" value="${cartDTO.cartCode }" class="checkbox${cnt}" checked>
+								<input type="checkbox" name="cartCheckbox" value="${CartAndProductDTO.carNo }" class="checkbox${cnt}" checked>
 							</td>
 
 							<td style="vertical-align: top; padding: 30px 17px;">
-								<a href="${pageContext.request.contextPath }/goods/goods_view?productCode=${cartDTO.productCode}" style="margin-bottom: 0;">
-								<img src="${pageContext.request.contextPath }/assets/image/thumb/${cartDTO.thumbImg }" width="70px" onerror=""></a>
+								<a href="${pageContext.request.contextPath }/goods/goods_view?productNo=${CartAndProductDTO.productNo}" style="margin-bottom: 0;">
+								<img src="${pageContext.request.contextPath }/assets/image/thumb/${CartAndProductDTO.img }.jpg" width="70px" onerror=""></a>
 							</td>
 
 							<td class="orderOption" style="text-align: left; vertical-align: top; padding: 30px 0;">
-								<div class="thumbImg" id="productName${cnt}" >${cartDTO.productName}</div>
+								<div class="thumbImg" id="productName${cnt}" >${CartAndProductDTO.name}</div>
 							
 								
 							</td>
 
-							<td class="price"><f:formatNumber pattern="###,###,###" value="${cartDTO.discountPrice }" />원</td>
+							<td class="price"><f:formatNumber pattern="###,###,###" value="${CartAndProductDTO.price }" />원</td>
 							
 							<td style="vertical-align: top; padding: 22px 0 30px 0;">
 								<table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
 									<tr>
 										<td style="padding: 0; height: 0px; border: 0">
 											<div style="float: left;">
-												<input type="text" name="productQty" id="${status.index}" step="1" min="1" size="2" 
-													   value="${cartDTO.productQty }" class="line productQty${cnt}" 
+												<input type="text" name="count" id="${status.index}" step="1" min="1" size="2" 
+													   value="${CartAndProductDTO.count }" class="line count${cnt}" 
 													   style="border: 1px solid #DDD; width: 40px; text-align: right; 
 													   		  height: 38px; padding-right: 5px; font-weight: 500;"/>
 											</div>
@@ -110,7 +110,7 @@
 							</td>
 							
 							<td id="eachCost" style="vertical-align: top; color: #333; text-align: right; padding: 30px 0; font-weight: 700; padding-right: 20px;">
-								<f:formatNumber pattern="###,###,###" value="${cartDTO.discountPrice * cartDTO.productQty }" />원
+								<f:formatNumber pattern="###,###,###" value="${CartAndProductDTO.price * CartAndProductDTO.count }" />원
 							</td>	
 						</tr>
 					</c:forEach>
@@ -210,7 +210,7 @@ $('.cart_select').click(function() {
 
 
 //숫자가 아닌경우  유효성검사 필요
-$('input[name=productQty]').focusout(function() {
+$('input[name=count]').focusout(function() {
 	var input = $(this).val();
 	//alert(input);
 	if (isNaN(input)==true) {
@@ -250,47 +250,43 @@ $('.modifyBtn').off('click').on('click',function(){
 	var cnt = idName.substring(10,idName.length);
 	
 	 
-	var productCode = $('#productCode'+cnt).val();
-	var input = $('.productQty'+cnt).val();
+	var productNo = $('#productNo'+cnt).val();
+	var input = $('.count'+cnt).val();
 	var productName = $('#productName'+cnt).text();
-	var cartCode = $('#cartCode'+cnt).val();
-	//alert("cartCode= "+cartCode+" productCode="+productCode+" productName="+productName+" productQty="+input+" optionContent="+optionContent);
+	var carNo = $('#carNo'+cnt).val();
 	
 	$.ajax({
 		type:'post',
-		url:'/miniproject/cart/goods_cart_modify',
-		data:{'cartCode':cartCode,
-			'productQty':input},
+		url:'${pageContext.request.contextPath }/cart/goods_cart_modify',
+		data:{'carNo':carNo,
+			'productNo':productNo,
+			'count':input},
 			success:function(){
-				location.href="/miniproject/cart/goods_cart";
+				location.href="${pageContext.request.contextPath }/cart/goods_cart";
 			}
 	});
 });
 
 //장바구니 선택삭제
 $('.selectDelete').click(function() {
-	var productCode = '';
-	
+	var productNo = '';
+	var carNo='';
 
 	//alert("삭제");
 	if(confirm("선택하신 상품을 장바구니에서 삭제하시겠습니까?")){
 		for (var i = 1; i <= $('input[name=cartCheckbox]').length; i++) {
 			if ($('.checkbox' + i).is(':checked')) {
-				productCode = $('#productCode' + i).val();
-	
-				
-				
-				if('${memId}'!=''){//회원
-					$.ajax({
-						type : 'post',
-						url : '/miniproject/cart/deleteCart',
-						data : {
-							'userId' : '${memId}',
-							'productCode' : productCode
-						}
-					});
-				//alert('회원 장바구니 선택삭제 성공');
-				}
+				productNo = $('#productNo' + i).val();
+				carNo=$('#carNo'+i).val();
+				$.ajax({
+					type : 'post',
+					url : '${pageContext.request.contextPath }/cart/deleteCart',
+					data : {
+						'userId' : '${memId}',
+						'carNo':carNo,
+						'productNo' : productNo
+					}
+				});				
 				
 			} //if; 체크 유무 확인
 		} //for
@@ -298,7 +294,7 @@ $('.selectDelete').click(function() {
 	}
 	//새로고침
 	if('${memId}'!='')
-		location.href = '/miniproject/cart/goods_cart';
+		location.href = '${pageContext.request.contextPath }/cart/goods_cart';
 	
 });
 
@@ -309,15 +305,16 @@ $('.allDelete').click(function() {
 		if('${memId}'!=''){//회원
 			$.ajax({
 				type : 'POST',
-				url : '/miniproject/cart/allDeleteCart',
+				url : '${pageContext.request.contextPath }/cart/allDeleteCart',
 				data : {
 					'userId' : '${memId}'
+				},success : function(data){
+					alert('장바구니 비우기 완료');
+					location.href = '${pageContext.request.contextPath }/cart/goods_cart';
+					
 				}
 			});
 		}
-		alert('장바구니 비우기 완료');
-		if('${memId}'!='')
-			location.href = '/miniproject/cart/goods_cart';
 		
 	}
 });
@@ -334,11 +331,11 @@ $('#selectOrderBtn').click(function(){
 	var checkedValueStr = "";
 	
 	for(i = 0; i<checkedValue.length; i++){
-		checkedValueStr += checkedValue[i].value;		//checkbox value값 = cartCode
+		checkedValueStr += checkedValue[i].value;		//checkbox value값 = carNo
 		checkedValueStr += ",";
 	}
 	if('${memId}'!=''){
-		location.href="/miniproject/order/order_cart?checkedValueStr="+checkedValueStr;
+		location.href="${pageContext.request.contextPath }/order/order_cart?checkedValueStr="+checkedValueStr;
 	}
 
 	

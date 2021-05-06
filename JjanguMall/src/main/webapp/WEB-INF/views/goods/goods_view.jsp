@@ -113,7 +113,7 @@ $('#cartBtn').click(function(){
 			data: {
 				   'productNo': '${productDTO.productNo}',
 				   'imgNo': '${productDTO.img}',
-				   'userId': '${memId}',
+				   'userID': userId,
 				   'count' : $('#productQty').val()
 				   },
 			success : function(data){

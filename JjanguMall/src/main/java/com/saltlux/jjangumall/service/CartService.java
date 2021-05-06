@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.CartDTO;
+import com.saltlux.jjangumall.dto.com.CartAndProductDTO;
 import com.saltlux.jjangumall.repository.CartRepository;
 
 
@@ -15,7 +16,7 @@ public class CartService {
 	@Autowired
 	private CartRepository cartRepository;
 
-	public List<CartDTO> getCart(String userId) {
+	public List<CartAndProductDTO> getCart(String userId) {
 		return cartRepository.getCart(userId);
 	}
 
@@ -31,18 +32,15 @@ public class CartService {
 		return cartRepository.getCartDTO(cartCode);
 	}
 
-	public void deleteCart(Map<String, String> map) {
-		cartRepository.deleteCart(map);
+	public void deleteCart(CartDTO cartDTO) {
+		cartRepository.deleteCart(cartDTO);
 	}
 
 	public void allDeleteCart(String userId) {
 		cartRepository.allDeleteCart(userId);
 	}
 
-	public void cartUpdate(CartDTO cartDTO) {
-		cartRepository.cartUpdate(cartDTO);
-	}
-
+	
 	public void cartInsertUpdate(CartDTO cartDTO) {
 		cartRepository.cartInsertUpdate(cartDTO);
 	}

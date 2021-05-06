@@ -20,7 +20,7 @@ a{color:#1E1E1E; text-decoration:none;}
 	width:300px; height:20px; padding-top:31px; float:left;
 	left:50px;
 	}
-#top_cate>table{width:420px;}
+#top_cate>table{width:300px;}
 
 #top_cate>table>tbody>tr>td{float:left; padding-right:40px;}
 #top_cate>table>tbody>tr>td>div>a.cate1{

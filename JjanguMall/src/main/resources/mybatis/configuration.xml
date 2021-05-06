@@ -5,9 +5,13 @@
 
 		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO" alias="product"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO" alias="cartproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistproduct"/>
     </typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
 		<mapper resource="mybatis/mappers/product.xml" />
+		<mapper resource="mybatis/mappers/cart.xml" />
 	</mappers>
 </configuration>
