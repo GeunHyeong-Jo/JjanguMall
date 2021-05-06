@@ -62,4 +62,9 @@
 		select * from user where userId=#{id} and password=#{pwd}
 	</select>
 	
+	<!--  권한 가져오기 위한 auth select -->
+	<select id="getAuth" parameterType="string" resultType="string">
+		select auth from user where userId=#{memId}
+	</select>
+	
 </mapper>

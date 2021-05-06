@@ -58,5 +58,9 @@ public class UserService {
 
 	}	
 	
+	public String getAuth(String memId) {
+		return userRepository.getAuth(memId);
+	}
+	
 	
 }

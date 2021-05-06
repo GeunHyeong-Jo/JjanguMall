@@ -75,5 +75,10 @@ public class StoreUserRepository {
 	}
 
 
+	public String getAuth(String memId) {
+		return sqlSession.selectOne(memId);
+	}
+
+
 
 }
