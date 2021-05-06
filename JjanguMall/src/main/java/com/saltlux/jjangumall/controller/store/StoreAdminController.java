@@ -107,7 +107,7 @@ public class StoreAdminController {
 		int thumbImgName = seq;
 		
 		//파일 생성 
-		File thumbImgFile = new	File(thumbImgPath, thumbImgName+""); 
+		File thumbImgFile = new	File(thumbImgPath, thumbImgName+".jpg"); 
 		 
 		try { 
 			System.out.println("파일복사");
