@@ -17,7 +17,7 @@ a{color:#1E1E1E; text-decoration:none;}
 
 #top_cate{
 	position:relative;
-	width:490px; height:20px; padding-top:31px; float:left;
+	width:300px; height:20px; padding-top:31px; float:left;
 	left:50px;
 	}
 #top_cate>table{width:420px;}

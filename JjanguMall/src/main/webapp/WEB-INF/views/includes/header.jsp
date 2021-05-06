@@ -14,6 +14,31 @@
 			</a>
 		</div><!-- top_logo 끝 -->
 		
+		<div id="top_cate">
+			<table>
+				<tbody>
+					<tr>						
+						<td><!-- 문방구 -->
+							<div>
+								<a href="${pageContext.request.contextPath }" class="cate1">문구</a>
+							</div>
+						</td>
+						<td><!-- 컴퓨터 -->
+							<div>
+								<a href="${pageContext.request.contextPath }/com/index" class="cate1">컴퓨터</a>
+							</div>
+						</td>
+						<td><!-- 문방구 -->
+							<div>
+								<a href="${pageContext.request.contextPath }/used/index" class="cate1">중고상품</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>			
+			</table>
+		
+		</div>
+		
 		<ul id="top_menu" class="utilMenu">
 			<c:if test="${memId == null}">
 			<li><a href="${pageContext.request.contextPath }/user/loginForm" class="utilMenuText">로그인</a></li>

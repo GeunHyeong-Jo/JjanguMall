@@ -42,7 +42,7 @@
 							style="height: 500px;" /></a>
 					</div>
 					<div>
-						<a href="${pageContext.request.contextPath }/store/index"><img
+						<a href="${pageContext.request.contextPath }"><img
 							src="${pageContext.request.contextPath }/assets/image/main_banner2.png"
 							style="height: 500px;" /></a>
 					</div>
