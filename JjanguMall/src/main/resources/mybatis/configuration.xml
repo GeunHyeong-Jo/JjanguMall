@@ -8,6 +8,8 @@
 		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.OrderlistDTO" alias="orderlist"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO" alias="cartandproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="cartandproduct"/>
+		
     </typeAliases>	
     
 	<mappers>

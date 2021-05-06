@@ -1,58 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
-
-	<!-- 회원가입시 중복아이디 체크 -->
-	<select id="checkId" parameterType="String" resultType="user">
-		  <![CDATA[ select *
-		from user where userId = #{userId}]]>
+	<!-- 주문조회 -->
+	<select id="getOrder" parameterType="string" resultType="order">
+	 	<![CDATA[ SELECT * FROM `order` WHERE `userID`= #{userID } order by orderNo DESC	]]>
 	</select>
-
-	<!-- 회원가입시 중복이메일 체크 -->
-	<select id="checkEmail" parameterType="String"
-		resultType="user">
-		  <![CDATA[ select * from user where userEmail = #{userEmail}]]>
+	<!-- 관리자 주문조회 -->
+	<select id="getAllOrder" resultType="order">
+	 	<![CDATA[ SELECT * FROM `order` ORDER BY orderNo DESC]]>
 	</select>
-
-	<!-- 회원가입 -->
-	<insert id="join" parameterType="user">
-		  <![CDATA[ insert into user
-		(userID,userName,password,gender,reg_date,email,cellNumber,totalCalory)
-		values
-		(#{userId},#{userName},#{password},#{gender},now(),#{email},#{cellNumber},0);
-		   ]]>
-	</insert>
-	<select id="findById" parameterType="string"
-		resultType="user">
-   <![CDATA[ 
-      select * from user where userId = #{userId }
-   ]]>
+	<!-- 주문상세조회 -->
+	<select id="getOrderList" parameterType="map" resultType="cartandproduct">
+	 	<![CDATA[ SELECT * FROM `orderlist` LEFT JOIN `product` ON orderlist.productNo = product.productNo 
+	 		where (SELECT `order`.userID FROM `order` LEFT JOIN  `orderlist` ON `order`.orderNo = orderlist.orderNo 
+	 		WHERE `order`.orderNo = orderlist.orderNo LIMIT 1) = #{userID } AND orderNo = #{orderNo }	]]>
 	</select>
-
-	<!-- 로그인 아이디/비밀번호 체크 -->
-	<select id="getUser" parameterType="user"
-		resultType="user">
-		  <![CDATA[ select * from user where userId = #{userId};
-		  ]]>
+	
+	<!-- 관리자의 주문상세조회 -->
+	<select id="getAllOrderList" resultType="cartandproduct">
+	 	<![CDATA[ SELECT * FROM `orderlist` LEFT JOIN `product` ON orderlist.productNo =
+	 		product.productNo where (SELECT `order`.userID FROM `order` LEFT JOIN
+	  		`orderlist` ON `order`.orderNo = orderlist.orderNo ORDER BY orderNo	]]>
 	</select>
-
-	<!-- 회원정보수정 -->
-	<update id="modify" parameterType="user">
-		  <![CDATA[ update user set
-		userName = #{userName}
-		,password=#{password}
-		,gender=#{gender}
-		,email=#{email}
-		,cellNumber=#{cellNumber}
-		,totalcalory=#{totalCalory};
-		]]>
-	</update>
-
-	<!-- 회원탈퇴 -->
-	<delete id="delete" parameterType="String">
-		  <![CDATA[ delete from user
-		where
-		userId=#{userId};
-		]]>
+	<!-- 주문 추가 -->
+	<insert id="addOrder" parameterType="order">
+	 	<![CDATA[ 	 INSERT INTO `order` (`totalPrice`, `userID`, `rAddress`, `rPhone`,
+	 		`rName`, `rZipcode`, `state`, `orderDate`) VALUES (#{totalprice },#{userid }, #{raddress }, #{rphone },
+	 		#{rname }, #{rzipcode }, #{rstate }, now())  ]]>
+	  
+	  </insert>
+	<!--  주문 취소 -->
+	<delete id="cancelOrder" parameterType="int">
+		<![CDATA[ DELETE FROM order WHERE orderNo=#{orderNo }	 ]]>
 	</delete>
+	<!--  주문상태 변경 -->
+	<update id="chageOrderState" parameterType="map">
+		<![CDATA[ UPDATE `order` SET `state`=#{state } WHERE `orderNo`=#{orderNo } ]]>
+	
+	</update>
 </mapper>

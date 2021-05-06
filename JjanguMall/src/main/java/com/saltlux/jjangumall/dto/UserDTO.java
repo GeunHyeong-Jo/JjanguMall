@@ -22,5 +22,6 @@ public class UserDTO {
 	private String cellNumber;  //유저전화번호
 	private int totalCalory;	//총 칼로리??
 	private String auth;		//권한(사용자인지, 관리자인지)
+	private String ages; // 나이
 	
 }
