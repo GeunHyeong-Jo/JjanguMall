@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="exerciselist">
+	<select id="findIdAllList" parameterType="string"
+		resultType="exerciselist">
+		<![CDATA[
+			select exerciseListNo
+			,user_no
+			,exerciseNo
+			,Time
+			,reg_date
+			from exerciselist where user_no=#{Id};
+		]]>
+	</select>
+
+	<insert id="insert" parameterType="exerciselist">
+		<![CDATA[
+			insert into exerciselist  
+			(exerciseListNo
+			,User_no
+			,exerciseNo
+			,Time
+			,reg_date)
+			values
+			(null
+			,#{user_no}
+			,#{exerciseNo}
+			,#{Time}
+			,now());
+		]]>
+	</insert>
+
+	<delete id="delete" parameterType="Integer"> 
+	<![CDATA[ delete from exerciselist 
+		where exerciselistno = #{no}; ]]>
+	</delete>
+	<select id="findNo" parameterType="long" resultType="foodlist"> <![CDATA[ select foodlistNo from foodlist where foodlistNo=#{no}; 
+		]]>
+	</select>
+	<update id="update" parameterType="exerciselist"> <![CDATA[ update 
+		exerciselist set exerciseNo = #{exerciseNo}, Time = #{Time} where user_no = #{user_no} and exerciselistNo = #{exerciseListNo}; 
+		]]>
+	</update>
+</mapper>
