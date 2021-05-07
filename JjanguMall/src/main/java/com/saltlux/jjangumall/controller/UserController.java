@@ -59,11 +59,6 @@ public class UserController {
 	@RequestMapping(value = "/joinOk", method = RequestMethod.POST)
 	public ModelAndView joinOk(@ModelAttribute UserDTO userDTO, HttpSession session) {
 
-		// session 생성
-		session.setAttribute("memName", userDTO.getUserName());
-		session.setAttribute("memId", userDTO.getUserId());
-		session.setAttribute("memEmail", userDTO.getEmail());
-
 		// 회원가입폼을 DB로 전달
 		String encPassword = passwordEncoder.encode(userDTO.getPassword());
 		System.out.println("비밀번호:" + userDTO.getPassword() + ", 암호화한 비밀번호:" + encPassword);

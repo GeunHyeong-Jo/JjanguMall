@@ -48,4 +48,8 @@ public class StoreProductRepository {
 	public void productDelete(String productNo) {
 		sqlSession.delete("product.productDelete",productNo);
 	}
+
+	public List<ProductDTO> get_store_list() {
+		return sqlSession.selectList("product.get_store_list");
+	}
 }

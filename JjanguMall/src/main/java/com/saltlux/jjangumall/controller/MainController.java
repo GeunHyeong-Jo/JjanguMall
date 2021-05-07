@@ -50,4 +50,16 @@ public class MainController {
 	public String caloryIndex() {
 		return "/main/caloryindex";
 	}
+	
+	//건강관리 페이지
+	@RequestMapping("/store")
+	public ModelAndView storeIndex() {
+		List<ProductDTO> list = sotreProductService.get_store_list();
+		System.out.println("메인 상품리스트 "+list);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.addObject("display", "/goods/store_goods.jsp");
+		mav.setViewName("/main/nosIndex");
+		return mav;	
+	}
 }

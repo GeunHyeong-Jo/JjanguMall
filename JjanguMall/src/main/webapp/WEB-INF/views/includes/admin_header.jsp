@@ -18,12 +18,7 @@
 							<div>
 								<a href="${pageContext.request.contextPath }/admin/productList" class="cate1">상품관리</a>
 							</div>
-						</td>
-						<td><!-- 주문관리 -->
-							<div>
-								<a href="${pageContext.request.contextPath }/admin/orderList" class="cate1">주문관리</a>
-							</div>
-						</td>
+						</td>						
 					</tr>
 				</tbody>			
 			</table>

@@ -39,4 +39,8 @@ public class StoreProductService {
 		StoreProductRepository.productDelete(productNo);
 	}
 
+	public List<ProductDTO> get_store_list() {
+		return StoreProductRepository.get_store_list();
+	}
+
 }
