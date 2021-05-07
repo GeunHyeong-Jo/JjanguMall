@@ -97,6 +97,7 @@ public class TotalCalory {
 //
 
 	// 1주일 안의 칼로리 전체 계산
+	@SuppressWarnings("deprecation")
 	public static WeeksCaloryDTO calculatedayCalory(List<FoodAndFoodListDTO> list) {
 		WeeksCaloryDTO wcv = new WeeksCaloryDTO();
 		for (FoodAndFoodListDTO vo : list) {
@@ -158,6 +159,7 @@ public class TotalCalory {
 		return wcv;
 	}
 
+	@SuppressWarnings("deprecation")
 	public static WeeksCaloryDTO calculatedLessdayCalory(List<ExerciseAndExerciseListDTO> list) {
 		WeeksCaloryDTO wcv = new WeeksCaloryDTO();
 		long tmp = 0L;

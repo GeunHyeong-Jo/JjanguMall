@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.UserDTO;
-import com.saltlux.jjangumall.repository.UserRepository;
 import com.saltlux.jjangumall.repository.store.StoreUserRepository;
 
 

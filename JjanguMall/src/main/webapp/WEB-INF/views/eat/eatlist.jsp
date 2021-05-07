@@ -202,10 +202,10 @@
 			value=""><br> 먹은 시간
 		<fieldset>
 			<legend>먹은 시간</legend>
-			<label>아침</label> <input type="radio" name="eat_Time" value="morning"
+			<label>아침</label> <input type="radio" name="eatTime" value="morning"
 				checked="checked"> <label>점심</label> <input type="radio"
-				name="eat_Time" value="lunch"> <label>저녁</label> <input
-				type="radio" name="eat_Time" value="evening">
+				name="eatTime" value="lunch"> <label>저녁</label> <input
+				type="radio" name="eatTime" value="evening">
 		</fieldset>
 		<input type="submit" value="등록">
 	</form>

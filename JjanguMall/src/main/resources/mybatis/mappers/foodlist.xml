@@ -22,9 +22,9 @@
 			,eat_Time
 			,reg_date) values
 			(null
-			,#{userNo}
-			,#{foodNo}
-			,#{eatTime}
+			,#{User_no}
+			,#{Food_no}
+			,#{eat_Time}
 			,now());
 		]]>
 	</insert>

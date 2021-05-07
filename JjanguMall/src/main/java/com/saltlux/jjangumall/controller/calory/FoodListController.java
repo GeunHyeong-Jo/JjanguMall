@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.saltlux.jjangumall.dto.EatTimeDTO;
 import com.saltlux.jjangumall.dto.FoodAndFoodListDTO;
 import com.saltlux.jjangumall.dto.FoodlistDTO;
-import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.dto.WeeksCaloryDTO;
 import com.saltlux.jjangumall.service.calory.FoodListService;
 import com.saltlux.jjangumall.service.calory.FoodService;
-import com.saltlux.jjangumall.service.store.StoreUserService;
 import com.saltlux.jjangumall.util.TotalCalory;
 
 @Controller
@@ -30,6 +28,7 @@ public class FoodListController {
 	@Autowired
 	FoodService foodService;
 
+	//음식 메인
 	@RequestMapping({ "/index" })
 	public String index(Model model, HttpSession session) {
 		String Id = (String) session.getAttribute("memId");
@@ -58,6 +57,7 @@ public class FoodListController {
 	public String days(String no, Model model, HttpSession session) {
 		String Id = (String) session.getAttribute("memId");
 
+		try {
 		if (Id == null)
 			return "redirect:/calory/index";
 		int No = 0;
@@ -85,9 +85,13 @@ public class FoodListController {
 		model.addAttribute("Lunch", Long.valueOf(vo.getLunch()));
 		model.addAttribute("Evening", Long.valueOf(vo.getEvening()));
 		model.addAttribute("no", no);
-		model.addAttribute("calory", 2100);
+		model.addAttribute("calory", totalcalory);
 		model.addAttribute("list", newList);
 		return "/eat/eatlistday";
+		}
+		catch(Exception e){
+			return "redirect:/calory/index";
+		}
 	}
 
 	@RequestMapping({ "/weeks" })
@@ -112,7 +116,6 @@ public class FoodListController {
 		}
 		WeeksCaloryDTO vo = new WeeksCaloryDTO();
 		vo = TotalCalory.calculatedayCalory(newList);
-		long totalCalory= (TotalCalory.carculateCalory(newList));
 
 		model.addAttribute("Sunday", Long.valueOf(vo.getSunday()));
 		model.addAttribute("Monday", Long.valueOf(vo.getMonday()));
@@ -129,7 +132,6 @@ public class FoodListController {
 	
 	@RequestMapping(value = { "/insert" }, method = { RequestMethod.GET })
 	public String insert(HttpSession session) {
-		UserDTO authUser = (UserDTO) session.getAttribute("authUser");
 		String Id = (String) session.getAttribute("memId");
 		if (Id == null)
 			return "redirect:/calory/index";
@@ -149,6 +151,7 @@ public class FoodListController {
 		} catch (NullPointerException e) {
 			return "redirect:/calory/index";
 		}
+	
 		System.out.println(no);
 		vo.setUser_no(Id);
 		vo.setFood_no(no);

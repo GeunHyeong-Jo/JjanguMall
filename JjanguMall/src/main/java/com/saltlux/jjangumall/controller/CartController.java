@@ -1,8 +1,6 @@
 package com.saltlux.jjangumall.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -19,13 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.saltlux.jjangumall.dto.CartDTO;
 import com.saltlux.jjangumall.dto.com.CartAndProductDTO;
 import com.saltlux.jjangumall.service.CartService;
-import com.saltlux.jjangumall.service.store.StoreUserService;
 
 @Controller
 @RequestMapping("/cart")
 public class CartController {
-	@Autowired
-	private StoreUserService storeUserService;
 	
 	@Autowired
 	private CartService CartService;
