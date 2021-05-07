@@ -4,17 +4,25 @@
 	<typeAliases>
 		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO" alias="product"/>
+
+		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO" alias="cartproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistproduct"/>
+
 		<typeAlias  type="com.saltlux.jjangumall.dto.FoodlistDTO" alias="foodlist"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.FoodDTO" alias="food"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.ExerciselistDTO" alias="exerciselist"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.ExerciseDTO" alias="exercise"/>
+
     </typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
 		<mapper resource="mybatis/mappers/product.xml" />
+		<mapper resource="mybatis/mappers/cart.xml" />
 		<mapper resource="mybatis/mappers/foodlist.xml"/>
 		<mapper resource="mybatis/mappers/food.xml"/>	
 		<mapper resource="mybatis/mappers/exerciselist.xml"/>
 		<mapper resource="mybatis/mappers/exercise.xml"/>
+
 	</mappers>
 </configuration>

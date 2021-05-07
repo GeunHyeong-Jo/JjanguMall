@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cartSQL">
+	<!-- 장바구니 리스트보기-->
+	<select id="getCart" parameterType="String" resultType="cartproduct">
+		SELECT * FROM cart LEFT JOIN product ON cart.productNo = product.productNo WHERE userID = #{userID} order BY carNo DESC
+	</select>
+	
+	<!-- 장바구니에 있는 상품인지 -->
+	<select id="checkCart" parameterType="cart" resultType="int">
+		select count(*) from cart where userID = #{userID} and productNo = #{productNo}
+	</select>
+	
+	<!-- 장바구니 추가 -->
+	<insert id="cartInsert" parameterType="cart">
+	INSERT INTO cart (productNo, 
+						imgNo, 
+						userID, 
+						count) 
+						VALUES (
+						#{productNo}, 
+						#{imgNo}, 
+						#{userID}, 
+						#{count})
+	</insert>
+	
+	<!-- getCartDTO -->
+	<select id="getCartDTO" parameterType="String" resultType="cart">
+		select * from cart where carNo = #{carNo}
+	</select>
+	
+	
+	<!-- 장바구니 선택삭제 -->
+	<delete id="deleteCart" parameterType="cart">
+		delete from cart where userID = #{userID } and carNo=#{carNo} AND productNo = #{productNo } 	
+	</delete>
+	
+	<!-- 장바구니 전체지우기 -->
+	<delete id="allDeleteCart" parameterType="String">
+		delete from cart where userID = #{userID }
+	</delete>
+	
+	
+	<!-- 장바구니에 있는 물품 추가 수정 -->
+	<update id="cartInsertUpdate" parameterType="cart">
+		UPDATE cart  SET count=#{count}  WHERE  userID = #{userID } and carNo=#{carNo} AND productNo=#{productNo}
+	</update>
+	
+	<!-- 주문 후 장바구니 삭제 -->
+	<delete id="deleteCartAfterPay" parameterType="Integer">
+		delete from cart where carNo = #{carNo}
+	</delete>
+	
+</mapper>

@@ -20,7 +20,7 @@
 			<!-- 상품 소개 페이지 -->
 			<div id="goods_main">
 				<div id="goods_image">
-					<img src="${pageContext.request.contextPath }/assets/image/thumb/${productDTO.img }" width="400">
+					<img src="${pageContext.request.contextPath }/assets/image/thumb/${productDTO.img }.jpg" width="400">
 				</div>
 				<div id="goods_subject">
 					<div>
@@ -113,7 +113,7 @@ $('#cartBtn').click(function(){
 			data: {
 				   'productNo': '${productDTO.productNo}',
 				   'imgNo': '${productDTO.img}',
-				   'userId': '${memId}',
+				   'userID': userId,
 				   'count' : $('#productQty').val()
 				   },
 			success : function(data){

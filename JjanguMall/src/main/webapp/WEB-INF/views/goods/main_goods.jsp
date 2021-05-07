@@ -11,7 +11,7 @@
 				<a href="${pageContext.request.contextPath }/goods_view?productNo=${ProductDTO.productNo}">
 
 					<div class="product_img" 
-					style="background-image: url(${pageContext.request.contextPath }/assets/image/thumb/${ProductDTO.img});
+					style="background-image: url(${pageContext.request.contextPath }/assets/image/thumb/${ProductDTO.img}.jpg);
 					background-size:100%;">								
 					</div>							
 				</a>

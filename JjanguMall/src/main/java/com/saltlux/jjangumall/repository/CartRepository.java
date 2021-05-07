@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.saltlux.jjangumall.dto.CartDTO;
+import com.saltlux.jjangumall.dto.com.CartAndProductDTO;
 
 @Repository
 public class CartRepository {
@@ -20,7 +21,7 @@ public class CartRepository {
 	@Autowired
 	private DataSource dataSource;
 
-	public List<CartDTO> getCart(String userId) {
+	public List<CartAndProductDTO> getCart(String userId) {
 		return sqlSession.selectList("cartSQL.getCart",userId);
 	}
 
@@ -36,17 +37,14 @@ public class CartRepository {
 		return sqlSession.selectOne("cartSQL.getCartDTO",cartCode);
 	}
 
-	public void deleteCart(Map<String, String> map) {
-		sqlSession.delete("cartSQL.deleteCart",map);
+	public void deleteCart(CartDTO cartDTO) {
+		sqlSession.delete("cartSQL.deleteCart",cartDTO);
 	}
 
 	public void allDeleteCart(String userId) {
 		sqlSession.delete("cartSQL.allDeleteCart",userId);
 	}
 
-	public void cartUpdate(CartDTO cartDTO) {
-		sqlSession.update("cartSQL.cartUpdate",cartDTO);
-	}
 
 	public void cartInsertUpdate(CartDTO cartDTO) {
 		sqlSession.update("cartSQL.cartInsertUpdate",cartDTO);
