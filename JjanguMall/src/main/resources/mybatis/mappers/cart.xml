@@ -25,8 +25,8 @@
 	</insert>
 	
 	<!-- getCartDTO -->
-	<select id="getCartDTO" parameterType="String" resultType="cart">
-		select * from cart where carNo = #{carNo}
+	<select id="getCartDTO" parameterType="String" resultType="cartproduct">
+		SELECT * FROM cart LEFT JOIN product ON cart.productNo = product.productNo where carNo = #{carNo} order BY carNo DESC
 	</select>
 	
 	

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.saltlux.jjangumall.dto.OrderDTO;
+import com.saltlux.jjangumall.dto.OrderlistDTO;
 import com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO;
 
 @Repository
@@ -45,6 +46,14 @@ public class ComOrderRepository {
 		return sqlSession.selectOne("order.getOneOrder", map);
 		
 	}
+	public String getMaxOrderNo(String userId) {
+		return sqlSession.selectOne("order.getMaxOrderNo", userId);
+	}
+	public void addOrderlist(OrderlistDTO orderlistDTO) {
+		sqlSession.insert("order.addOrderlist", orderlistDTO);
+		
+	}
+	
 	
 	
 	

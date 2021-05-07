@@ -33,7 +33,7 @@ public class CartRepository {
 		sqlSession.insert("cartSQL.cartInsert", cartDTO);
 	}
 
-	public CartDTO getCartDTO(int cartCode) {
+	public CartAndProductDTO getCartDTO(int cartCode) {
 		return sqlSession.selectOne("cartSQL.getCartDTO",cartCode);
 	}
 

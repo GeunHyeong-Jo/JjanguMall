@@ -31,8 +31,8 @@
 	<!-- 주문 추가 -->
 	<insert id="addOrder" parameterType="order">
 	 	<![CDATA[ 	 INSERT INTO `order` (`totalPrice`, `userID`, `rAddress`, `rPhone`,
-	 		`rName`, `rZipcode`, `state`, `orderDate`) VALUES (#{totalprice },#{userid }, #{raddress }, #{rphone },
-	 		#{rname }, #{rzipcode }, #{rstate }, now())  ]]>
+	 		`rName`, `rZipcode`, `state`, `orderDate`) VALUES (#{totalPrice },#{userID }, #{rAddress }, #{rPhone },
+	 		#{rName }, #{rZipcode }, #{state }, now())  ]]>
 	  
 	  </insert>
 	<!--  주문 취소 -->
@@ -44,4 +44,15 @@
 		<![CDATA[ UPDATE `order` SET `state`=#{state } WHERE `orderNo`=#{orderNo } ]]>
 	
 	</update>
+	<!-- 자신의 아이디로 주문번호 최대값   -->
+	<select id="getMaxOrderNo" parameterType="string" resultType="string">
+		<![CDATA[ SELECT MAX(`order`.orderNo) FROM `order` WHERE userID = #{userID } ]]>
+	</select>
+	
+	<insert id="addOrderlist" parameterType="orderlist">
+		<![CDATA[ INSERT INTO `orderlist` (`productNo`, `orderNo`, `count`) VALUES (#{productNo }, #{orderNo }, #{count }) ]]>
+	</insert>
+	
+	
+	
 </mapper>

@@ -28,7 +28,7 @@ public class CartService {
 		cartRepository.cartInsert(cartDTO);
 	}
 
-	public CartDTO getCartDTO(int cartCode) {
+	public CartAndProductDTO getCartDTO(int cartCode) {
 		return cartRepository.getCartDTO(cartCode);
 	}
 
