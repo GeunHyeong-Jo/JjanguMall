@@ -1,7 +1,5 @@
 package com.saltlux.jjangumall.controller;
 
-
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.saltlux.jjangumall.dto.ProductDTO;
 import com.saltlux.jjangumall.service.store.StoreProductService;
-
-
 
 @Controller
 public class MainController {
@@ -50,9 +46,5 @@ public class MainController {
 		
 	}
 	
-	@RequestMapping("/calory/index")
-	public String caloryIndex() {
-		
-		return "/main/caloryindex";
-	}
+	
 }

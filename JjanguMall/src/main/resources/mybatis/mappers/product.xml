@@ -63,6 +63,8 @@
 	<delete id="productDelete" parameterType="String">
 		delete from product where productNo =#{productNo}
 	</delete>
-	
+	<select id="getProductByCategory" parameterType="string" resultType="product">
+		  <![CDATA[ select productNo, name, price, img from product where category = #{category }]]>
+	</select>
 	
 </mapper>
