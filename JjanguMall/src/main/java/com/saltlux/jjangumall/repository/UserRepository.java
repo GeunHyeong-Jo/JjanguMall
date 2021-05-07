@@ -63,6 +63,4 @@ public class UserRepository {
 	public UserDTO getUser(Map<String, String> map) {
 		return sqlSession.selectOne("user.getUser",map);
 	}
-
-
 }

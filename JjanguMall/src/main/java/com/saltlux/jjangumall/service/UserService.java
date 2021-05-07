@@ -55,12 +55,9 @@ public class UserService {
 
 	public UserDTO getUser(UserDTO userDTO) {
 		return userRepository.getUser(userDTO);
-
 	}	
 	
 	public String getAuth(String memId) {
 		return userRepository.getAuth(memId);
 	}
-	
-	
 }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="foodlist">
+	<select id="findIdAllList" parameterType="string"
+		resultType="foodlist">
+		<![CDATA[
+			select foodlistno
+			, userNo
+			, foodNo
+			, eatTime
+			, reg_date 
+			from foodlist where userNo=#{Id};
+		]]>
+	</select>
+
+	<insert id="insert" parameterType="foodlist">
+		<![CDATA[
+			insert into foodlist 
+			(foodlistno
+			,userNo
+			,foodNo
+			,eatTime
+			,reg_date) values
+			(null
+			,#{userNo}
+			,#{foodNo}
+			,#{eatTime}
+			,now());
+		]]>
+	</insert>
+
+	<delete id="delete" parameterType="Integer">
+		<![CDATA[
+			delete 
+			from foodlist 
+			where foodlistno = #{no};
+		]]>
+	</delete>
+
+	<select id="findNo" parameterType="long" resultType="foodlist">
+	<![CDATA[
+		select foodlistNo from foodlist where foodlistNo=#{no};
+	]]>
+	</select>
+	
+	<update id="update" parameterType="foodlist">
+	<![CDATA[
+		update foodlist set foodNo = #{foodNo}, eatTime = #{eatTime} where userNo = #{userNo};
+	]]>
+	</update>
+</mapper>
