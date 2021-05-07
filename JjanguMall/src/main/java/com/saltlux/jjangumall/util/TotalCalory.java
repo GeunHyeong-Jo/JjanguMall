@@ -33,7 +33,7 @@ public class TotalCalory {
 		long total = 0L;
 		for (FoodAndFoodListDTO vo : list) {
 			String str;
-			switch ((str = vo.getFoodlistDTO().getEatTime()).hashCode()) {
+			switch ((str = vo.getFoodlistDTO().getEat_Time()).hashCode()) {
 			case -1376511864:
 				if (!str.equals("evening"))
 					continue;
@@ -134,7 +134,7 @@ public class TotalCalory {
 		long tmp = 0L;
 		for (FoodAndFoodListDTO vo : list) {
 			String str;
-			switch ((str = vo.getFoodlistDTO().getEatTime()).hashCode()) {
+			switch ((str = vo.getFoodlistDTO().getEat_Time()).hashCode()) {
 			case -1376511864:
 				if (!str.equals("evening"))
 					break;

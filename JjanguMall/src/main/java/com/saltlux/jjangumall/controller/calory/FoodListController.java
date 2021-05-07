@@ -41,7 +41,8 @@ public class FoodListController {
 		List<FoodAndFoodListDTO> newList = new ArrayList<FoodAndFoodListDTO>();
 		for (FoodlistDTO dto : list) {
 			FoodAndFoodListDTO listdto = new FoodAndFoodListDTO();
-			listdto = TotalCalory.mergeFoodAndFoodList(dto, foodService.findNo(dto.getFoodNo()));
+			listdto = TotalCalory.mergeFoodAndFoodList(dto, foodService.findNo(dto.getFood_no()));
+			System.out.println(listdto);
 			newList.add(listdto);
 		}
 
@@ -73,7 +74,7 @@ public class FoodListController {
 		for (FoodlistDTO dto : list) {
 			System.out.println(dto);
 			FoodAndFoodListDTO listdto = new FoodAndFoodListDTO();
-			listdto = TotalCalory.mergeFoodAndFoodList(dto, foodService.findNo(dto.getFoodNo()));
+			listdto = TotalCalory.mergeFoodAndFoodList(dto, foodService.findNo(dto.getFood_no()));
 			newList.add(listdto);
 		}
 		
@@ -106,7 +107,7 @@ public class FoodListController {
 		List<FoodAndFoodListDTO> newList = new ArrayList<FoodAndFoodListDTO>();
 		for (FoodlistDTO dto : list) {
 			FoodAndFoodListDTO listdto = new FoodAndFoodListDTO();
-			listdto = TotalCalory.mergeFoodAndFoodList(dto, foodService.findNo(dto.getFoodNo()));
+			listdto = TotalCalory.mergeFoodAndFoodList(dto, foodService.findNo(dto.getFood_no()));
 			newList.add(listdto);
 		}
 		WeeksCaloryDTO vo = new WeeksCaloryDTO();
@@ -149,9 +150,9 @@ public class FoodListController {
 			return "redirect:/calory/index";
 		}
 		System.out.println(no);
-		vo.setUserNo(Id);
-		vo.setFoodNo(no);
-		vo.setEatTime(eatTime);
+		vo.setUser_no(Id);
+		vo.setFood_no(no);
+		vo.setEat_Time(eatTime);
 		this.foodListService.insert(vo);
 		return "redirect:/calory/eat/index";
 	}
@@ -190,9 +191,9 @@ public class FoodListController {
 			return "redirect:/calory/index";
 		}
 
-		vo.setUserNo(Id);
-		vo.setFoodNo(foodno);
-		vo.setEatTime(eatTime);
+		vo.setUser_no(Id);
+		vo.setFood_no(foodno);
+		vo.setEat_Time(eatTime);
 		this.foodListService.update(vo);
 		return "redirect:/calory/eat/index";
 	}

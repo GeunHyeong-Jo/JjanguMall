@@ -97,7 +97,7 @@
 							<tr>
 								<td width="110">${vo.foodDTO.name}</td>
 								<td width="110">${vo.foodDTO.calory}</td>
-								<td>${vo.foodlistDTO.eatTime }</td>
+								<td>${vo.foodlistDTO.eat_Time }</td>
 								<td>${vo.foodlistDTO.reg_date }</td>
 								<c:choose>
 									<c:when test="${vo.foodlistDTO.reg_date.day eq 1 }">
