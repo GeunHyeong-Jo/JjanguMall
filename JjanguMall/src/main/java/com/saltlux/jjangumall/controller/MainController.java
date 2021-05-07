@@ -47,8 +47,11 @@ public class MainController {
 	
 	//건강관리 페이지
 	@RequestMapping("/calory/index")
-	public String caloryIndex() {
-		return "/main/caloryindex";
+	public ModelAndView caloryIndex() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("display", "/main/caloryindex.jsp");
+		mav.setViewName("/main/nosIndex");
+		return mav;
 	}
 	
 	//건강관리 페이지

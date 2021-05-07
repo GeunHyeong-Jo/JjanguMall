@@ -33,7 +33,6 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<c:import url="/WEB-INF/views/includes/header.jsp" />
 			<c:import url="/WEB-INF/views/includes/navigation.jsp" />
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 			<div
