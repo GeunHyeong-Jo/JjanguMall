@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="user">
+<mapper namespace="used.user">
 
 	<resultMap type="tradevo" id="tradeMap">
 		<result property="itemNo" column="item_no" />
@@ -23,9 +23,9 @@
 	
 	<select id="findByIdAndPassword" parameterType="uservo" resultType="uservo">
 		<![CDATA[
-			select id, name, role
+			select userid, username, role
 			from user 
-			where id = #{id } and password = #{password }
+			where userid = #{id } and password = #{password }
 		]]>
 	</select>
 	
@@ -41,9 +41,9 @@
 	
 	<!--  seller 정보창에 나오는 정보들 -->
 	<select id="seller" parameterType="String" resultType="uservo">
-		select id, name, region
+		select userId, userName
 		from user
-		where id = #{id }
+		where userId = #{id }
 	</select>
 	
 	<!--  seller에 같이나오는 평점 -->

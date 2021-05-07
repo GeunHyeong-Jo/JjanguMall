@@ -38,6 +38,7 @@ public class UsedUserService {
 	public UserVo seller(String id) {
 
 		UserVo vo = userRepository.seller(id);
+		System.out.println(vo);
 		vo.setAvgPoint(userRepository.sellerPoint(id));
 		return vo;
 	}
