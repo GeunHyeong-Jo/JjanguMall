@@ -26,7 +26,7 @@
 
 		select item.no as no, user_id, title, contents, region, status, min(image.no) as imageNo
 			from item, image 
-			where item.no = image.item_no
+			where item.no = image.item_no and status = 0
 			group by item.no
 			order by item.no desc;
 		
@@ -37,7 +37,7 @@
 
 		select item.no as no, user_id, title, contents, region, status, min(image.no) as imageNo
 			from item, image 
-			where item.no = image.item_no
+			where item.no = image.item_no and status = 0
 			group by item.no
 			order by item.no desc
 			limit #{no }, 3;
@@ -49,7 +49,7 @@
 
 		select item.no as no, user_id, title, contents, region, status, min(image.no) as imageNo
 			from item, image 
-			where item.no = image.item_no and ${option } like CONCAT('%',#{search},'%')
+			where item.no = image.item_no and ${option } like CONCAT('%',#{search},'%') and status = 0
 			group by item.no
 			order by item.no desc
 			limit #{page }, 3;
