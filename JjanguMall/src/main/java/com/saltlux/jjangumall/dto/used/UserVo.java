@@ -2,19 +2,19 @@ package com.saltlux.jjangumall.dto.used;
 
 public class UserVo {
 	
-	private String id;
+	private String userId;
 	private String password;
-	private String name;
+	private String userName;
 	private String region;
 	private Double avgPoint;
 	private String role;
 	
 	
-	public String getId() {
-		return id;
+	public String getUserId() {
+		return userId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public String getPassword() {
 		return password;
@@ -22,11 +22,11 @@ public class UserVo {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
-	public void setName(String name) {
-		this.name = name; 
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getRegion() {
 		return region;
@@ -46,14 +46,12 @@ public class UserVo {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
 	@Override
 	public String toString() {
-		return "UserVo [id=" + id + ", password=" + password + ", name=" + name + ", region=" + region + ", avgPoint="
-				+ avgPoint + ", role=" + role + "]";
+		return "UserVo [userId=" + userId + ", password=" + password + ", userName=" + userName + ", region=" + region
+				+ ", avgPoint=" + avgPoint + ", role=" + role + "]";
 	}
-	
-	
-	
 	
 	
 	

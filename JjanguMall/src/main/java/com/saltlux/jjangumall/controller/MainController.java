@@ -50,5 +50,9 @@ public class MainController {
 		
 	}
 	
-	
+	@RequestMapping("/calory/index")
+	public String caloryIndex() {
+		
+		return "/main/caloryindex";
+	}
 }

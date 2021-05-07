@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="food">
+	<select id="findNo" parameterType="Integer" resultType="food">
+		<![CDATA[
+			select foodno 
+			,name
+			,calory
+			 from food 
+			 where foodNo = #{no};
+		]]>
+	</select>
+
+	<select id="findName" parameterType="String" resultType="Integer">
+		<![CDATA[
+			select foodno 
+			from food 
+			where name = #{name};
+		]]>
+	</select>
+</mapper>

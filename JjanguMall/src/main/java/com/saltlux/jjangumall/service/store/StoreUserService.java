@@ -16,8 +16,6 @@ public class StoreUserService {
 	@Autowired
 	private StoreUserRepository storeUserRepository;
 
-
-
 	public UserDTO checkId(String userId) {
 		return storeUserRepository.checkId(userId);
 	}

@@ -12,7 +12,7 @@
 <link href="${pageContext.request.contextPath }/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-<c:import url="/WEB-INF/views/include/header.jsp"/>
+<c:import url="/WEB-INF/views/used/include/header.jsp"/>
 <div class="wrapper row3">
   <main class="container clear"> 
     <!-- main body -->
@@ -22,13 +22,10 @@
         <h1> Seller Info</h1>
 		<div class="one_third first">
 			<label for="NAME">NAME </label>
-			<div>${userVo.name }</div>
+			<div>${userVo.userName }</div>
 		</div>
 		
-		<div class="one_third">
-			<label for="region">지 역 </label> 
-			<div>${userVo.region }</div>
-		</div>
+		
 		
 		<div class="one_third">
 			<label for="point">평균 별점</label> 
@@ -60,7 +57,7 @@
                 </c:otherwise>
               </c:choose>
               <c:choose>
-                <c:when test="${userVo.id eq tradeVo.sellerId }">
+                <c:when test="${userVo.userId eq tradeVo.sellerId }">
  	              <td>판매</td>
                 </c:when>
                 <c:otherwise>

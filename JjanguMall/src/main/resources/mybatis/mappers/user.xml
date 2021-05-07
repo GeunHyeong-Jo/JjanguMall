@@ -22,10 +22,12 @@
 		(#{userId},#{userName},#{password},#{gender},now(),#{email},#{cellNumber},0);
 		   ]]>
 	</insert>
-	<select id="findById" parameterType="string"
+	
+	<!-- id를 이용한 userdata찾기 -->
+	<select id="findById" parameterType="String"
 		resultType="user">
    <![CDATA[ 
-      select * from user where userId = #{userId }
+      select * from user where userId = #{userId };
    ]]>
 	</select>
 
@@ -62,4 +64,11 @@
 		select * from user where userId=#{id} and password=#{pwd}
 	</select>
 	
+
+	<!--  권한 가져오기 위한 auth select -->
+	<select id="getAuth" parameterType="string" resultType="string">
+		select auth from user where userId=#{memId}
+	</select>
+	
+
 </mapper>

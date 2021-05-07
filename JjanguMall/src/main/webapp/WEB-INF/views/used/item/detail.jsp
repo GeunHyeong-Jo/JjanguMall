@@ -42,7 +42,7 @@
 		
 		<div class="one_quarter">
 			<label for="password">판매자</label> 
-			<div style="padding-top: 8px; font-weight: bold;"><a href="${pageContext.request.contextPath }/used/user/seller/${vo.userId }"> ${vo.name }</a></div>
+			<div style="padding-top: 8px; font-weight: bold;"><a href="${pageContext.request.contextPath }/used/user/seller/${vo.userId }"> ${vo.userName }</a></div>
 		</div>
 		
 		<div class="three_quarter first">

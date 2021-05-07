@@ -35,8 +35,9 @@ public class UsedUserController {
 	@Auth
 	@RequestMapping(value="/seller/{id}")
 	public String detail(@PathVariable("id") String id, Model model) {
-		
+		System.out.println("123");
 		UserVo userVo = userService.seller(id);
+		System.out.println(userVo);
 		List<TradeVo> tradeList = userService.tradeList(id);
 		model.addAttribute("userVo", userVo);
 		model.addAttribute("tradeList", tradeList);
