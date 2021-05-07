@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.ExerciselistDTO;
-import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.repository.calory.ExerciseListRepository;
-import com.saltlux.jjangumall.repository.calory.ExerciseRepository;
 
 @Service
 public class ExerciseListService {

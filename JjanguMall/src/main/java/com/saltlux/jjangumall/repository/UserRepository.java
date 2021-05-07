@@ -2,8 +2,6 @@ package com.saltlux.jjangumall.repository;
 
 import java.util.Map;
 
-import javax.sql.DataSource;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,10 +13,6 @@ public class UserRepository {
 
 	@Autowired
 	private SqlSession sqlSession;
-	
-	@Autowired
-	private DataSource dataSource;	
-	
 	
 
 	public UserDTO checkId(String userId) {
@@ -32,7 +26,7 @@ public class UserRepository {
 
 
 	public void join(UserDTO userDTO) {
-		int count = sqlSession.insert("user.join",userDTO);
+		sqlSession.insert("user.join",userDTO);
 	}
 
 	public void updateUserInfo(UserDTO userDTO) {

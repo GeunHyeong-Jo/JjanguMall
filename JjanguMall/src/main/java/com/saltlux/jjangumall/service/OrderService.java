@@ -6,7 +6,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.saltlux.jjangumall.dto.GoodsDTO;
 import com.saltlux.jjangumall.dto.OrderDTO;
 import com.saltlux.jjangumall.dto.OrderlistDTO;
 import com.saltlux.jjangumall.repository.OrderRepository;

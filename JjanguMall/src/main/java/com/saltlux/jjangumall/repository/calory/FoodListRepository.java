@@ -34,7 +34,7 @@ public class FoodListRepository {
 
 	public boolean delete(int no) {
 		int count = sqlSession.delete("foodlist.delete", no);
-		return false;
+		return count==1;
 	}
 
 	public boolean update(FoodlistDTO vo) {
