@@ -2,22 +2,35 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<!-- 공통 -->
 		<typeAlias type="com.saltlux.jjangumall.dto.UserDTO" alias="user"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.ProductDTO" alias="product"/>
 
+		<!-- Song -->
 		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO" alias="cartproduct"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistproduct"/>
+		<!-- Jo -->
 		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO"  alias="cartandproduct"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistandproduct"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.OrderlistDTO" alias="orderlist"/>
 
-
+		<!-- MY -->
 		<typeAlias  type="com.saltlux.jjangumall.dto.FoodlistDTO" alias="foodlist"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.FoodDTO" alias="food"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.ExerciselistDTO" alias="exerciselist"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.ExerciseDTO" alias="exercise"/>
 
+		<!-- Heo -->
+		  <typeAlias type="com.saltlux.jjangumall.dto.used.UserVo" alias="uservo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.BoardVo" alias="boardvo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.ItemVo" alias="itemvo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.ImageVo" alias="imagevo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.SearchVo" alias="searchvo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.ReviewVo" alias="reviewvo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.TradeVo" alias="tradevo"/>
+	      <typeAlias type="com.saltlux.jjangumall.dto.used.ItemDetailVo" alias="itemdetailvo"/>
+	      
     </typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
@@ -27,6 +40,9 @@
 		<mapper resource="mybatis/mappers/food.xml"/>	
 		<mapper resource="mybatis/mappers/exerciselist.xml"/>
 		<mapper resource="mybatis/mappers/exercise.xml"/>
-
+		<mapper resource="mybatis/mappers/used/user-mapper.xml" />
+     	<mapper resource="mybatis/mappers/used/review-mapper.xml" />
+      	<mapper resource="mybatis/mappers/used/trade-mapper.xml" />
+      	<mapper resource="mybatis/mappers/used/item-mapper.xml" />
 	</mappers>
 </configuration>

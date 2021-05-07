@@ -30,7 +30,7 @@
 						</td>
 						<td><!-- 문방구 -->
 							<div>
-								<a href="${pageContext.request.contextPath }/used/index" class="cate1">중고상품</a>
+								<a href="${pageContext.request.contextPath }/used" class="cate1">중고상품</a>
 							</div>
 						</td>
 					</tr>

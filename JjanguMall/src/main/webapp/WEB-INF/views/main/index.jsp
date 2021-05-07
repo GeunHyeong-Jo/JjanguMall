@@ -48,12 +48,12 @@
 							style="height: 500px;" /></a>
 					</div>
 					<div>
-						<a href="${pageContext.request.contextPath }/used/index"><img
+						<a href="${pageContext.request.contextPath }/calory/index"><img
 							src="${pageContext.request.contextPath }/assets/image/main_banner3.png"
 							style="height: 500px;" /></a>
 					</div>
 					<div>
-						<a href="${pageContext.request.contextPath }/calory/index"><img
+						<a href="${pageContext.request.contextPath }/used"><img
 							src="${pageContext.request.contextPath }/assets/image/main_banner4.png"
 							style="height: 500px;" /></a>
 					</div>

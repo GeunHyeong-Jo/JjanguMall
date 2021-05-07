@@ -43,8 +43,11 @@ public class MainController {
 		mav.addObject("display", "/goods/goods_view.jsp");
 		mav.setViewName("/main/nosIndex");
 		return mav;
-		
 	}
 	
-	
+	//건강관리 페이지
+	@RequestMapping("/calory/index")
+	public String caloryIndex() {
+		return "/main/caloryindex";
+	}
 }

@@ -16,7 +16,7 @@ public class CartAndProductDTO {
 	private int imgNo;	//이미지 번호
 	private String userID;//유저ID
 	private int count;	// 갯수
-	private int price;		//상품 각겨
+	private int price;		//상품 가격
 	private String origin;	//원산지
 	private String manufacturer;	//제조사
 	private int img;	//이미지
@@ -27,5 +27,5 @@ public class CartAndProductDTO {
 	private Date reg_date;	//등록일
 	private String context;	//상세설명
 	private String socket;	//소켓
-	
+	private String name;	//상품이름
 }
