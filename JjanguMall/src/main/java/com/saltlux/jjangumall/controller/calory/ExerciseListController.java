@@ -12,11 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.saltlux.jjangumall.dto.ExerciseAndExerciseListDTO;
-import com.saltlux.jjangumall.dto.ExerciseDTO;
 import com.saltlux.jjangumall.dto.ExerciselistDTO;
-import com.saltlux.jjangumall.dto.FoodAndFoodListDTO;
-import com.saltlux.jjangumall.dto.FoodlistDTO;
-import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.dto.WeeksCaloryDTO;
 import com.saltlux.jjangumall.service.calory.ExerciseListService;
 import com.saltlux.jjangumall.service.calory.ExerciseService;

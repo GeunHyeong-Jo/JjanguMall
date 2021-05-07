@@ -34,7 +34,7 @@ public class FoodListRepository {
 
 	public boolean delete(int no) {
 		int count = sqlSession.delete("foodlist.delete", no);
-		return false;
+		return count==1;
 	}
 
 	public boolean update(FoodlistDTO vo) {
@@ -52,7 +52,7 @@ public class FoodListRepository {
 		PreparedStatement pstmt = null;
 		try {
 			conn = this.dataSource.getConnection();
-			String sql = "select foodlistno,foodno,eatTime,reg_date from foodlist where userNo=? and reg_date between date_add(now(),INTERVAL -? week) and date_add(now(),INTERVAL -? week);";
+			String sql = "select foodListNo,Food_no,eat_Time,reg_date from foodlist where User_no=? and reg_date between date_add(now(),INTERVAL -? week) and date_add(now(),INTERVAL -? week);";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo);
 			pstmt.setInt(2, no + 1);
@@ -62,9 +62,9 @@ public class FoodListRepository {
 			while (rs.next()) {
 				FoodlistDTO eatListVo = new FoodlistDTO();
 				eatListVo.setFoodListNo(rs.getInt(1));
-				eatListVo.setUserNo(vo);
-				eatListVo.setFoodNo(rs.getInt(2));
-				eatListVo.setEatTime(rs.getString(3));
+				eatListVo.setUser_no(vo);
+				eatListVo.setFood_no(rs.getInt(2));
+				eatListVo.setEat_Time(rs.getString(3));
 				eatListVo.setReg_date(rs.getDate(4));
 				list.add(eatListVo);
 			}
@@ -89,7 +89,7 @@ public class FoodListRepository {
 		PreparedStatement pstmt = null;
 		try {
 			conn = this.dataSource.getConnection();
-			String sql = "select foodlistno,foodno,eatTime,reg_date from foodlist where userNo=? and reg_date between date_add(now(),INTERVAL -? day) and date_add(now(),INTERVAL -? day);";
+			String sql = "select foodlistno,Food_no,eat_Time,reg_date from foodlist where User_no=? and reg_date between date_add(now(),INTERVAL -? day) and date_add(now(),INTERVAL -? day);";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo);
 			pstmt.setInt(2, no + 1);
@@ -99,9 +99,9 @@ public class FoodListRepository {
 			while (rs.next()) {
 				FoodlistDTO eatListVo = new FoodlistDTO();
 				eatListVo.setFoodListNo(rs.getInt(1));
-				eatListVo.setUserNo(vo);
-				eatListVo.setFoodNo(rs.getInt(2));
-				eatListVo.setEatTime(rs.getString(3));
+				eatListVo.setUser_no(vo);
+				eatListVo.setFood_no(rs.getInt(2));
+				eatListVo.setEat_Time(rs.getString(3));
 				eatListVo.setReg_date(rs.getDate(4));
 				list.add(eatListVo);
 			}

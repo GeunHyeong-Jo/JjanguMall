@@ -67,4 +67,9 @@
 		  <![CDATA[ select productNo, name, price, img from product where category = #{category }]]>
 	</select>
 	
+	<!-- 문구점페이지에 모든 상품출력 -->
+	<select id="get_store_list" resultType="product">
+		  <![CDATA[ select * from product where category='store' order by productNo desc]]>
+	</select>
+	
 </mapper>

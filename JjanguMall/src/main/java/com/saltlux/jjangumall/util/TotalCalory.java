@@ -33,7 +33,7 @@ public class TotalCalory {
 		long total = 0L;
 		for (FoodAndFoodListDTO vo : list) {
 			String str;
-			switch ((str = vo.getFoodlistDTO().getEatTime()).hashCode()) {
+			switch ((str = vo.getFoodlistDTO().getEat_Time()).hashCode()) {
 			case -1376511864:
 				if (!str.equals("evening"))
 					continue;
@@ -97,6 +97,7 @@ public class TotalCalory {
 //
 
 	// 1주일 안의 칼로리 전체 계산
+	@SuppressWarnings("deprecation")
 	public static WeeksCaloryDTO calculatedayCalory(List<FoodAndFoodListDTO> list) {
 		WeeksCaloryDTO wcv = new WeeksCaloryDTO();
 		for (FoodAndFoodListDTO vo : list) {
@@ -134,7 +135,7 @@ public class TotalCalory {
 		long tmp = 0L;
 		for (FoodAndFoodListDTO vo : list) {
 			String str;
-			switch ((str = vo.getFoodlistDTO().getEatTime()).hashCode()) {
+			switch ((str = vo.getFoodlistDTO().getEat_Time()).hashCode()) {
 			case -1376511864:
 				if (!str.equals("evening"))
 					break;
@@ -158,6 +159,7 @@ public class TotalCalory {
 		return wcv;
 	}
 
+	@SuppressWarnings("deprecation")
 	public static WeeksCaloryDTO calculatedLessdayCalory(List<ExerciseAndExerciseListDTO> list) {
 		WeeksCaloryDTO wcv = new WeeksCaloryDTO();
 		long tmp = 0L;

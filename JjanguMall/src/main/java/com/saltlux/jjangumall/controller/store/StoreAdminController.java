@@ -1,7 +1,6 @@
 package com.saltlux.jjangumall.controller.store;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,11 +20,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.saltlux.jjangumall.dto.ProductDTO;
 import com.saltlux.jjangumall.dto.UserDTO;
+import com.saltlux.jjangumall.security.Auth;
 import com.saltlux.jjangumall.service.store.StoreProductService;
 import com.saltlux.jjangumall.service.store.StoreUserService;
 
 @Controller
 @RequestMapping("/admin")
+@Auth(role = "admin")
 public class StoreAdminController {
 
 	@Autowired
@@ -74,7 +75,7 @@ public class StoreAdminController {
 	@RequestMapping(value="/logout",method=RequestMethod.GET)
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
-		return new ModelAndView("redirect:/admin/loginForm");
+		return new ModelAndView("redirect:/user/loginForm");
 	}
 	
 	//상품등록폼

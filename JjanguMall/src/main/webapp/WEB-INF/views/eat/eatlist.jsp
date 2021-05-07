@@ -100,7 +100,7 @@
 							<tr>
 								<td width="110">${vo.foodDTO.name}</td>
 								<td width="110">${vo.foodDTO.calory}</td>
-								<td>${vo.foodlistDTO.eatTime }</td>
+								<td>${vo.foodlistDTO.eat_Time }</td>
 								<td>${vo.foodlistDTO.reg_date }</td>
 								<c:choose>
 									<c:when test="${vo.foodlistDTO.reg_date.day eq 1 }">
@@ -129,7 +129,7 @@
 									href="${pageContext.request.contextPath }/calory/eat/delete?no=${ vo.foodlistDTO.foodListNo}">삭제</a></td>
 								<td><a
 									href="${pageContext.request.contextPath }/calory/eat/update?no=${ vo.foodlistDTO.foodListNo}">수정</a></td>
-							</tr>
+							</tr>	
 							<br>
 						</c:forEach>
 					</tbody>

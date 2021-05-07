@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.saltlux.jjangumall.dto.ProductDTO;
+import com.saltlux.jjangumall.security.Auth;
 import com.saltlux.jjangumall.service.store.StoreProductService;
 
 @Controller
@@ -46,8 +47,24 @@ public class MainController {
 	}
 	
 	//건강관리 페이지
+	@Auth
 	@RequestMapping("/calory/index")
-	public String caloryIndex() {
-		return "/main/caloryindex";
+	public ModelAndView caloryIndex() {
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("display", "/main/caloryindex.jsp");
+		mav.setViewName("/main/nosIndex");
+		return mav;
+	}
+	
+	@RequestMapping("/store")
+	public ModelAndView storeIndex() {
+		List<ProductDTO> list = sotreProductService.get_store_list();
+		System.out.println("메인 상품리스트 "+list);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.addObject("display", "/goods/store_goods.jsp");
+		mav.setViewName("/main/nosIndex");
+		return mav;	
 	}
 }

@@ -5,11 +5,11 @@
 		resultType="foodlist">
 		<![CDATA[
 			select foodlistno
-			, userNo
-			, foodNo
-			, eatTime
+			, User_no
+			, Food_no
+			, eat_Time
 			, reg_date 
-			from foodlist where userNo=#{Id};
+			from foodlist where User_no=#{Id};
 		]]>
 	</select>
 
@@ -17,14 +17,14 @@
 		<![CDATA[
 			insert into foodlist 
 			(foodlistno
-			,userNo
-			,foodNo
-			,eatTime
+			,User_no
+			,Food_no
+			,eat_Time
 			,reg_date) values
 			(null
-			,#{userNo}
-			,#{foodNo}
-			,#{eatTime}
+			,#{User_no}
+			,#{Food_no}
+			,#{eat_Time}
 			,now());
 		]]>
 	</insert>
@@ -45,7 +45,7 @@
 	
 	<update id="update" parameterType="foodlist">
 	<![CDATA[
-		update foodlist set foodNo = #{foodNo}, eatTime = #{eatTime} where userNo = #{userNo};
+		update foodlist set Food_no = #{foodNo}, eat_Time = #{eatTime} where User_no = #{userNo};
 	]]>
 	</update>
 </mapper>

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.saltlux.jjangumall.dto.GoodsDTO;
 import com.saltlux.jjangumall.dto.ProductDTO;
 import com.saltlux.jjangumall.repository.store.StoreProductRepository;
 
@@ -37,6 +36,10 @@ public class StoreProductService {
 
 	public void productDelete(String productNo) {
 		StoreProductRepository.productDelete(productNo);
+	}
+
+	public List<ProductDTO> get_store_list() {
+		return StoreProductRepository.get_store_list();
 	}
 
 }

@@ -20,7 +20,7 @@
 					<tr>						
 						<td><!-- 문방구 -->
 							<div>
-								<a href="${pageContext.request.contextPath }" class="cate1">문구</a>
+								<a href="${pageContext.request.contextPath }/store" class="cate1">문구</a>
 							</div>
 						</td>
 						<td><!-- 컴퓨터 -->

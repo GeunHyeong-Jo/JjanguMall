@@ -49,4 +49,8 @@ public class StoreUserService {
 		map.put("pwd", pwd);
 		return storeUserRepository.adminLogin(map);
 	}
+
+	public String getAuth(String userId) {
+		return storeUserRepository.getAuth(userId);
+	}
 }

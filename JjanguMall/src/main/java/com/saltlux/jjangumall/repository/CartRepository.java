@@ -1,9 +1,6 @@
 package com.saltlux.jjangumall.repository;
 
 import java.util.List;
-import java.util.Map;
-
-import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +14,6 @@ public class CartRepository {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	
-	@Autowired
-	private DataSource dataSource;
 
 	public List<CartAndProductDTO> getCart(String userId) {
 		return sqlSession.selectList("cartSQL.getCart",userId);

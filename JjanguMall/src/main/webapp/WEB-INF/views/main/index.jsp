@@ -38,7 +38,7 @@
 				<div id="main_slider" class="main_slider">
 					
 					<div>
-						<a href="${pageContext.request.contextPath }"><img
+						<a href="${pageContext.request.contextPath }/store"><img
 							src="${pageContext.request.contextPath }/assets/image/main_banner1.png"
 							style="height: 500px;" /></a>
 					</div>

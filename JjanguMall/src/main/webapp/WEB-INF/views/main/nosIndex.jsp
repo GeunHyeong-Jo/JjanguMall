@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/slick-theme.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/index.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/order.css">    
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/goods_list.css" /> 
 
 </head>
 

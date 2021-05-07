@@ -20,7 +20,7 @@ import com.saltlux.jjangumall.service.store.StoreUserService;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	private StoreUserService userService;	
+	private StoreUserService userService;
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
@@ -59,11 +59,6 @@ public class UserController {
 	@RequestMapping(value = "/joinOk", method = RequestMethod.POST)
 	public ModelAndView joinOk(@ModelAttribute UserDTO userDTO, HttpSession session) {
 
-		// session 생성
-		session.setAttribute("memName", userDTO.getUserName());
-		session.setAttribute("memId", userDTO.getUserId());
-		session.setAttribute("memEmail", userDTO.getEmail());
-
 		// 회원가입폼을 DB로 전달
 		String encPassword = passwordEncoder.encode(userDTO.getPassword());
 		System.out.println("비밀번호:" + userDTO.getPassword() + ", 암호화한 비밀번호:" + encPassword);
@@ -95,7 +90,11 @@ public class UserController {
 			session.setAttribute("memName", userDTO.getUserName());
 			session.setAttribute("memId", userDTO.getUserId());
 			session.setAttribute("memEmail", userDTO.getEmail());
-			
+
+			if ("admin".equals(userService.getAuth(dto.getUserId()))) {
+				return "redirect:/admin/productList";
+			}
+
 			session.setAttribute("authResult", "true");
 			return "redirect:/";
 		} else {
@@ -124,13 +123,13 @@ public class UserController {
 	// 회원정보수정 페이지
 	@RequestMapping("/modifyForm")
 	public ModelAndView modifyForm(HttpSession session) {
-		String userID = (String)session.getAttribute("memId");
-		
+		String userID = (String) session.getAttribute("memId");
+
 		UserDTO authDTO = new UserDTO();
 		authDTO.setUserId(userID);
 		UserDTO userDTO = userService.getUser(authDTO);
 		System.out.println(userDTO);
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("contents", "/user/modifyForm.jsp");
 		mav.addObject("display", "/mypage/mypageIndex.jsp");
@@ -143,13 +142,13 @@ public class UserController {
 
 	// 회원정보수정
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public ModelAndView modify(UserDTO dto,HttpSession session) {
+	public ModelAndView modify(UserDTO dto, HttpSession session) {
 
-		System.out.println("수정내용="+dto);
+		System.out.println("수정내용=" + dto);
 		UserDTO userDTO = userService.checkId(dto.getUserId());
 
 		// 비밀번호가 null때 이전 값 그대로
-		if(dto.getPassword()=="")
+		if (dto.getPassword() == "")
 			dto.setPassword(userDTO.getPassword());
 		else {
 			String encPassword = passwordEncoder.encode(dto.getPassword());
@@ -159,7 +158,7 @@ public class UserController {
 		userService.modify(dto);
 		session.setAttribute("memName", userDTO.getUserName());
 		session.setAttribute("memEmail", userDTO.getEmail());
-		
+
 		return new ModelAndView("redirect:/user/modifyForm");
 	}
 
