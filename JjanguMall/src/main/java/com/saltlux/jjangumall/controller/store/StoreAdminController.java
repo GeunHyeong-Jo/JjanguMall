@@ -21,11 +21,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.saltlux.jjangumall.dto.ProductDTO;
 import com.saltlux.jjangumall.dto.UserDTO;
+import com.saltlux.jjangumall.security.Auth;
 import com.saltlux.jjangumall.service.store.StoreProductService;
 import com.saltlux.jjangumall.service.store.StoreUserService;
 
 @Controller
 @RequestMapping("/admin")
+@Auth(role="admin")
 public class StoreAdminController {
 
 	@Autowired
