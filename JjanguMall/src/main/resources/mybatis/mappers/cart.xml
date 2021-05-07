@@ -35,6 +35,13 @@
 		delete from cart where userID = #{userID } and carNo=#{carNo} AND productNo = #{productNo } 	
 	</delete>
 	
+	<!-- 장바구니 선택삭제 근형 구매후삭제 -->
+	<delete id="deleteAfterBuyCart" parameterType="String">
+		<![CDATA[
+			delete from cart where carNo= #{carNo};
+		]]>
+	</delete>
+	
 	<!-- 장바구니 전체지우기 -->
 	<delete id="allDeleteCart" parameterType="String">
 		delete from cart where userID = #{userID }
@@ -45,10 +52,5 @@
 	<update id="cartInsertUpdate" parameterType="cart">
 		UPDATE cart  SET count=#{count}  WHERE  userID = #{userID } and carNo=#{carNo} AND productNo=#{productNo}
 	</update>
-	
-	<!-- 주문 후 장바구니 삭제 -->
-	<delete id="deleteCartAfterPay" parameterType="Integer">
-		delete from cart where carNo = #{carNo}
-	</delete>
 	
 </mapper>

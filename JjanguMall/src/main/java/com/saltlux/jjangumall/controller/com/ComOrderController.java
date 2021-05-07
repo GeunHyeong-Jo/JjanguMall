@@ -25,7 +25,6 @@ import com.saltlux.jjangumall.dto.UserDTO;
 import com.saltlux.jjangumall.dto.com.CartAndProductDTO;
 import com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO;
 import com.saltlux.jjangumall.service.CartService;
-import com.saltlux.jjangumall.service.com.ComCartService;
 import com.saltlux.jjangumall.service.com.ComOrderService;
 import com.saltlux.jjangumall.service.com.ComProductService;
 import com.saltlux.jjangumall.service.store.StoreUserService;
@@ -44,12 +43,8 @@ public class ComOrderController {
 	private ComProductService comProductService;
 
 	@Autowired
-	private ComCartService comCartService;
-
-	@Autowired
 	private CartService cartService;
 
-	
 	// order_cart 페이지 : 장바구니에서 선택주문에서 이동하는 페이지
 	@GetMapping("/order_cart")
 	public ModelAndView orderCart(@RequestParam(required = false, defaultValue = "") String checkedValueStr,
@@ -95,8 +90,7 @@ public class ComOrderController {
 		mav.addObject("display", "/order/order_cart.jsp");
 		mav.setViewName("/main/nosIndex");
 		return mav;
-		
-		
+
 	}
 
 	// order_settle 페이지
@@ -107,42 +101,39 @@ public class ComOrderController {
 		String userId = (String) session.getAttribute("memId");
 		ModelAndView mav = new ModelAndView();
 
-		
-		
-		String[] carNo = orderSettleDTO.getCheckedValueStr().split(",");
-		OrderDTO orderDTO= new OrderDTO();
-		orderDTO.setRAddress(orderSettleDTO.getReceiverAddr1()+orderSettleDTO.getReceiverAddr2());
+		String[] carNos = orderSettleDTO.getCheckedValueStr().split(",");
+		OrderDTO orderDTO = new OrderDTO();
+		orderDTO.setRAddress(orderSettleDTO.getReceiverAddr1() + orderSettleDTO.getReceiverAddr2());
 		orderDTO.setRName(orderSettleDTO.getRName());
 		orderDTO.setRPhone(orderSettleDTO.getRPhone());
 		orderDTO.setRZipcode(orderSettleDTO.getRZipcode());
 		orderDTO.setState("주문완료");
 		orderDTO.setTotalPrice(orderSettleDTO.getTotalPrice());
 		orderDTO.setUserID(userId);
-		
-		
+
 		OrderlistDTO orderlistDTO = new OrderlistDTO();
-		comOrderService.addOrder(orderDTO);//order에 추가
-		
-		String orderNo = comOrderService.getMaxOrderNo(userId);//넣은 orderNo확인
-		
-		//넘어온 상품 orderlist에 넣는다
-		for(String catno : carNo) {
-			CartAndProductDTO cartAndProductDTO= cartService.getCartDTO(Integer.parseInt(catno));
+		comOrderService.addOrder(orderDTO);// order에 추가
+
+		String orderNo = comOrderService.getMaxOrderNo(userId);// 넣은 orderNo확인
+
+		// 넘어온 상품 orderlist에 넣는다
+		for (String carNo : carNos) {
+			CartAndProductDTO cartAndProductDTO = cartService.getCartDTO(Integer.parseInt(carNo));
 			orderlistDTO.setOrderNo(Integer.parseInt(orderNo));
 			orderlistDTO.setProductNo(cartAndProductDTO.getProductNo());
 			orderlistDTO.setCount(cartAndProductDTO.getCount());
 			comOrderService.addOrderlist(orderlistDTO);
-			comCartService.deleteCart(catno);
-			//재고 정리
+			System.out.println("carNo입니다 " + carNo);
+			cartService.deleteAfterBuyCart(carNo);
+			// 재고 정리
 		}
-		
-		////여기서 입력 완료// 해당 cart 지우고 출력하는거 하기// 트리거로 구현
-		
+
+		//// 여기서 입력 완료// 해당 cart 지우고 출력하는거 하기// 트리거로 구현
+
 		// 주문정보 OrderlistAndProductDTO 리스트 넘겨주기
-		//List<OrderDTO> list = comOrderService.getOrderProduct(userId);
-		List<OrderlistAndProductDTO> orderlistAndProductDTOs = 	comOrderService.getOrderList(userId, orderNo);
-		
-		
+		// List<OrderDTO> list = comOrderService.getOrderProduct(userId);
+		List<OrderlistAndProductDTO> orderlistAndProductDTOs = comOrderService.getOrderList(userId, orderNo);
+
 		// 유저정보
 		UserDTO userDTO = storeUserService.checkId(userId);
 
@@ -150,10 +141,10 @@ public class ComOrderController {
 		mav.addObject("userDTO", userDTO);
 		System.out.println(orderDTO);
 //		mav.addObject("orderDTO", orderDTO); //cartCode // 이렇게하면 왜 안되는것인가 왜!!!
-		mav.addObject("rName",orderDTO.getRName());
-		mav.addObject("rPhone",orderDTO.getRPhone());
-		mav.addObject("rZipcode",orderDTO.getRZipcode());
-		mav.addObject("rAddress",orderDTO.getRAddress());
+		mav.addObject("rName", orderDTO.getRName());
+		mav.addObject("rPhone", orderDTO.getRPhone());
+		mav.addObject("rZipcode", orderDTO.getRZipcode());
+		mav.addObject("rAddress", orderDTO.getRAddress());
 		mav.addObject("display", "/order/order_settle.jsp");
 		mav.setViewName("/main/nosIndex");
 		return mav;

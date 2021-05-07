@@ -44,8 +44,9 @@ public class CartRepository {
 		sqlSession.update("cartSQL.cartInsertUpdate",cartDTO);
 	}
 
-	public void deleteCartAfterPay(int cartCode) {
-		sqlSession.delete("cartSQL.deleteCartAfterPay",cartCode);
+	
+	public void deleteAfterBuyCart(String carNo) {
+		sqlSession.delete("cartSQL.deleteAfterBuyCart",carNo);
 	}	
 
 }

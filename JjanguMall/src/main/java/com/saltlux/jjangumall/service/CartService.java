@@ -44,7 +44,8 @@ public class CartService {
 		cartRepository.cartInsertUpdate(cartDTO);
 	}
 
-	public void deleteCartAfterPay(int cartCode) {
-		cartRepository.deleteCartAfterPay(cartCode);
+	
+	public void deleteAfterBuyCart(String carNo) {
+		cartRepository.deleteAfterBuyCart(carNo);
 	}
 }
