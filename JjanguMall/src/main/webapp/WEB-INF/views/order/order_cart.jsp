@@ -266,12 +266,12 @@
 			        <td align="center" height="100">
 			          <div style="width:100%" class="noline">
 			            <div style="width: 180px; display: inline-block;">
-			            	<div onclick="location.href='${pageContext.request.contextPath }/order/orderCancle'" class="sub-button-s" 
+			            	<div onclick="location.href='${pageContext.request.contextPath }/cart/goods_cart'" class="sub-button-s" 
 							style="text-align:center; height:60px; width:150px; line-height:55px; font-size: 14px; font-weight:700;">취소</div>			            
 			            </div>
 			            <div style="width: 180px; display: inline-block; padding-left: 5px;">
 							<input type="submit" id="orderWriteBtn" class="main-button-s" 
-							style="border:0px; text-align:center; height:60px; width:150px; line-height:55px; font-size: 14px; font-weight:700;" value="다음">			
+							style="border:0px; text-align:center; height:60px; width:150px; line-height:55px; font-size: 14px; font-weight:700;" value="결제">			
 						</div>					
 			          </div>
 			        </td>

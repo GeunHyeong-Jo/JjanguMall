@@ -26,7 +26,7 @@
 			<td style="width:100px;">${OrderDTO.orderDate }</td>
 			<td>
 			<a id="mypage_orderCode" class="${OrderDTO.orderNo }" href="${pageContext.request.contextPath }/mypage/mypage_orderview?orderNo=${OrderDTO.orderNo }">${OrderDTO.orderNo }</a>
-			<a href="${pageContext.request.contextPath }/mypage/mypage_orderview?orderCode=${OrderDTO.orderNo }">
+			<a href="${pageContext.request.contextPath }/mypage/mypage_orderview?orderNo=${OrderDTO.orderNo }">
 			<div style="cursor:pointer; color:gray; margin: 3px auto 0 auto; width:80px; height:25px; line-height:25px; text-align:center; border:1px solid gray;">상세보기</div></a>
 			</td>
 			<td>${OrderDTO.totalPrice }</td>

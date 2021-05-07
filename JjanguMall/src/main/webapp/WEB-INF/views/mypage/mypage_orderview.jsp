@@ -18,7 +18,7 @@
         </tr>
         <c:forEach var="orderandproduct" items="${list }">
 	        <tr class="mypage_table_content orderview_content">
-	          <td id="product_thumb"><img id="thumbimg" src="${pageContext.request.contextPath }/assets/image/thumb/${orderandproduct.img }"></td>
+	          <td id="product_thumb"><img id="thumbimg" src="${pageContext.request.contextPath }/assets/image/thumb/${orderandproduct.img }.jpg"></td>
 	          <td>
 		          <span id="product_name">${orderandproduct.name }</span>		          
 	          </td>
@@ -55,20 +55,20 @@
         </tr>
         <tr>
           <td id="box_name">받는 분 이름 :</td>
-          <td>${orderDTO.rName}</td>
+          <td>${rName}</td>
         </tr>
         <tr>
           <td>핸드폰 :</td>
-          <td>${orderDTO.rPhone}</td>
+          <td>${rPhone}</td>
         </tr>
         <tr>
           <td>우편번호 :</td>
-          <td>${orderDTO.rZipcode }</td>
+          <td>${rZipcode }</td>
         </tr>
         <tr>
           <td>주소 :</td>
           <td>
-	           ${orderDTO.rAddress }<br>
+	           ${rAddress }<br>
           </td>
         </tr>
       </table>
@@ -79,19 +79,15 @@
         <tr>
           <td id="box_name">총주문금액 :</td>
           <td>
-          		<c:set var="sum" value="0"/>
+          		<c:set var="sum" />
 	         
 	          <c:forEach var="orderandproduct" items="${list}">
-	          	<c:set var="sum" value="${ sum += orderandproduct.price * orderandproduct.count }"/>
+	          	<c:set var="sum" value="${orderandproduct.price * orderandproduct.count }"/>
 	          </c:forEach>
 	          
 	          	<c:out value="${sum}"/>
           	원</td>
-        </tr>
-        <tr>
-          <td>사용포인트 :</td>
-          <td></td>  <!-- <td>${usePoint}원</td> -->
-        </tr>
+        </tr>        
         <tr>
           <td>배송비 :</td>
           <td>
@@ -117,27 +113,7 @@
           </td>
         </tr>
       </table>
-      <!-- <table class="box_style1">
-        <tr>
-          <td id="box_title1" colspan="2">결제수단</td>
-        </tr>
-        <tr>
-          <td id="box_name">결제방법 :</td>
-          <td>
-          <c:set var="loop" value="false"/>
-           <c:forEach var="orderDTO" items="${list}">
-	          <c:if test="${not loop }">
-	          <c:if test="${orderDTO.paymentType == 0 }">
-	          	신용카드 <c:set var="loop" value="true"/>
-	          </c:if>
-	          <c:if test="${orderDTO.paymentType == 1 }">
-	          	핸드폰 <c:set var="loop" value="true"/>
-	          </c:if>
-	          </c:if>
-          	</c:forEach>
-          </td>
-        </tr>
-      </table>-->
+     
     </div>
 
     <div>

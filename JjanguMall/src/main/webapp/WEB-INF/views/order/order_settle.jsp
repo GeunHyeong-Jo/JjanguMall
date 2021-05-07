@@ -187,7 +187,7 @@
 			            
 			            <div style="width: 180px; display: inline-block; padding-left: 5px;">
 							<input type="button" id="payBtn" class="main-button-s" 
-							style="border:0px; text-align:center; height:60px; width:150px; line-height:55px; font-size: 14px; font-weight:700;" value="결제하기">			
+							style="border:0px; text-align:center; height:60px; width:150px; line-height:55px; font-size: 14px; font-weight:700;" value="확인">			
 						</div>					
 			          </div>
 			        </td>

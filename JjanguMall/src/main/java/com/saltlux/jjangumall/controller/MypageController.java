@@ -48,16 +48,19 @@ public class MypageController {
 	public ModelAndView orderview(HttpSession session, HttpServletRequest  request) {
 		ModelAndView mav = new ModelAndView();
 		String orderNo =request.getParameter("orderNo");
-		UserDTO authUser= (UserDTO) session.getAttribute("authUser");
-		String userId = authUser.getUserId();
+		String userId= (String) session.getAttribute("memId");
 		List<OrderlistAndProductDTO> list =  comOrderService.getOrderList(userId, orderNo);
 		// 위에부분 @AuthUser로 줄일 수 있다
-		authUser=userService.getUser(authUser);
+		UserDTO userDTO = userService.checkId(userId);
 		
 		OrderDTO orderDTO =  comOrderService.getOneOrder(userId,orderNo);
 		mav.addObject("list", list);
-		mav.addObject("orderDTO", orderDTO);
-		mav.addObject("userDTO", authUser);
+		//mav.addObject("orderDTO", orderDTO);
+		mav.addObject("rName",orderDTO.getRName());
+		mav.addObject("rPhone",orderDTO.getRPhone());
+		mav.addObject("rZipcode",orderDTO.getRZipcode());
+		mav.addObject("rAddress",orderDTO.getRAddress());
+		mav.addObject("userDTO", userDTO);
 		mav.addObject("display", "/mypage/mypageIndex.jsp");
 		mav.addObject("contents", "/mypage/mypage_orderview.jsp");
 		mav.setViewName("/main/nosIndex");
