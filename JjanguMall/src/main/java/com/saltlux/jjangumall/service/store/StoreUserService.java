@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saltlux.jjangumall.dto.UserDTO;
+import com.saltlux.jjangumall.repository.UserRepository;
 import com.saltlux.jjangumall.repository.store.StoreUserRepository;
 
 
@@ -48,5 +49,9 @@ public class StoreUserService {
 		map.put("id", id);
 		map.put("pwd", pwd);
 		return storeUserRepository.adminLogin(map);
+	}
+
+	public String getAuth(String userId) {
+		return storeUserRepository.getAuth(userId);
 	}
 }

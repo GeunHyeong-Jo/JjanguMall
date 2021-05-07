@@ -91,6 +91,10 @@ public class UserController {
 			session.setAttribute("memId", userDTO.getUserId());
 			session.setAttribute("memEmail", userDTO.getEmail());
 			
+			if ("admin".equals(userService.getAuth(dto.getUserId()))){
+				return "redirect:/admin/productList";
+			}
+			
 			session.setAttribute("authResult", "true");
 			return "redirect:/";
 		} else {
