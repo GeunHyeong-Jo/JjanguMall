@@ -17,7 +17,7 @@ public class OrderlistAndProductDTO {
 	private int orderNo;	//주문 번호
 	private int oderNo;	//이미지 번호
 	private int count;	//수량
-	private int price;		//상품 각겨
+	private int price;		//상품 가격
 	private String origin;	//원산지
 	private String manufacturer;	//제조사
 	private int img;	//이미지
@@ -28,5 +28,6 @@ public class OrderlistAndProductDTO {
 	private Date reg_date;	//등록일
 	private String context;	//상세설명
 	private String socket;	//소켓
+	private String name;// 제품명
 }
 

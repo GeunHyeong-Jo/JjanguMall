@@ -8,6 +8,10 @@
 		<typeAlias type="com.saltlux.jjangumall.dto.CartDTO" alias="cart"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO" alias="cartproduct"/>
 		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.CartAndProductDTO"  alias="cartandproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.com.OrderlistAndProductDTO" alias="orderlistandproduct"/>
+		<typeAlias type="com.saltlux.jjangumall.dto.OrderlistDTO" alias="orderlist"/>
+
 
 		<typeAlias  type="com.saltlux.jjangumall.dto.FoodlistDTO" alias="foodlist"/>
 		<typeAlias  type="com.saltlux.jjangumall.dto.FoodDTO" alias="food"/>
