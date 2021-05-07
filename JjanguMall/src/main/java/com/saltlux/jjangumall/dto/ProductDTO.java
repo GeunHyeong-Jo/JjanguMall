@@ -22,10 +22,11 @@ public class ProductDTO {
 	private int totalQty;	//총수량
 	private int saleQty;	//판매량
 	private int stockQty;	//재고량
+	private int addQty;		//추가수량
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
 	private Date reg_date;	//등록일
 	private String context;	//상세설명
 	private String socket;	//소켓
-	
+	private String category;//카테고리
 	
 }

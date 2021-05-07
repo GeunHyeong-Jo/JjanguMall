@@ -70,5 +70,15 @@ public class StoreUserRepository {
 	}
 
 
+	public UserDTO adminLogin(Map<String, String> map) {
+		return sqlSession.selectOne("user.adminLogin",map);
+	}
+
+
+	public String getAuth(String memId) {
+		return sqlSession.selectOne(memId);
+	}
+
+
 
 }

@@ -28,4 +28,24 @@ public class StoreProductRepository {
 	public ProductDTO getGoodsView(int productCode) {
 		return sqlSession.selectOne("product.getGoodsView", productCode);
 	}
+
+	public int getProductNo() {
+		// TODO Auto-generated method stub
+		if(sqlSession.selectOne("product.getProductNo")==null)
+			return 0;
+		else
+			return sqlSession.selectOne("product.getProductNo");
+	}
+
+	public int productRegist(ProductDTO productDTO) {
+		return sqlSession.insert("product.productRegist",productDTO);
+	}
+
+	public void productModify(ProductDTO productDTO) {
+		sqlSession.update("product.productModify",productDTO);
+	}
+
+	public void productDelete(String productNo) {
+		sqlSession.delete("product.productDelete",productNo);
+	}
 }

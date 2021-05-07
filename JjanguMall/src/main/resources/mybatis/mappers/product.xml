@@ -12,4 +12,57 @@
 	<select id="getGoodsView" parameterType="Integer" resultType="product">
 		<![CDATA[select * from product where productNo = #{productNo}]]>
 	</select> 
+	
+	<!-- 가장 상위 productNo 가져오기 -->
+	<select id="getProductNo" resultType="Integer">
+		select productNo from product order by productNo desc limit 1
+	</select> 
+	
+	<!-- admin 상품 등록 -->
+	<insert id="productRegist" parameterType="product">
+		insert into product(name, 
+								price, 
+								origin, 
+								manufacturer, 
+								img, 
+								totalQty,
+								stockQty, 
+								reg_date, 
+								context, 
+								category,
+								socket) 
+							values( #{name}
+									, #{price}
+									, #{origin}
+									, #{manufacturer}
+									, #{img}
+									, #{totalQty}
+									, #{totalQty}									
+									, now()
+									, #{context}
+									, #{category}
+									, #{socket})
+	</insert>
+	
+	<!-- admin 상품 수정 -->
+	<update id="productModify" parameterType="product">
+		update product set name = #{name}
+							, price = #{price}
+							, origin = #{origin}
+							, manufacturer = #{manufacturer}
+							, img = #{img}
+							, totalQty = #{totalQty}
+							, stockQty = #{stockQty}
+							, context = #{context}
+							, category = #{category}
+							, socket = #{socket}
+		where productNo = #{productNo}
+	</update>	
+		
+	<!-- admin 상품삭제 -->
+	<delete id="productDelete" parameterType="String">
+		delete from product where productNo =#{productNo}
+	</delete>
+	
+	
 </mapper>

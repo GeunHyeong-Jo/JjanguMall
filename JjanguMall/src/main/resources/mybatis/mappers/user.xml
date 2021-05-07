@@ -57,4 +57,16 @@
 		userId=#{userId};
 		]]>
 	</delete>
+	
+	
+	<!-- 관리자 로그인 -->
+	<select id="adminLogin" parameterType="java.util.Map" resultType="user" >
+		select * from user where userId=#{id} and password=#{pwd}
+	</select>
+	
+	<!--  권한 가져오기 위한 auth select -->
+	<select id="getAuth" parameterType="string" resultType="string">
+		select auth from user where userId=#{memId}
+	</select>
+	
 </mapper>
