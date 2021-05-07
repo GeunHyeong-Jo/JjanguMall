@@ -28,6 +28,7 @@ public class FoodListController {
 	@Autowired
 	FoodService foodService;
 
+	//음식 메인
 	@RequestMapping({ "/index" })
 	public String index(Model model, HttpSession session) {
 		String Id = (String) session.getAttribute("memId");
